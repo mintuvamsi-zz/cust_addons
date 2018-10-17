@@ -1,0 +1,8 @@
+<odoo> 
+    <template id="debranding_title" name="Debranding title JS"
+              inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/debranding_sailotech/static/src/js/title.js"/>
+        </xpath>
+    </template>
+</odoo>    

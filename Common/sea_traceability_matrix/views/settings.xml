@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- Module Name -->
+       <record id="module_id_tree" model="ir.ui.view">
+            <field name="name">module.id.tree</field>
+            <field name="model">module.id</field>
+            <field name="arch" type="xml">
+                <tree string="Module Name">
+                        <field name="module_id"/>
+                        <field name="created_by"/>
+                        <field name="date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="module_id_form" model="ir.ui.view">
+            <field name="name">module.id.form</field>
+            <field name="model">module.id</field>
+            <field name="arch" type="xml">
+              
+                    <form string="Module Name">
+                        <group>
+                        <field name="module_id"/>
+                        <field name="created_by"/>
+                        <field name="date"/>
+                        </group>
+                    </form>
+              
+<!--                         <div class="oe_chatter"> 
+                            <field name="message_follower_ids" widget="mail_followers"/> 
+                            <field name="message_ids" widget="mail_thread"/> 
+                        </div>  -->
+            </field>
+        </record>
+
+        <record id="traceability_module_id_action" model="ir.actions.act_window">
+            <field name="name">Module Name</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">module.id</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>         
+        </record>
+
+<!-- Sub-Module Name -->
+       <record id="sub_module_name_tree" model="ir.ui.view">
+            <field name="name">sub.module.name.tree</field>
+            <field name="model">sub.module.name</field>
+            <field name="arch" type="xml">
+                <tree string="Sub-Module Name">
+                    <field name="sub_module_name"/>
+                    <field name="created_by"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sub_module_name_form" model="ir.ui.view">
+            <field name="name">sub.module.name.form</field>
+            <field name="model">sub.module.name</field>
+            <field name="arch" type="xml">
+           
+                <form string="Sub-Module Name">
+                    <group>
+                            <field name="sub_module_name"/>
+                            <field name="created_by"/>
+                            <field name="date"/>
+                    </group>
+                </form>
+            
+<!--                         <div class="oe_chatter"> 
+                            <field name="message_follower_ids" widget="mail_followers"/> 
+                            <field name="message_ids" widget="mail_thread"/> 
+                        </div>  -->
+            </field>
+        </record>
+
+        <record id="sub_module_name_action" model="ir.actions.act_window">
+            <field name="name">Sub-Module Name</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sub.module.name</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>         
+        </record>
+
+
+<!-- Tower Name -->
+       <record id="tower_name_tree" model="ir.ui.view">
+            <field name="name">tower.name.tree</field>
+            <field name="model">tower.name</field>
+            <field name="arch" type="xml">
+                <tree string="Tower Name">
+                    <field name="tower_name"/>
+                    <field name="created_by"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="tower_name_form" model="ir.ui.view">
+            <field name="name">tower.name.form</field>
+            <field name="model">tower.name</field>
+            <field name="arch" type="xml">
+           
+                <form string="Tower Name">
+                    <group>
+                            <field name="tower_name"/>
+                            <field name="created_by"/>
+                            <field name="date"/>
+                    </group>
+                </form>
+            
+<!--                         <div class="oe_chatter"> 
+                            <field name="message_follower_ids" widget="mail_followers"/> 
+                            <field name="message_ids" widget="mail_thread"/> 
+                        </div>  -->
+            </field>
+        </record>
+
+        <record id="tower_name_action" model="ir.actions.act_window">
+            <field name="name">Tower Name</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tower.name</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>         
+        </record>
+
+
+    <menuitem name="Configuration" id="configuration_menu" parent="traceability_matrix_pmenu" sequence="2"/>
+
+    <menuitem name="Module Name" id="traceability_matrix_module" parent="configuration_menu"
+        action= "traceability_module_id_action" sequence="2"/>
+
+    <menuitem name="Sub-Module Name" id="traceability_matrix_sub_module" parent="configuration_menu"
+        action="sub_module_name_action" sequence="3"/>
+    
+    <menuitem name="Tower Name" id="traceability_tower_name" parent="configuration_menu"
+        action="tower_name_action" sequence="1"/>
+
+</odoo>

@@ -1,0 +1,37 @@
+<openerp>
+  <data>
+      <record model="ir.ui.view" id="project_issue_form">
+          <field name="name">project.issue.form</field>
+          <field name="model">project.issue</field>
+          <field name="inherit_id" ref="project_issue.project_issue_form_view"/>
+          <field name="arch" type="xml">
+              <xpath expr="//field[@name='email_from']" position="before">
+                      <field name="assigned_to"/>
+                      <field name="build_number"/>
+                      <field name="module"/>
+                      <field name="detected_in_build"/>
+                      <field name="fixed_in_build"/>
+                      <field name="issue_type"/>
+                      <field name="issue_status"/>
+                      <field name="user_story"/>
+                      <field name="root_cause"/>
+
+          
+                      
+              </xpath>
+              <xpath expr="//field[@name='project_id']" position="after">
+              	<field name="sprint_id"/>
+              </xpath>
+              <xpath expr="//field[@name='tag_ids']" position="before">
+              	<field name="raised_by"/>
+              	<field name="detected_in_sprint"/>
+              	<field name="fixed_in_sprint"/>
+                <field name="fixed_sprint"/>
+              	<field name="severity"/>
+              	<field name="priority"/>
+              </xpath>
+
+           </field>
+      </record>
+  </data>
+</openerp>

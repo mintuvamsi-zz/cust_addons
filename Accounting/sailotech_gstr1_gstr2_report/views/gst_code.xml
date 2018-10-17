@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_country_state_custom_tree" model="ir.ui.view">
+        <field name="name">res.country.custom.state.tree</field>
+        <field name="model">res.country.state</field>
+        <field name="inherit_id" ref="base.view_country_state_tree"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='country_id']" position="after">
+                    <field name="state_code" />
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+	 <record id="gst_invoice_customer_form" model="ir.ui.view">
+        <field name="name">gst.invoice.customer.form</field>
+        <field name="model">account.invoice</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="elec_ref" />
+					<field name="export_invoice"/>
+					<field name="export_type" attrs="{'invisible': [('export_invoice','=',False)]}"/>
+                </xpath>
+
+				<xpath expr="//field[@name='date_due']" position="after">
+					<field name="invoice_type"/>
+                </xpath>
+
+				<xpath expr="//page//group//field[@name='fiscal_position_id']" position="after">
+                   <field name="ship_bill_no" attrs="{'invisible': [('export_invoice','=',False)]}"/>
+                   <field name="ship_bill_date" attrs="{'invisible': [('export_invoice','=',False)]}"/>
+                </xpath>
+
+				<xpath expr="//page//group//field[@name='name']" position="after">
+                   <field name="port_code" attrs="{'invisible': [('export_invoice','=',False)]}"/>
+                </xpath>
+
+            </data>
+        </field>
+    </record>
+
+
+</odoo>

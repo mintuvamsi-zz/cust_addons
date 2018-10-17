@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<record id="view_applicant_status_form" model="ir.ui.view">
+	        <field name="name">applicant.status.form</field>
+	        <field name="model">application.status</field>
+	        <field name="type">form</field>
+	        <field name="arch" type="xml">
+	            <form string="Application Status">
+	            	<field name="application_status"/>
+	            </form>
+	        </field>
+	    </record>
+
+    	<record id="view_applicant_status_tree" model="ir.ui.view">
+	        <field name="name">applicant.status.form</field>
+	        <field name="model">application.status</field>
+	        <field name="type">tree</field>
+	        <field name="arch" type="xml">
+	            <tree string="Application Status">
+	            	<field name="application_status"/>
+	            </tree>
+	        </field>
+	    </record>
+
+
+	    <record id="action_applicant_status_form_lines" model="ir.actions.act_window">
+	        <field name="name">Application Status</field>
+	        <field name="type">ir.actions.act_window</field>
+	        <field name="res_model">application.status</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">form,tree</field>
+	        <field name="context">{}</field>
+	        <field name="domain">[]</field>	        
+	    </record>
+
+
+    	<menuitem id="menu_application_status" name="Application Status" parent="hr_recruitment.menu_hr_job_position_config"
+        sequence="25"/>
+
+
+    </data>
+</openerp>

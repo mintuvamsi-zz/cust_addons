@@ -1,0 +1,65 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition for messages -->
+    <record model="ir.ui.view" id="sea_messages.list">
+      <field name="name">SEA Messages</field>
+      <field name="model">sea.payroll.messages</field>
+      <field name="arch" type="xml">
+        <tree string="Messages" create="false" edit="false">
+          <field name="emp_name"/>
+          <field name="payroll_month"/>
+          <field name="message"/>
+          <field name="contract_id"/>
+          <field name="message_type"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Explicit Form view -->
+    <record model="ir.ui.view" id="sea_messages.form">
+      <field name="name">sea messages form</field>
+      <field name="model">sea.payroll.messages</field>
+      <field name="arch" type="xml">
+        <form string="Messages" create="false" edit="false">
+          <field name="emp_name"/>
+          <field name="payroll_month"/>
+          <field name="message"/>
+          <field name="contract_id"/>
+          <field name="message_type"/>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="sea_messages.action_window">
+      <field name="name">Messages</field>
+      <field name="res_model">sea.payroll.messages</field>
+      <field name="view_mode">tree</field>
+    </record>
+    
+    <!--search filers using search view-->
+
+    <record id="sea_payroll_messages_view_search" model="ir.ui.view">
+      <field name="name">sea.payroll.messages.filters</field>
+      <field name="model">sea.payroll.messages</field>
+      <field name="arch" type="xml">
+          <search string="Payroll Messages">
+            <filter string="This Month" name="payroll_month" domain="[('payroll_month', '&gt;=', context_today().strftime('%%Y-%%m-01'))]"/>
+            <filter string="Last Month" name="last_month" domain="['&amp;', ('payroll_month', '&gt;=', (context_today() - relativedelta(months=1)).strftime('%%Y-%%m-01')), ('payroll_month', '&lt;', context_today().strftime('%%Y-%%m-01'))]"/>
+            <separator/>
+            <filter string="Error" domain="[('message_type', '=', 'E')]"  name="message_type"/>
+            <filter string="Warning" domain="[('message_type', '=', 'W')]" name="message_type"/>
+            <filter string="Information" domain="[('message_type', '=', 'I')]" name="message_type"/>
+            <!--<filter name="message_type" string="Message Type"/>-->
+          </search>
+      </field>
+    </record>
+    
+
+    <!-- menu categories -->
+    <menuitem name="Messages" id="sea_messages.menu_1" parent="l10n_in_hr_payroll.menu_l10n_in_hr_payroll_report"
+              action="sea_messages.action_window" sequence="100"/>
+
+  </data>
+</odoo>

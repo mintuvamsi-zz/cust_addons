@@ -1,0 +1,26 @@
+ Volume in drive E is New Volume
+ Volume Serial Number is D2DB-5460
+
+ Directory of E:\SVN\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech\static\src\css
+
+05/05/2018  12:30 PM             2,455 web_login_style.css
+               1 File(s)          2,455 bytes
+
+ Directory of E:\SVN\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech\static\src\js
+
+05/02/2018  04:59 PM            12,021 dashboard.js
+05/02/2018  05:21 PM             7,683 title.js
+               2 File(s)         19,704 bytes
+
+ Directory of E:\SVN\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech\static\src\less
+
+01/18/2018  02:51 PM             1,420 bootswatch.less
+01/18/2018  02:51 PM             3,090 drawer.less
+01/18/2018  02:51 PM             1,275 sidebar.less
+01/18/2018  02:51 PM             8,283 style.less
+01/18/2018  02:51 PM            28,022 variables.less
+               5 File(s)         42,090 bytes
+
+     Total Files Listed:
+               8 File(s)         64,249 bytes
+               0 Dir(s)  636,260,069,376 bytes free

@@ -1,0 +1,1141 @@
+ Volume in drive E has no label.
+ Volume Serial Number is 74D8-2F90
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\account_standard_report
+
+06/15/2018  02:21 PM                88 __init__.py
+06/15/2018  02:21 PM               814 __manifest__.py
+               2 File(s)            902 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\account_standard_report\data
+
+06/15/2018  02:21 PM               953 data_account_standard_report.xml
+06/15/2018  02:21 PM               743 report_paperformat.xml
+06/15/2018  02:21 PM               421 res_currency_data.xml
+               3 File(s)          2,117 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\account_standard_report\migrations\10.0.1.1
+
+06/15/2018  02:21 PM               259 post-00-regenrate-shorted.py
+               1 File(s)            259 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\account_standard_report\models
+
+06/15/2018  02:21 PM               455 account.py
+06/15/2018  02:21 PM               259 res_currency.py
+06/15/2018  02:21 PM                74 __init__.py
+               3 File(s)            788 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\account_standard_report\report
+
+06/15/2018  02:21 PM            29,481 report_account_standard_report.xml
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\account_standard_report\report
+
+06/15/2018  02:21 PM            21,923 report_account_standard_excel.py
+06/15/2018  02:21 PM                69 __init__.py
+               3 File(s)         51,473 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\account_standard_report\views
+
+06/15/2018  02:22 PM             7,350 account_standard.xml
+06/15/2018  02:22 PM               627 account_view.xml
+06/15/2018  02:22 PM               544 res_currency_views.xml
+               3 File(s)          8,521 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\account_standard_report\wizard
+
+06/15/2018  02:22 PM             4,066 account_standard_report_view.xml
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\account_standard_report\wizard
+
+06/15/2018  02:22 PM            49,254 account_standard_report.py
+06/15/2018  02:22 PM                63 __init__.py
+               3 File(s)         53,383 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\report_xlsx
+
+06/15/2018  02:22 PM               139 __init__.py
+06/15/2018  02:22 PM               756 __manifest__.py
+               2 File(s)            895 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\report_xlsx\controllers
+
+06/15/2018  02:22 PM             1,882 main.py
+06/15/2018  02:22 PM                19 __init__.py
+               2 File(s)          1,901 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\report_xlsx\demo
+
+06/15/2018  02:22 PM               396 report.xml
+               1 File(s)            396 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\report_xlsx\models
+
+06/15/2018  02:22 PM             1,251 ir_report.py
+06/15/2018  02:22 PM                24 __init__.py
+               2 File(s)          1,275 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\report_xlsx\report
+
+06/15/2018  02:22 PM               504 report_partner_xlsx.py
+06/15/2018  02:22 PM               945 report_xlsx.py
+06/15/2018  02:22 PM                60 __init__.py
+               3 File(s)          1,509 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\report_xlsx\tests
+
+06/15/2018  02:22 PM               844 test_report.py
+06/15/2018  02:22 PM                26 __init__.py
+               2 File(s)            870 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\report_xlsx\views
+
+06/15/2018  02:22 PM               417 webclient_templates.xml
+               1 File(s)            417 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_gstr1_gstr2_report
+
+06/12/2018  02:48 PM                88 __init__.py
+07/16/2018  01:41 PM             1,004 __manifest__.py
+               2 File(s)          1,092 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_gstr1_gstr2_report\data
+
+06/12/2018  02:48 PM               349 fiscal_data.xml
+               1 File(s)            349 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_gstr1_gstr2_report\models
+
+06/12/2018  02:48 PM             2,195 gst_code.py
+06/12/2018  02:48 PM                48 __init__.py
+               2 File(s)          2,243 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_gstr1_gstr2_report\report
+
+06/12/2018  02:48 PM               234 b2b.xml
+06/12/2018  02:48 PM               237 b2cl.xml
+06/12/2018  02:48 PM               242 b2cs.xml
+06/12/2018  02:48 PM               252 export.xml
+06/12/2018  02:48 PM             4,221 gst_invoice_pdf.xml
+06/12/2018  02:48 PM            16,433 gst_sales_invoice_pdf.xml
+06/12/2018  02:48 PM               237 hsn.xml
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_gstr1_gstr2_report\report
+
+07/16/2018  01:41 PM            18,136 b2b.py
+07/16/2018  01:41 PM            21,594 b2cl.py
+06/12/2018  02:48 PM             4,173 b2cs.py
+06/12/2018  02:48 PM             4,388 export.py
+06/12/2018  02:48 PM             3,434 hsn.py
+06/12/2018  02:48 PM               120 __init__.py
+              13 File(s)         73,701 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_gstr1_gstr2_report\views
+
+06/12/2018  02:48 PM             1,865 gst_code.xml
+06/12/2018  02:48 PM             1,460 port_code.xml
+               2 File(s)          3,325 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_gstr1_gstr2_report\wizard
+
+06/12/2018  02:48 PM             1,565 b2b_wizard.xml
+06/12/2018  02:48 PM             1,469 b2cl_wizard.xml
+06/12/2018  02:48 PM             1,468 b2cs_wizard.xml
+06/12/2018  02:48 PM             1,492 export_wizard.xml
+06/12/2018  02:48 PM             1,472 hsn_wizard.xml
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_gstr1_gstr2_report\wizard
+
+07/16/2018  01:41 PM               767 b2b_wizard.py
+06/12/2018  02:48 PM               765 b2cl_wizard.py
+06/12/2018  02:48 PM               746 b2cs_wizard.py
+06/12/2018  02:48 PM               754 export_wizard.py
+06/12/2018  02:48 PM               743 hsn_wizard.py
+06/12/2018  02:48 PM               130 __init__.py
+              11 File(s)         11,371 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_res_partner_extended
+
+06/08/2018  04:47 PM               127 __init__.py
+06/08/2018  04:47 PM               696 __manifest__.py
+               2 File(s)            823 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_res_partner_extended\models
+
+06/08/2018  04:47 PM               462 res_company.py
+06/08/2018  04:47 PM             3,527 res_partner.py
+06/08/2018  04:47 PM               159 __init__.py
+               3 File(s)          4,148 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_res_partner_extended\security
+
+05/31/2018  03:43 PM             7,430 account_security.xml
+               1 File(s)          7,430 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_res_partner_extended\views
+
+05/31/2018  03:43 PM               771 res_company_view.xml
+05/31/2018  03:43 PM               438 res_country_view.xml
+05/31/2018  03:43 PM             1,442 res_partner_views.xml
+               3 File(s)          2,651 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax
+
+06/08/2018  04:47 PM               149 __init__.py
+06/08/2018  04:47 PM             1,064 __manifest__.py
+               2 File(s)          1,213 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\models
+
+06/08/2018  04:47 PM            22,043 account_invoice.py
+06/08/2018  04:47 PM             6,445 product.py
+06/08/2018  04:47 PM            52,803 purchase.py
+06/08/2018  04:47 PM               462 res_company.py
+06/08/2018  04:47 PM             3,395 res_partner.py
+06/08/2018  04:47 PM             2,024 sale.py
+06/08/2018  04:47 PM             7,216 stock.py
+05/31/2018  03:43 PM               903 transactions.py
+06/08/2018  04:47 PM             2,115 xattax_config_setting.py
+06/08/2018  04:47 PM               415 __init__.py
+              10 File(s)         97,821 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\report
+
+05/31/2018  03:43 PM               784 invoice_report.xml
+05/31/2018  03:43 PM             7,894 invoice_template.xml
+               2 File(s)          8,678 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\security
+
+05/31/2018  03:43 PM             7,430 account_security.xml
+               1 File(s)          7,430 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\views
+
+05/31/2018  03:43 PM            12,910 account_invoice_views.xml
+05/31/2018  03:43 PM             6,168 portal_templates.xml
+05/31/2018  03:43 PM             3,023 product_views.xml
+05/31/2018  03:43 PM               673 purchase_template.xml
+05/31/2018  03:43 PM            39,376 purchase_views.xml
+05/31/2018  03:43 PM               771 res_company_view.xml
+05/31/2018  03:43 PM            12,880 res_config_settings_views.xml
+05/31/2018  03:43 PM             1,351 res_partner_views.xml
+05/31/2018  03:43 PM               764 sale_view.xml
+05/31/2018  03:43 PM               524 sale_views.xml
+05/31/2018  03:43 PM             1,806 stock_views.xml
+05/31/2018  03:43 PM             3,265 transactions_view.xml
+05/31/2018  03:43 PM            12,113 xattax_config_settings_views.xml
+              13 File(s)         95,624 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\wizard
+
+05/31/2018  03:43 PM               829 account_invoice_refund_view.xml
+05/31/2018  03:43 PM             1,200 account_invoice_state_view.xml
+05/31/2018  03:43 PM             2,546 gstr2_gstin_report_xls_view.xml
+05/31/2018  03:43 PM             2,564 invoice_xattax_view.xml
+05/31/2018  03:43 PM             2,549 xattax_report_xls_view.xml
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\wizard
+
+05/31/2018  03:43 PM             2,004 account_invoice_refund.py
+05/31/2018  03:43 PM               897 account_invoice_state.py
+05/31/2018  03:43 PM            19,233 gstr2_gstin_report_xls.py
+05/31/2018  03:43 PM             7,405 invoice_xatax.py
+05/31/2018  03:43 PM            18,528 xattax_report_xls.py
+05/31/2018  03:43 PM               202 __init__.py
+              11 File(s)         57,957 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\xattax
+
+05/31/2018  03:43 PM               143 __init__.py
+05/31/2018  03:43 PM               629 __manifest__.py
+               2 File(s)            772 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\xattax\models
+
+05/31/2018  03:43 PM             1,018 account_invoice.py
+05/31/2018  03:43 PM            52,798 purchase.py
+05/31/2018  03:43 PM             1,335 res_company.py
+05/31/2018  03:43 PM             1,489 res_partner.py
+05/31/2018  03:43 PM             7,211 stock.py
+05/31/2018  03:43 PM             1,155 stock_config_settings.py
+05/31/2018  03:43 PM               307 __init__.py
+               7 File(s)         65,313 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\xattax\views
+
+05/31/2018  03:43 PM             2,197 account_invoice_views.xml
+05/31/2018  03:43 PM             6,168 portal_templates.xml
+05/31/2018  03:43 PM               673 purchase_template.xml
+05/31/2018  03:43 PM            39,376 purchase_views.xml
+05/31/2018  03:43 PM            12,680 res_config_settings_views.xml
+05/31/2018  03:43 PM             6,152 res_partner_views.xml
+05/31/2018  03:43 PM             1,806 stock_views.xml
+05/31/2018  03:43 PM            12,740 xattax_config_settings_views.xml
+               8 File(s)         81,792 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\xattax\wizard
+
+05/31/2018  03:43 PM             1,206 account_invoice_state_view.xml
+05/31/2018  03:43 PM             2,490 invoice_xattax_view.xml
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\xattax\wizard
+
+05/31/2018  03:43 PM               901 account_invoice_state.py
+05/31/2018  03:43 PM             6,213 invoice_xatax.py
+05/31/2018  03:43 PM               165 __init__.py
+               5 File(s)         10,975 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sea_multi_quot_single_select
+
+06/08/2018  04:47 PM               127 __init__.py
+06/08/2018  04:47 PM               613 __manifest__.py
+               2 File(s)            740 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sea_multi_quot_single_select\models
+
+06/08/2018  04:47 PM             1,331 sale_order.py
+06/08/2018  04:47 PM               160 __init__.py
+               2 File(s)          1,491 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sea_multi_quot_single_select\security
+
+06/08/2018  04:47 PM             7,430 account_security.xml
+               1 File(s)          7,430 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sea_multi_quot_single_select\views
+
+06/08/2018  04:47 PM               536 sale_order_views.xml
+               1 File(s)            536 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Employee\Front-end\Code\sailotech_employee_status
+
+07/16/2018  01:41 PM             6,395 hr_employee_status.py
+07/16/2018  01:41 PM             1,157 __init__.py
+07/16/2018  01:41 PM             1,903 __manifest__.py
+               3 File(s)          9,455 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Employee\Front-end\Code\sailotech_employee_status\data
+
+07/16/2018  01:41 PM             2,709 hr_employee_status_view.xml
+               1 File(s)          2,709 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Employee\Front-end\Code\sailotech_employee_status\wizard
+
+07/16/2018  01:41 PM             1,671 employee_change_status_view.xml
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Employee\Front-end\Code\sailotech_employee_status\wizard
+
+07/16/2018  01:41 PM             2,890 employee_change_status.py
+07/16/2018  01:41 PM             1,084 __init__.py
+               3 File(s)          5,645 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Employee\Front-end\Code\SEA_hr_employee_skills_extended
+
+07/16/2018  01:41 PM                47 __init__.py
+07/16/2018  01:41 PM               642 __manifest__.py
+               2 File(s)            689 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Employee\Front-end\Code\SEA_hr_employee_skills_extended\models
+
+07/16/2018  01:41 PM             1,296 hr_employee_documents.py
+07/16/2018  01:41 PM               389 hr_skills.py
+06/12/2018  02:48 PM                85 __init__.py
+               3 File(s)          1,770 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Employee\Front-end\Code\SEA_hr_employee_skills_extended\security
+
+06/12/2018  02:48 PM             2,097 hr_security.xml
+               1 File(s)          2,097 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Employee\Front-end\Code\SEA_hr_employee_skills_extended\views
+
+07/16/2018  01:41 PM             1,664 hr_employee_documents_views.xml
+06/12/2018  02:48 PM             1,361 skill_view.xml
+               2 File(s)          3,025 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Employee\Front-end\Code\SEA_hr_Extended
+
+06/12/2018  02:48 PM               121 __init__.py
+07/16/2018  01:41 PM               798 __manifest__.py
+               2 File(s)            919 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Employee\Front-end\Code\SEA_hr_Extended\data
+
+06/12/2018  02:48 PM             1,601 hr_data.xml
+06/12/2018  02:48 PM            20,910 hr_demo.xml
+               2 File(s)         22,511 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Employee\Front-end\Code\SEA_hr_Extended\models
+
+07/16/2018  01:41 PM             1,121 hr.py
+06/12/2018  02:48 PM             1,276 mail_alias.py
+06/12/2018  02:48 PM               371 res_config_settings.py
+06/12/2018  02:48 PM               829 res_partner.py
+06/12/2018  02:48 PM             1,912 res_users.py
+07/16/2018  01:41 PM               117 __init__.py
+               6 File(s)          5,626 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Employee\Front-end\Code\SEA_hr_Extended\security
+
+06/12/2018  02:48 PM             1,743 hr_security.xml
+               1 File(s)          1,743 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Employee\Front-end\Code\SEA_hr_Extended\tests
+
+06/12/2018  02:48 PM             2,037 common.py
+06/12/2018  02:48 PM             1,741 test_hr_flow.py
+06/12/2018  02:48 PM               127 __init__.py
+               3 File(s)          3,905 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Employee\Front-end\Code\SEA_hr_Extended\views
+
+06/12/2018  02:48 PM               288 hr_templates.xml
+07/16/2018  01:41 PM               905 hr_views.xml
+06/12/2018  02:48 PM             3,390 res_config_settings_views.xml
+               3 File(s)          4,583 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Help Desk\website_support
+
+07/16/2018  01:41 PM                92 __init__.py
+07/16/2018  01:41 PM             2,010 __manifest__.py
+               2 File(s)          2,102 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Help Desk\website_support\controllers
+
+07/20/2018  12:40 PM            26,415 main.py
+07/16/2018  01:41 PM                43 __init__.py
+               2 File(s)         26,458 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Help Desk\website_support\data
+
+07/16/2018  01:41 PM             1,187 website.support.settings.xml
+07/16/2018  01:41 PM               734 website.support.ticket.approval.xml
+07/16/2018  01:41 PM               444 website.support.ticket.categories.xml
+07/16/2018  01:41 PM             1,011 website.support.ticket.priority.xml
+07/16/2018  01:41 PM             1,669 website.support.ticket.states.xml
+               5 File(s)          5,045 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Help Desk\website_support\models
+
+07/16/2018  01:41 PM               272 mail_template.py
+07/16/2018  01:41 PM               238 res_company.py
+07/16/2018  01:41 PM             1,672 res_partner.py
+07/16/2018  01:41 PM             9,239 website_support_department.py
+07/16/2018  01:41 PM             4,094 website_support_help.py
+07/16/2018  01:41 PM             3,458 website_support_settings.py
+07/20/2018  12:40 PM            26,380 website_support_ticket.py
+07/16/2018  01:41 PM               256 __init__.py
+               8 File(s)         45,609 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Help Desk\website_support\Report
+
+07/20/2018  12:40 PM               852 project_report_view.xml
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Help Desk\website_support\Report
+
+07/20/2018  12:40 PM             1,504 project_report.py
+07/20/2018  12:40 PM                29 __init__.py
+               3 File(s)          2,385 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Help Desk\website_support\security
+
+07/20/2018  12:40 PM             1,182 helpdesk_security.xml
+               1 File(s)          1,182 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Help Desk\website_support\views
+
+07/20/2018  12:40 PM            11,183 email_templates.xml
+07/16/2018  01:41 PM               584 res_company_views.xml
+07/16/2018  01:41 PM             1,231 res_partner_views.xml
+07/16/2018  01:41 PM               706 res_users_views.xml
+07/16/2018  01:41 PM             3,022 website_support_help_groups_views.xml
+07/16/2018  01:41 PM             2,015 website_support_help_page_views.xml
+07/16/2018  01:41 PM             1,703 website_support_settings_views.xml
+07/16/2018  01:41 PM             2,024 website_support_ticket_categories_views.xml
+07/16/2018  01:41 PM               849 website_support_ticket_close_views.xml
+07/16/2018  01:41 PM             1,748 website_support_ticket_compose_views.xml
+07/16/2018  01:41 PM             2,350 website_support_ticket_department_views.xml
+07/16/2018  01:41 PM             1,516 website_support_ticket_priority_views.xml
+07/16/2018  01:41 PM             1,688 website_support_ticket_states_views.xml
+07/16/2018  01:41 PM             2,387 website_support_ticket_subcategory_views.xml
+07/16/2018  01:41 PM            28,548 website_support_ticket_templates.xml
+07/20/2018  12:40 PM            10,087 website_support_ticket_views.xml
+              16 File(s)         71,641 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Help Desk\website_support\wizard
+
+07/16/2018  01:41 PM             1,678 assigning_ticket_status_view.xml
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Help Desk\website_support\wizard
+
+07/16/2018  01:41 PM             2,788 assigning_ticket_status.py
+07/16/2018  01:41 PM                37 __init__.py
+               3 File(s)          4,503 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\ideas
+
+06/14/2018  03:16 PM                71 __init__.py
+07/13/2018  01:34 PM             1,187 __manifest__.py
+               2 File(s)          1,258 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\ideas\controllers
+
+06/14/2018  03:16 PM               669 controllers.py
+06/14/2018  03:16 PM                50 __init__.py
+               2 File(s)            719 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\ideas\demo
+
+06/14/2018  03:16 PM             1,139 demo.xml
+               1 File(s)          1,139 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\ideas\models
+
+07/18/2018  03:10 PM             5,161 ideas.py
+06/14/2018  03:43 PM                44 __init__.py
+               2 File(s)          5,205 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\ideas\security
+
+07/13/2018  11:07 AM             1,251 ideas_security.xml
+               1 File(s)          1,251 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\ideas\views
+
+07/20/2018  07:14 PM             4,924 ideas_views.xml
+06/14/2018  03:16 PM               783 templates.xml
+               2 File(s)          5,707 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Leaves\sea_compoff
+
+06/04/2018  03:08 PM               122 __init__.py
+07/11/2018  12:04 PM               600 __manifest__.py
+               2 File(s)            722 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Leaves\sea_compoff\models
+
+07/19/2018  10:34 AM            19,876 hr_compoff.py
+06/04/2018  03:08 PM               126 __init__.py
+               2 File(s)         20,002 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Leaves\sea_compoff\security
+
+06/04/2018  03:08 PM               419 hr_holidays_security.xml
+               1 File(s)            419 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Leaves\sea_compoff\views
+
+07/19/2018  10:34 AM            17,613 hr_compoff_view.xml
+               1 File(s)         17,613 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Payroll\Front-end\Payslip Batch
+
+07/20/2018  05:11 PM                67 __init__.py
+07/20/2018  05:11 PM             1,046 __manifest__.py
+               2 File(s)          1,113 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Payroll\Front-end\Payslip Batch\models
+
+07/20/2018  05:11 PM             1,077 payslip_duplicationbatch.py
+07/20/2018  05:11 PM                40 __init__.py
+               2 File(s)          1,117 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Payroll\Front-end\Payslip Batch\views
+
+07/20/2018  05:11 PM             1,633 payslipbatch_duplication_view.xml
+               1 File(s)          1,633 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Payroll\Front-end\Payslip Batch\wizard
+
+07/20/2018  05:11 PM             1,962 payslip_batch_wizard_view.xml
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Payroll\Front-end\Payslip Batch\wizard
+
+07/20/2018  05:11 PM             1,312 payslip_batch_wizard.py
+07/20/2018  05:11 PM             3,489 s.py
+07/20/2018  05:11 PM                34 __init__.py
+               4 File(s)          6,797 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Payroll\Front-end\sea_hr_payroll_taxreports
+
+07/19/2018  10:34 AM                89 __init__.py
+07/19/2018  10:34 AM             1,129 __manifest__.py
+               2 File(s)          1,218 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Payroll\Front-end\sea_hr_payroll_taxreports\models
+
+07/19/2018  10:34 AM             1,513 esi.py
+07/19/2018  10:34 AM               571 image.py
+07/19/2018  10:34 AM             2,723 pf_ecr.py
+07/19/2018  10:34 AM             2,513 pt.py
+07/19/2018  10:34 AM               100 __init__.py
+               5 File(s)          7,420 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Payroll\Front-end\sea_hr_payroll_taxreports\report
+
+07/19/2018  10:34 AM               443 pf_esi_xl_view.xml
+07/19/2018  10:34 AM             2,101 pt_pdf.xml
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Payroll\Front-end\sea_hr_payroll_taxreports\report
+
+07/19/2018  10:34 AM             2,673 esi_xlsx.py
+07/19/2018  10:34 AM             2,899 pf_esi_xl.py
+07/19/2018  10:34 AM                48 __init__.py
+               5 File(s)          8,164 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Payroll\Front-end\sea_hr_payroll_taxreports\views
+
+07/19/2018  10:34 AM               867 employee_view.xml
+07/19/2018  10:34 AM             2,803 esi_view.xml
+07/19/2018  10:34 AM             2,645 pf_ecr_view.xml
+07/19/2018  10:34 AM             5,848 product_view.xml
+07/19/2018  10:34 AM             1,885 pt_view.xml
+               5 File(s)         14,048 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Payroll\Front-end\sea_hr_payroll_taxreports\wizard
+
+07/19/2018  10:34 AM             1,302 esi_wizard_view.xml
+07/19/2018  10:34 AM             1,048 image.xml
+07/19/2018  10:34 AM             1,511 pf_wizard_view.xml
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Payroll\Front-end\sea_hr_payroll_taxreports\wizard
+
+07/19/2018  10:34 AM               635 esi_wizard.py
+07/19/2018  10:34 AM               701 pf_wizard.py
+07/19/2018  10:34 AM                51 __init__.py
+               6 File(s)          5,248 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Payroll\Front-end\tax_deduction_type
+
+05/29/2018  07:12 PM                76 __init__.py
+05/29/2018  07:12 PM             1,041 __manifest__.py
+               2 File(s)          1,117 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Payroll\Front-end\tax_deduction_type\models
+
+07/20/2018  12:40 PM             1,275 employee_tax_deduction.py
+07/20/2018  12:40 PM               732 tax_deduction_desc.py
+07/20/2018  12:40 PM             1,258 tdstaxdeduction_configuration.py
+05/29/2018  07:12 PM               121 __init__.py
+               4 File(s)          3,386 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Payroll\Front-end\tax_deduction_type\views
+
+07/20/2018  12:40 PM             2,211 employee_tax_deduction_views.xml
+05/29/2018  07:12 PM             1,755 tax_deduction_description_view.xml
+05/29/2018  07:12 PM             2,042 tds_taxdeduction_config_view.xml
+               3 File(s)          6,008 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Payroll\Front-end\tds calculation
+
+05/29/2018  07:12 PM                45 __init__.py
+07/20/2018  12:40 PM               430 __manifest__.py
+               2 File(s)            475 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Payroll\Front-end\tds calculation\models
+
+07/20/2018  12:40 PM             3,021 tds.py
+05/29/2018  07:12 PM                42 __init__.py
+               2 File(s)          3,063 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Payroll\Front-end\tds calculation\views
+
+07/20/2018  12:40 PM             8,171 ctc_view.xml
+07/20/2018  12:40 PM             2,061 tds_view.xml
+               2 File(s)         10,232 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Performance Evaluation and Planning(PEP)\sailotech_employee_appraisal
+
+07/11/2018  12:04 PM               630 appraisal_cron_view.xml
+07/11/2018  12:04 PM             1,511 default_data.xml
+07/11/2018  12:04 PM               540 employee_grade_view.xml
+07/11/2018  12:04 PM            15,111 periodic_appraisal_view.xml
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Performance Evaluation and Planning(PEP)\sailotech_employee_appraisal
+
+07/11/2018  12:04 PM             1,142 appraisal_cron.py
+07/11/2018  12:04 PM               748 employee_grade.py
+07/11/2018  12:04 PM            16,660 periodic_appraisal.py
+07/11/2018  12:04 PM               200 __init__.py
+07/11/2018  12:04 PM             1,195 __manifest__.py
+               9 File(s)         37,737 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Performance Evaluation and Planning(PEP)\sailotech_employee_appraisal\data
+
+07/11/2018  12:04 PM             4,547 mail_template_data.xml
+               1 File(s)          4,547 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Performance Evaluation and Planning(PEP)\sailotech_employee_appraisal\security
+
+07/11/2018  12:04 PM               557 hr_security.xml
+               1 File(s)            557 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Performance Evaluation and Planning(PEP)\sailotech_employee_appraisal\views
+
+07/11/2018  12:04 PM               335 hr.xml
+               1 File(s)            335 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Project\sea_project_extended
+
+06/04/2018  03:08 PM                73 __init__.py
+06/04/2018  03:08 PM               951 __manifest__.py
+               2 File(s)          1,024 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Project\sea_project_extended\models
+
+07/19/2018  10:34 AM             7,019 project_extended.py
+06/04/2018  03:08 PM                56 __init__.py
+               2 File(s)          7,075 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Project\sea_project_extended\security
+
+06/04/2018  03:08 PM             2,097 hr_security.xml
+               1 File(s)          2,097 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Project\sea_project_extended\views
+
+06/04/2018  03:08 PM             1,436 project_extended_issue_view.xml
+06/04/2018  03:08 PM               619 project_extended_sprint_view.xml
+07/11/2018  12:04 PM             3,751 project_extended_task_view.xml
+07/19/2018  10:34 AM             1,419 project_extended_view.xml
+06/04/2018  03:08 PM             1,367 skill_view.xml
+               5 File(s)          8,592 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Project\sea_project_issue
+
+06/04/2018  03:08 PM               215 __init__.py
+06/04/2018  03:08 PM               836 __manifest__.py
+               2 File(s)          1,051 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Project\sea_project_issue\models
+
+06/04/2018  03:08 PM               831 project_issues.py
+06/04/2018  03:08 PM               202 __init__.py
+               2 File(s)          1,033 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Project\sea_project_issue\views
+
+06/04/2018  03:08 PM             2,735 project_issues.xml
+               1 File(s)          2,735 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Project\sea_project_issue\wizard
+
+06/04/2018  03:08 PM             1,376 project_issue_wizard.xml
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Project\sea_project_issue\wizard
+
+06/04/2018  03:08 PM             1,892 project_issue_wizard.py
+06/04/2018  03:08 PM               202 __init__.py
+               3 File(s)          3,470 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Project\sea_project_modules
+
+07/11/2018  12:04 PM               154 __init__.py
+07/19/2018  10:34 AM               948 __manifest__.py
+               2 File(s)          1,102 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Project\sea_project_modules\controllers
+
+07/11/2018  12:04 PM               898 controllers.py
+07/11/2018  12:04 PM               130 __init__.py
+               2 File(s)          1,028 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Project\sea_project_modules\models
+
+07/19/2018  10:34 AM             1,221 modules.py
+07/11/2018  12:04 PM               429 submodules.py
+06/04/2018  03:08 PM                71 __init__.py
+               3 File(s)          1,721 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Project\sea_project_modules\views
+
+07/19/2018  10:34 AM             2,505 modules_views.xml
+07/19/2018  10:34 AM             1,274 submodule_view.xml
+06/04/2018  03:08 PM               789 templates.xml
+               3 File(s)          4,568 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Project\sea_project_sprint
+
+07/11/2018  12:04 PM               126 __init__.py
+07/11/2018  12:04 PM               800 __manifest__.py
+               2 File(s)            926 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Project\sea_project_sprint\models
+
+07/11/2018  12:04 PM             5,246 project.py
+07/11/2018  12:04 PM               127 __init__.py
+               2 File(s)          5,373 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Project\sea_project_sprint\views
+
+07/11/2018  12:04 PM             6,185 project_view.xml
+               1 File(s)          6,185 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Sprints\sea_project_modules
+
+06/12/2018  02:48 PM               154 __init__.py
+06/12/2018  02:48 PM               949 __manifest__.py
+               2 File(s)          1,103 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Sprints\sea_project_modules\controllers
+
+06/12/2018  02:48 PM               898 controllers.py
+06/12/2018  02:48 PM               130 __init__.py
+               2 File(s)          1,028 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Sprints\sea_project_modules\models
+
+06/12/2018  02:48 PM             1,221 modules.py
+06/12/2018  02:48 PM               429 submodules.py
+06/04/2018  03:08 PM                71 __init__.py
+               3 File(s)          1,721 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Sprints\sea_project_modules\views
+
+06/04/2018  03:08 PM             2,491 modules_views.xml
+06/04/2018  03:08 PM             1,250 submodule_view.xml
+06/04/2018  03:08 PM               789 templates.xml
+               3 File(s)          4,530 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Sprints\sea_project_sprint
+
+06/12/2018  02:48 PM               126 __init__.py
+07/11/2018  12:04 PM               800 __manifest__.py
+               2 File(s)            926 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Sprints\sea_project_sprint\models
+
+07/11/2018  12:04 PM             5,246 project.py
+06/12/2018  02:48 PM               127 __init__.py
+               2 File(s)          5,373 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Sprints\sea_project_sprint\views
+
+07/11/2018  12:04 PM             6,185 project_view.xml
+               1 File(s)          6,185 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Timesheets\sea_hr_timesheet
+
+06/04/2018  03:08 PM               230 __init__.py
+06/04/2018  03:08 PM               777 __manifest__.py
+               2 File(s)          1,007 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Timesheets\sea_hr_timesheet\models
+
+07/19/2018  10:34 AM               855 hr_timesheet_sheet.py
+06/04/2018  03:08 PM               221 __init__.py
+               2 File(s)          1,076 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Timesheets\sea_hr_timesheet\views
+
+07/19/2018  10:34 AM             5,043 hr_timesheet_sheet_view.xml
+               1 File(s)          5,043 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Timesheets\sea_hr_timesheet\wizard
+
+06/04/2018  03:08 PM             1,049 manager_approval_view.xml
+06/04/2018  03:08 PM             1,026 send_manager_view.xml
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\HR\Timesheets\sea_hr_timesheet\wizard
+
+06/04/2018  03:08 PM               830 manager_approval.py
+06/04/2018  03:08 PM               867 send_manager.py
+06/04/2018  03:08 PM                58 __init__.py
+               5 File(s)          3,830 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Inventory\Sales\Custom Modules\Manika Jewellers\sailotech_jewellery
+
+06/12/2018  02:48 PM               165 __init__.py
+06/12/2018  02:48 PM             1,300 __manifest__.py
+               2 File(s)          1,465 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Inventory\Sales\Custom Modules\Manika Jewellers\sailotech_jewellery\models
+
+06/12/2018  02:48 PM             2,354 account_invoice.py
+06/12/2018  02:48 PM             1,982 daily_price.py
+06/12/2018  02:48 PM             8,761 product.py
+06/12/2018  02:48 PM               179 res_company.py
+06/12/2018  02:48 PM             1,098 sale.py
+06/12/2018  02:48 PM               511 __init__.py
+               6 File(s)         14,885 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Inventory\Sales\Custom Modules\Manika Jewellers\sailotech_jewellery\views
+
+06/12/2018  02:48 PM               728 account_invoice_view.xml
+06/12/2018  02:48 PM               598 account_report.xml
+06/12/2018  02:48 PM             2,496 daily_price_view.xml
+06/12/2018  02:48 PM             1,243 product_product_view.xml
+06/12/2018  02:48 PM             4,147 product_view.xml
+06/12/2018  02:48 PM               612 res_company_view.xml
+06/12/2018  02:48 PM               690 sale_view.xml
+               7 File(s)         10,514 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Inventory\Sales\Custom Modules\Manika Jewellers\sailotech_jewellery\wizard
+
+06/12/2018  02:48 PM             2,020 product_wizard_view.xml
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Inventory\Sales\Custom Modules\Manika Jewellers\sailotech_jewellery\wizard
+
+06/12/2018  02:48 PM             2,444 product_wizard.py
+06/12/2018  02:48 PM               131 __init__.py
+               3 File(s)          4,595 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\backend_theme_v11
+
+07/16/2018  01:41 PM                70 __init__.py
+07/16/2018  01:41 PM               723 __manifest__.py
+               2 File(s)            793 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\backend_theme_v11\controllers
+
+07/16/2018  01:41 PM               760 main.py
+07/16/2018  01:41 PM                42 __init__.py
+               2 File(s)            802 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\backend_theme_v11\models
+
+07/16/2018  01:41 PM               279 res_company.py
+07/16/2018  01:41 PM             1,084 res_users.py
+07/16/2018  01:41 PM                73 __init__.py
+               3 File(s)          1,436 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\backend_theme_v11\views
+
+07/16/2018  01:41 PM               996 assets.xml
+07/16/2018  01:41 PM               686 res_company_view.xml
+07/16/2018  01:41 PM             1,774 sidebar.xml
+07/16/2018  01:41 PM               577 users.xml
+               4 File(s)          4,033 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech
+
+07/16/2018  01:41 PM                71 __init__.py
+07/16/2018  01:41 PM             1,215 __manifest__.py
+               2 File(s)          1,286 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech\controllers
+
+07/16/2018  01:41 PM             4,658 controllers.py
+07/16/2018  01:41 PM             4,750 dbselect.py
+07/16/2018  01:41 PM             1,097 main.py
+07/16/2018  01:41 PM             4,157 test.py
+07/16/2018  01:41 PM                43 __init__.py
+               5 File(s)         14,705 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech\models
+
+07/16/2018  01:41 PM               818 app_hide.py
+07/16/2018  01:41 PM             1,643 models.py
+07/16/2018  01:41 PM                68 __init__.py
+               3 File(s)          2,529 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech\static\src\xml
+
+07/16/2018  01:41 PM             2,075 base.xml
+07/16/2018  01:41 PM               311 client_action.xml
+07/16/2018  01:41 PM             9,729 dashboard.xml
+               3 File(s)         12,115 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech\views
+
+07/20/2018  06:10 PM             1,615 app_hide_view.xml
+07/16/2018  01:41 PM               384 assets.xml
+07/16/2018  01:41 PM             1,008 Company_data.xml
+07/16/2018  01:41 PM             3,740 company_report.xml
+07/16/2018  01:41 PM               440 dashboard_assets.xml
+07/16/2018  01:41 PM             2,160 dbs.xml
+07/16/2018  01:41 PM             2,707 edit_company_view.xml
+07/16/2018  01:41 PM            21,674 partner.xml
+07/16/2018  01:41 PM            16,602 res_config_settings.xml
+07/16/2018  01:41 PM               295 stylesheet.xml
+07/16/2018  01:41 PM               308 title.xml
+07/16/2018  01:41 PM             9,892 views.xml
+07/16/2018  01:41 PM             3,018 webclient_templates.xml
+07/16/2018  01:41 PM            13,427 website_config_settings.xml
+              14 File(s)         77,270 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech_account
+
+07/16/2018  01:41 PM               102 __init__.py
+07/16/2018  01:41 PM               456 __manifest__.py
+               2 File(s)            558 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech_account\views
+
+07/16/2018  01:41 PM            36,091 account_config_settings.xml
+07/16/2018  01:41 PM            42,338 account_planner.xml
+07/16/2018  01:41 PM             4,685 inum.xml
+               3 File(s)         83,114 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech_crm
+
+07/16/2018  01:41 PM                 0 __init__.py
+07/16/2018  01:41 PM               376 __manifest__.py
+               2 File(s)            376 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech_crm\views
+
+07/16/2018  01:41 PM             4,634 crm_config_settings.xml
+               1 File(s)          4,634 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech_fleet
+
+07/16/2018  01:41 PM               102 __init__.py
+07/16/2018  01:41 PM               372 __manifest__.py
+               2 File(s)            474 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech_fleet\views
+
+07/16/2018  01:41 PM             5,430 fleet.xml
+               1 File(s)          5,430 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech_hr
+
+07/16/2018  01:41 PM                99 __init__.py
+07/16/2018  01:41 PM               518 __manifest__.py
+               2 File(s)            617 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech_hr\views
+
+07/16/2018  01:41 PM             3,753 payroll_config_settings.xml
+07/19/2018  10:34 AM             5,340 project_config_settings.xml
+07/16/2018  01:41 PM             5,279 timesheet_config_settings.xml
+               3 File(s)         14,372 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech_Inventory_and_manufacturing
+
+07/16/2018  01:41 PM               101 __init__.py
+07/16/2018  01:41 PM               521 __manifest__.py
+               2 File(s)            622 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech_Inventory_and_manufacturing\views
+
+07/16/2018  01:41 PM            16,644 Inventory_config_settings.xml
+07/16/2018  01:41 PM             5,242 mrp_config_settings.xml
+07/16/2018  01:41 PM             1,760 run_schedulers.xml
+               3 File(s)         23,646 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech_pos
+
+07/16/2018  01:41 PM                 0 __init__.py
+07/16/2018  01:41 PM               447 __manifest__.py
+               2 File(s)            447 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech_pos\static\src\xml
+
+07/16/2018  01:41 PM            77,304 pos.xml
+               1 File(s)         77,304 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech_pos\views
+
+07/16/2018  01:41 PM             6,229 pos.xml
+07/16/2018  01:41 PM            32,364 pos_config_view.xml
+               2 File(s)         38,593 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech_purchase_and_inventory
+
+07/16/2018  01:41 PM                 0 __init__.py
+07/16/2018  01:41 PM               576 __manifest__.py
+               2 File(s)            576 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech_purchase_and_inventory\views
+
+07/16/2018  01:41 PM            15,490 Inventory_config_settings.xml
+07/16/2018  01:41 PM             2,399 purchase.xml
+07/16/2018  01:41 PM            11,499 purchas_econfig_settings.xml
+07/16/2018  01:41 PM               904 run_schedulers.xml
+               4 File(s)         30,292 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech_sales
+
+07/16/2018  01:41 PM                 0 __init__.py
+07/16/2018  01:41 PM               378 __manifest__.py
+               2 File(s)            378 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech_sales\views
+
+07/16/2018  01:41 PM            19,209 sale_config_settings.xml
+               1 File(s)         19,209 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\web_responsive
+
+07/16/2018  01:41 PM                24 __init__.py
+07/16/2018  01:41 PM               689 __manifest__.py
+               2 File(s)            713 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\web_responsive\static\src\xml
+
+07/16/2018  01:41 PM               397 form_view.xml
+07/16/2018  01:41 PM               379 navbar.xml
+               2 File(s)            776 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\web_responsive\tests
+
+07/16/2018  01:41 PM               370 test_ui.py
+07/16/2018  01:41 PM                22 __init__.py
+               2 File(s)            392 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\web_responsive\views
+
+07/16/2018  01:41 PM             1,905 assets.xml
+07/16/2018  01:41 PM            10,384 web.xml
+               2 File(s)         12,289 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\VAS\visitors
+
+05/10/2018  08:33 PM               122 __init__.py
+05/17/2018  12:57 PM             1,257 __manifest__.py
+               2 File(s)          1,379 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\VAS\visitors\controllers
+
+04/14/2018  12:28 PM               714 controllers.py
+04/14/2018  12:28 PM                50 __init__.py
+               2 File(s)            764 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\VAS\visitors\demo
+
+04/14/2018  12:28 PM             1,169 demo.xml
+               1 File(s)          1,169 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\VAS\visitors\models
+
+05/15/2018  01:04 PM             4,577 models.py
+04/25/2018  10:11 PM               473 visitor_config_setting.py
+04/23/2018  05:41 PM               113 __init__.py
+               3 File(s)          5,163 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\VAS\visitors\report
+
+05/17/2018  11:13 AM             1,323 new_wizard.xml
+05/08/2018  02:56 PM             1,056 visitors.xml
+05/11/2018  07:11 PM             3,568 visitors_report.xml
+05/17/2018  10:31 AM             1,569 visitors_report_month.xml
+               4 File(s)          7,516 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\VAS\visitors\views
+
+04/17/2018  06:19 PM               628 report.xml
+04/14/2018  12:28 PM               783 templates.xml
+04/14/2018  12:28 PM             1,804 views.xml
+06/11/2018  04:01 PM             8,429 visitors_view.xml
+06/06/2018  02:03 PM             1,254 visitor_config_setting.xml
+               5 File(s)         12,898 bytes
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\VAS\visitors\wizard
+
+05/17/2018  11:49 AM             2,825 new_wiz_report.xml
+05/11/2018  02:10 PM             1,718 report_visitors_bymonth.xml
+
+ Directory of E:\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\VAS\visitors\wizard
+
+05/17/2018  12:51 PM             2,836 new_wiz_report.py
+05/16/2018  12:58 PM             4,768 report_visitors_bymonth.py
+05/16/2018  02:57 PM               250 __init__.py
+               5 File(s)         12,397 bytes
+
+     Total Files Listed:
+             464 File(s)      1,643,791 bytes
+               0 Dir(s)  148,401,037,312 bytes free

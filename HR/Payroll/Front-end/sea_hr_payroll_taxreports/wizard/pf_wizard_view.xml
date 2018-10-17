@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_b2b_view" model="ir.ui.view">
+        <field name="name">wizard.b2b.report</field>
+        <field name="model">pf.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Enter your Month-Year">
+
+                        <group>
+                        <field name="month_year" placeholder="e.g. Jun-2018"/>
+                        </group>
+
+                <footer>
+                    <button name="print_esi_report" string="Generate Report" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="wizard_b2b_gst_action" model="ir.actions.act_window">
+        <field name="name">Provident Fund Electronic Challan cum Return Report</field>
+        <field name="res_model">pf.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_b2b_view"/>
+        <field name="target">new</field>
+    </record>
+
+<!--     <menuitem id="main_menu_wizard_esi" name="PF ECR" />    
+
+    <menuitem id="sub_menu_wizard_esi" parent="main_menu_wizard_esi" sequence="4" name="PF ECR"/>
+     -->
+	<menuitem id="esi_menu" action="wizard_b2b_gst_action" parent="l10n_in_hr_payroll.menu_l10n_in_hr_payroll_report" sequence="5" name="PF ECR xlsx Report"/>
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <menuitem id="res_country_state" name="Country and States" parent="account.menu_finance" sequence="19"/>
+        <menuitem id="menu_country_feed" action="base.action_country" name="Country" parent="res_country_state" sequence="1"/>
+        <menuitem id="menu_state_feed" action="base.action_country_state" parent="res_country_state" sequence="2"/>
+
+    </data>
+  </odoo>

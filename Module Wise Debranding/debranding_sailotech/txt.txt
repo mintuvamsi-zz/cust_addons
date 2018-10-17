@@ -1,0 +1,53 @@
+ Volume in drive E is New Volume
+ Volume Serial Number is D2DB-5460
+
+ Directory of E:\SVN\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech
+
+03/12/2018  12:50 PM                71 __init__.py
+06/13/2018  06:28 PM             1,215 __manifest__.py
+               2 File(s)          1,286 bytes
+
+ Directory of E:\SVN\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech\controllers
+
+07/13/2018  09:22 AM             4,658 controllers.py
+07/13/2018  11:34 AM             4,750 dbselect.py
+07/13/2018  11:29 AM             1,097 main.py
+07/13/2018  11:32 AM             4,157 test.py
+07/13/2018  11:37 AM                43 __init__.py
+               5 File(s)         14,705 bytes
+
+ Directory of E:\SVN\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech\models
+
+05/02/2018  04:01 PM               818 app_hide.py
+03/12/2018  12:50 PM             1,643 models.py
+07/13/2018  10:53 AM                68 __init__.py
+               3 File(s)          2,529 bytes
+
+ Directory of E:\SVN\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech\static\src\xml
+
+05/02/2018  05:21 PM             2,075 base.xml
+03/19/2018  04:09 PM               311 client_action.xml
+05/22/2018  03:38 PM             9,729 dashboard.xml
+               3 File(s)         12,115 bytes
+
+ Directory of E:\SVN\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech\views
+
+07/20/2018  06:04 PM             1,615 app_hide_view.xml
+05/22/2018  03:36 PM               384 assets.xml
+05/02/2018  05:21 PM             1,008 Company_data.xml
+05/22/2018  03:35 PM             3,740 company_report.xml
+05/02/2018  05:21 PM               440 dashboard_assets.xml
+05/22/2018  03:45 PM             2,160 dbs.xml
+06/13/2018  06:54 PM             2,707 edit_company_view.xml
+05/22/2018  03:34 PM            21,674 partner.xml
+05/22/2018  03:32 PM            16,602 res_config_settings.xml
+05/02/2018  05:21 PM               295 stylesheet.xml
+05/02/2018  05:21 PM               308 title.xml
+07/13/2018  11:02 AM             9,892 views.xml
+05/03/2018  06:10 PM             3,018 webclient_templates.xml
+05/02/2018  03:53 PM            13,427 website_config_settings.xml
+              14 File(s)         77,270 bytes
+
+     Total Files Listed:
+              27 File(s)        107,905 bytes
+               0 Dir(s)  636,260,073,472 bytes free

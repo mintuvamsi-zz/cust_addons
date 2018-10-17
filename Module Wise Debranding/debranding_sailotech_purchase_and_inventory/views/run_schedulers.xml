@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="stock.view_procurement_compute_wizard" model="ir.ui.view">
+        <field name="name">Run Schedulers Manually</field>
+        <field name="model">stock.scheduler.compute</field>
+        <field name="arch" type="xml">
+            <form string="Parameters">
+                <p>
+                When you run the schedulers, SEA tries to reserve the available stock to fulfill the existing pickings
+                and verify if some reordering rules should be triggered.
+                </p>
+                <footer>
+                    <button name="procure_calculation" string="Run Schedulers" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</data>
+</odoo>

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="report_payslip23">
+
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="doc">
+            <t t-call="web.external_layout">
+              <style>
+            body {
+            color: #000 !important;
+            word-wrap: break-word;
+            }
+
+            table{
+            font-size:12px;
+            line-height:18px;
+            width:100%;
+            border-collapse: collapse;
+
+            }
+
+            /* vertical-align Top Middle*/
+            .vat{
+            vertical-align: top;
+            }
+            .vam{
+            vertical-align: middle;
+            }
+
+            .gridlist th{
+            background: #eee none repeat scroll 0 0;
+            vertical-align: top;
+            }
+
+
+            table, td, th ,tr{
+            border:1px solid #ccc
+
+            }
+
+            /* table Border */
+            .noborder{
+            border:0px;
+            }
+            .ttb{
+            border-top:1px solid #888;
+            border-bottom:1px solid #888;
+            }
+            .ttop{
+            border-top:1px solid #ccc;
+            }
+            .tbottom{
+            border-bottom:1px solid #888;
+            }
+
+            .tleft{
+            border-left:1px solid #888;
+            }
+
+            .tright{
+            border-right: 1px solid #888;
+            }
+            .padding_lr{
+            padding-left:5px;
+            padding-right:5px;
+            }
+            .padding_tb{
+            padding-top:5px;
+            padding-bottom:5px;
+            }
+            .padding_all{
+            padding:5px;
+            }
+            .padding_left{
+            padding-left:5px;
+            }
+
+            h1{
+            font-size:24px;
+            margin-top:5px;
+            margin-bottom:5px;
+            padding-top:5px;
+            padding-bottom:5px;
+            }
+            h2{
+            font-size:18px;
+            margin-top:5px;
+            margin-bottom:5px;
+            padding-top:5px;
+            padding-bottom:5px;
+            }
+            h4{
+            font-size:14px;
+            margin-top:5px;
+            margin-bottom:5px;
+            padding-top:5px;
+            padding-bottom:5px;
+            }
+            .grid{
+            border:1px solid #888;
+            }
+            .silverbg{
+            background: #d3d3d3 none repeat scroll 0 0;
+            }
+            .grid td{
+            }
+            .bold{
+            font-weight:bold;
+            }
+            .small{
+            font-size:10px;
+            line-height:14px;
+            }
+            .gridlist td{
+            font-size:11px;
+            }
+            .left{
+            text-align:left;
+            }
+            .ttopthick{
+            border-top:1px solid #888;
+            }
+            .center{
+            text-align:center;
+            }
+            .right{
+            text-align:right;
+            }
+
+            .vertical-text {
+
+            /* Safari */
+            -webkit-transform: rotate(-90deg);
+
+            /* Firefox */
+            -moz-transform: rotate(-90deg);
+
+            /* IE */
+            -ms-transform: rotate(-90deg);
+
+            /* Opera */
+            -o-transform: rotate(-90deg);
+
+            /* Internet Explorer */
+            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+            }
+            .borderdot{
+            border-bottom:1px dotted #000;
+            }
+
+            </style>
+                <div class="page">
+                    <!-- <h2>Pay Slip</h2>
+                    <p t-field="doc.name"/> -->
+                    <p></p>
+
+                    <table class="grid">
+                        <tr>
+
+                		            <td colspan="2">
+                		            	<center>Payslip for the month of &amp;amp;nbsp;<b><span t-field="doc.date_from" t-field-options="{&amp;quot;format&amp;quot;: &amp;quot;MMMM y&amp;quot;}"/></b></center>
+
+                		            </td>
+
+
+                        </tr>
+                        <tr>
+                            <td width="50%">
+                            	<table class="noborder">
+                            		<tr class="noborder">
+                            			<td class="noborder padding_all" width="40%">Name:</td>
+                            			<td class="noborder padding_all"><span t-esc="doc.employee_id.name"/></td>
+                            		</tr>
+                            		<tr class="noborder">
+
+                            		</tr>
+                            		<tr class="noborder">
+                            			<td class="noborder padding_all" width="40%">Designation:</td>
+                            			<td class="noborder padding_all"><span t-esc="doc.employee_id.job_id.name"/></td>
+                            		</tr>
+
+
+
+                            	</table>
+
+
+                            </td>
+
+                            <td width="50%">
+                              <tr class="noborder">
+                                <td class="noborder padding_all" width="40%">Department:</td>
+                                <td class="noborder padding_all"><span t-esc="doc.employee_id.department_id.name"/></td>
+                              </tr>
+
+
+
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td class="padding_all"><b>Allowance</b>
+                        	     	<table>
+                        	     		<thead class="noborder">
+                        	     			<tr>
+
+                        	     				<th class="padding_all" >Name</th>
+
+                        	     				<th class="padding_all right" >Total</th>
+                        	     			</tr>
+                        	     		</thead>
+                        	     		<tbody class="noborder">
+                                            <t t-set="unit_sum" t-value="0" />
+                        	     			<tr t-foreach="doc.line_ids" t-as="p">
+                        	     			<t t-if="p.category_id.code=='ALW' or p.category_id.code=='BASIC' or p.category_id.code=='Extra'">
+                        	     				<t t-if="p.total!= 0">
+                            	     				<td class="padding_all" align="left"><span t-field="p.name"/></td>
+                            	     				<t t-set="unit_sum" t-value="unit_sum + p.total"/>
+                            	     				<td class="padding_all" align="right"><span t-esc="p.total"/></td>
+                                                </t>
+                        	     			</t>
+                        	     			</tr>
+                                            <tr>
+                                                <t t-set="extra_unit_sum" t-value="0" />
+                                                <t t-foreach="doc.line_ids" t-as="p">
+                                                    <t t-if="p.category_id.code=='EXTRA'">
+                                                        <t t-if="p.total != 0">
+                                                            <t t-set="extra_unit_sum" t-value="extra_unit_sum + p.total"/>
+                                                        </t>
+                                                    </t>
+                                                </t>
+                                                <td class="padding_all" align="left">Additional Conveyance</td>
+                                                <td class="padding_all" align="right"><span t-esc="extra_unit_sum"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="padding_all" align="left"><strong>Total  Earnings:</strong></td>
+                                                <td class="padding_all" align="right"><strong><span t-esc="unit_sum + extra_unit_sum"/></strong></td>
+                                            </tr>
+                        	     		</tbody>
+                        	     	</table>
+
+                        	</td>
+                        	<td class="padding_all"><b>Deduction</b>
+                        	     	<table>
+                        	     		<thead class="noborder">
+                        	     			<tr>
+
+                        	     				<th class="padding_all">Name</th>
+
+                        	     				<th class="padding_all right">Total</th>
+                        	     			</tr>
+                        	     		</thead>
+                        	     		<tbody class="noborder">
+                                            <t t-set="unit_neg" t-value="0" />
+                        	     			<tr t-foreach="doc.line_ids" t-as="p">
+                            	     			<t t-if="p.category_id.code=='DED'">
+                            	     				<t t-if="p.total != 0">
+                                	     				<td class="padding_all" align="left"><span t-field="p.name"/></td>
+                                	     			    <t t-set="unit_neg" t-value="unit_neg + p.total"/>
+                                	     				<td class="padding_all" align="right"><span t-esc="p.total"/></td>
+                                                    </t>
+                            	     			</t>
+                        	     			</tr>
+                                            <tr>
+                                                <td class="padding_all" align="left"><strong>Total  Deduction:</strong></td>
+                                                <td class="padding_all" align="right"><strong><span t-esc="unit_neg"/></strong></td>
+                                            </tr>
+
+                        	     		</tbody>
+                        	     	</table>
+
+                        	</td>
+
+                        </tr>
+                        <tr>
+                        <td colspan="2">
+                            <table class="noborder">
+
+                                <tr class="noborder">
+                                    <td class="noborder padding_all right" width="100%"><b>Net Salary:&amp;amp;nbsp;</b> <span t-esc="(unit_sum + extra_unit_sum)-unit_neg"/></td>
+
+                                </tr>
+                            </table>
+                    </td>
+                    </tr>
+                    </table>
+
+                    <p class="text-right"><strong>Authorized signature</strong></p>
+                </div>
+            </t>
+        </t>
+    </t>
+
+</template>
+
+
+
+
+
+</odoo>

@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="traceability_matrix_tree" model="ir.ui.view">
+            <field name="name">traceability.matrix.tree</field>
+            <field name="model">traceability.matrix</field>
+            <field name="arch" type="xml">
+                <tree string="Traceability Matrix">
+                    <field name="project_name"/>
+                    <field name="author"/>
+                    <field name="tower_name"/>
+                    <field name="responsible"/>
+                    <field name="iteration_release"/>
+                    <field name="date_creation"/>
+                    <field name="last_updated_date1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="traceability_matrix_form" model="ir.ui.view">
+            <field name="name">traceability.matrix.form</field>
+            <field name="model">traceability.matrix</field>
+            <field name="arch" type="xml">
+                <form string="Traceability Matrix">
+
+                    <sheet>
+
+            <group col='6'>
+                <group style="align: right;" col='3' colspan='3'>
+                    <field name="project_name"/>
+                    <field name="author"/>
+                    <field name="iteration_release"/>
+                </group>
+
+                <group style="align:left;" col='3' colspan='3'>
+                    <field name="tower_name"/>
+                    <field name="responsible"/>
+                    <field name="date_creation"/>
+                    <field name="last_updated_date1"/>
+                </group>
+            </group>
+<!--  <table style = "width:100%; heaight:100%;">
+                                <group class="form-group table table-bordered"
+                                  style ="padding: 10px; border: 1px solid #000; "> -->
+        <notebook>
+<!--    General   -->
+            <page string="General" name="General">
+                <table style = "width:100%; heaight:100%;">
+                <group>           
+                    <field name="module_id"/>
+                    <field name="sub_module_name"/>
+                    <field name="technical_name"/>
+                    <field name="custom_module"/>
+                    <field name="responsible_line"/>
+                    <field name="current_status" widget="many2many_tags"/>
+                </group>
+            </table>
+            </page>
+
+ <!--    Functional   -->
+            <page string="Functional" name="Functional">
+                <group col='2'>    
+                    <group colspan='5'>       
+                    <field name="features_requirements" widget="many2many_tags" />
+                    </group>
+                    <group colspan='3'>
+                    <field name="requirements_specification" widget="many2many_tags" />
+                    </group>
+                    <group>
+                    <field name="fsdname_link" widget='url'/>
+                    </group>
+                    <group col='2'>
+                    <field name="requirements_id"/>
+                    </group>
+                </group>
+            </page>
+            
+
+<!--    Technical   -->
+            <page string="Technical" name="Technical">
+                <group>           
+                    <field name="tdname_link" widget='url'/>
+                    <field name="design_components"/>
+                    <field name="unit_test_case_link" widget='url'/>
+                    <field name="unit_test_results"/>
+                    <field name="svn_commits"/>
+                    <field name="svn_folder_path"/>
+                    <field name="svn_commit_date"/>
+                    <field name="code_review"/>
+                </group>
+            </page>
+
+  <!--    QA   -->
+            <page string="QA" name="QA">
+                <group >        
+                    <field name="automation_status"/>
+                    <field name="automation_code_link" widget='url' />
+                    <field name="automation_results"/>
+                    <field name="integration_system_test_cases"/>
+                    <field name="integration_system_test_results"/>
+                </group>
+            </page>
+
+  <!--    Management   -->
+            <page string="Management" name="Management">
+                <group>      
+                    <field name="user_manuals_link" widget='url' />
+                    <field name="democript"/>
+                    <field name="sales_decks"/>
+                </group>
+            </page>
+
+<!--    Misc   -->
+            <page string="Misc" name="Misc">
+                <group>           
+                    <field name="last_updated_date"/>
+                    <field name="last_updated_by"/>
+                    <field name="last_review_comments"/>
+                    <field name="last_reviewed_by"/>
+                    <field name="last_review_date"/>
+                </group>
+            </page>
+        </notebook>
+
+        </sheet>
+            <div class="oe_chatter"> 
+                <field name="message_follower_ids" widget="mail_followers"/> 
+                <field name="message_ids" widget="mail_thread"/> 
+              </div> 
+    </form>
+</field>
+</record>
+
+        <record id="traceability_matrix_action" model="ir.actions.act_window">
+            <field name="name">Traceability Matrix</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">traceability.matrix</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>         
+        </record>
+
+       <menuitem name="Traceability Matrix" id="traceability_matrix_pmenu" web_icon="traceability_matrix,description/logo.png"/>
+
+       <menuitem name="Traceability Matrix" id="traceability_matrix_smenu" parent="traceability_matrix_pmenu"/>
+
+       <menuitem name="Traceability Matrix" id="traceability_matrix_cmenu" parent="traceability_matrix_smenu"
+        action="traceability_matrix_action"/>
+
+    </odoo>
+
+    <?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- Features/ Customer Requirements -->
+       <record id="traceability_tags_tree" model="ir.ui.view">
+            <field name="name">traceability.tags.tree</field>
+            <field name="model">traceability.tags</field>
+            <field name="arch" type="xml">
+                <tree string="Traceability Tags">
+                    <field name="features_requirements"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="traceability_tags_form" model="ir.ui.view">
+            <field name="name">traceability.tags.form</field>
+            <field name="model">traceability.tags</field>
+            <field name="arch" type="xml">
+                <form string="Traceability Tags">
+                    <group>
+                    <field name="features_requirements"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="traceability_matrix_tags_action" model="ir.actions.act_window">
+            <field name="name">Features/Customer Requirements</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">traceability.tags</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>         
+        </record>
+
+<!-- Requirements Specification -->
+       <record id="traceability_tags1_tree" model="ir.ui.view">
+            <field name="name">traceability.tags1.tree</field>
+            <field name="model">traceability.tags1</field>
+            <field name="arch" type="xml">
+                <tree string="Requirements Specification">
+                    <field name="requirements_specification"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="traceability_tags1_form" model="ir.ui.view">
+            <field name="name">traceability.tags1.form</field>
+            <field name="model">traceability.tags1</field>
+            <field name="arch" type="xml">
+                <form string="Requirements Specification">
+                    <group>
+                    <field name="requirements_specification"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="traceability_matrix_tags1_action" model="ir.actions.act_window">
+            <field name="name">Requirements Specification</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">traceability.tags1</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>         
+        </record>
+
+<!-- Module Name -->
+       <record id="module_id_tree" model="ir.ui.view">
+            <field name="name">module.id.tree</field>
+            <field name="model">module.id</field>
+            <field name="arch" type="xml">
+                <tree string="Module Name">
+                    <field name="module_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="module_id_form" model="ir.ui.view">
+            <field name="name">module.id.form</field>
+            <field name="model">module.id</field>
+            <field name="arch" type="xml">
+                <form string="Module Name">
+                    <group>
+                    <field name="module_id"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="traceability_module_id_action" model="ir.actions.act_window">
+            <field name="name">Module Name</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">module.id</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>         
+        </record>
+
+<!-- Sub-Module Name -->
+       <record id="sub_module_name_tree" model="ir.ui.view">
+            <field name="name">sub.module.name.tree</field>
+            <field name="model">sub.module.name</field>
+            <field name="arch" type="xml">
+                <tree string="Sub-Module Name">
+                    <field name="sub_module_name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sub_module_name_form" model="ir.ui.view">
+            <field name="name">sub.module.name.form</field>
+            <field name="model">sub.module.name</field>
+            <field name="arch" type="xml">
+                <form string="Sub-Module Name">
+                    <group>
+                    <field name="sub_module_name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="sub_module_name_action" model="ir.actions.act_window">
+            <field name="name">Sub-Module Name</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sub.module.name</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>         
+        </record>
+
+
+<!-- Technical Name -->
+       <record id="technical_name_tree" model="ir.ui.view">
+            <field name="name">technical.name.name.tree</field>
+            <field name="model">technical.name</field>
+            <field name="arch" type="xml">
+                <tree string="Technical Name">
+                    <field name="technical_name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="technical_name_form" model="ir.ui.view">
+            <field name="name">technical.name.form</field>
+            <field name="model">technical.name</field>
+            <field name="arch" type="xml">
+                <form string="Technical Name">
+                    <group>
+                    <field name="technical_name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="technical_name_action" model="ir.actions.act_window">
+            <field name="name">Technical Name</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">technical.name</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>         
+        </record>
+<!-- Current Status -->
+
+       <record id="current_status_tree" model="ir.ui.view">
+            <field name="name">current.status.tree</field>
+            <field name="model">current.status</field>
+            <field name="arch" type="xml">
+                <tree string="Current Status">
+                    <field name="current_status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="current_status_form" model="ir.ui.view">
+            <field name="name">current.status.form</field>
+            <field name="model">current.status</field>
+            <field name="arch" type="xml">
+                <form string="Current Status">
+                    <group>
+                    <field name="current_status"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="current_status_action" model="ir.actions.act_window">
+            <field name="name">Current Status</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">current.status</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>         
+        </record>
+
+
+
+    <menuitem name="Configuration" id="configuration_menu" parent="traceability_matrix_pmenu"/>
+
+    <menuitem name="Features/ Customer Requirements" id="traceability_matrix_features" parent="configuration_menu"
+        action="traceability_matrix_tags_action"/>
+
+    <menuitem name="Requirements Specification" id="traceability_matrix_requirements" parent="configuration_menu"
+        action="traceability_matrix_tags1_action" />
+
+    <menuitem name="Module Name" id="traceability_matrix_module" parent="configuration_menu"
+        action= "traceability_module_id_action" />
+
+    <menuitem name="Sub-Module Name" id="traceability_matrix_sub_module" parent="configuration_menu"
+        action="sub_module_name_action" />
+
+    <menuitem name="Technical Name" id="traceability_matrix_technical" parent="configuration_menu"
+        action="technical_name_action" />
+
+    <menuitem name="Current Status" id="traceability_matrix_current" parent="configuration_menu"
+        action="current_status_action" /> 
+
+    
+
+</odoo>

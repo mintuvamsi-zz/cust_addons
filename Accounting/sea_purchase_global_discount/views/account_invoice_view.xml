@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo> 
+    <record id="extend_invoice_supplier_form" model="ir.ui.view">
+        <field name="name">extend.invoice.supplier.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='amount_untaxed']" position="before">
+
+                    <field name="discount_selection" style="color:#2E8B57; padding:1;" widget='radio' options="{'horizontal': true}"/>
+   
+            </xpath>
+
+            <xpath expr="//field[@name='amount_tax']" position="after">
+
+                    <field name="discount_type" class="oe_inline" 
+                        attrs="{'invisible' : [('discount_selection', 'not in', ['btd','atd'])]}"/>
+
+                    <field name="discount_rate" class="oe_inline" 
+                        attrs="{'invisible' : [('discount_selection', 'not in', ['btd','atd'])]}"/>
+                            
+                    <field name="amount_discount" class="oe_inline" 
+                        attrs="{'invisible' : [('discount_selection', 'not in', ['btd','atd'])]}"/>
+
+            </xpath>
+        </field>
+    </record>
+
+        <record id="invoice_supplier_tree" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.tree</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_tree"/>
+            <field name="arch" type="xml">
+               
+                    <xpath expr="//tree/field[@name='state']" position="before">
+                        <field name="discount_selection"/>
+                    </xpath>
+                </field>
+            </record>
+
+</odoo>

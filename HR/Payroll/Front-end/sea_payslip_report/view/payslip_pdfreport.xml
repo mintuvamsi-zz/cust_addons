@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="employee_payslip_pdf_report">
+    <div class="container-fluid">
+
+        <div class="col-lg-12">
+    <table class="noborder">
+        <tr>
+    <div class="header" style = "height:20%">
+
+        <div class="row">
+<td style="width: 119px; height: 53px;">&#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; <img src='payslip_report/static/src/img/logo1.png' style="left : 120px;  width: 100px; height:80px;"/></td>
+<td style="width: 702px;LINE-HEIGHT:20px;">Sailotech Pvt Ltd Vittal Rao Nagar,Reliance Cyberville,Near Image Hospital, Madhapur, Hyderabad-500081</td>
+        </div>
+        </div>
+</tr>
+</table>
+
+</div>
+<div class="row">
+        <div class="col-lg-12">
+
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="doc">
+            <t t-call="web.external_layout">
+              <style>
+            body {
+            color: #000 !important;
+            word-wrap: break-word;
+            }
+
+            table{
+            font-size:12px;
+            line-height:16px;
+            width:100%;
+            border-collapse: collapse;
+
+            }
+
+            /* vertical-align Top Middle*/
+            .vat{
+            vertical-align: top;
+            }
+            .vam{
+            vertical-align: middle;
+            }
+
+            .gridlist th{
+            background: #eee none repeat scroll 0 0;
+            vertical-align: top;
+            }
+
+
+            table, td, th ,tr{
+            border:1px solid #ccc
+
+            }
+
+            /* table Border */
+            .noborder{
+            border:0px;
+            }
+            .ttb{
+            border-top:1px solid #888;
+            border-bottom:1px solid #888;
+            }
+            .ttop{
+            border-top:1px solid #ccc;
+            }
+            .tbottom{
+            border-bottom:1px solid #888;
+            }
+
+            .tleft{
+            border-left:1px solid #888;
+            }
+
+            .tright{
+            border-right: 1px solid #888;
+            }
+            .padding_lr{
+            padding-left:5px;
+            padding-right:5px;
+            }
+            .padding_tb{
+            padding-top:5px;
+            padding-bottom:5px;
+            }
+            .padding_all{
+            padding:4px;
+            }
+            .padding_left{
+            padding-left:5px;
+            }
+
+            h1{
+            font-size:24px;
+            margin-top:5px;
+            margin-bottom:5px;
+            padding-top:5px;
+            padding-bottom:5px;
+            }
+            h2{
+            font-size:18px;
+            margin-top:5px;
+            margin-bottom:5px;
+            padding-top:5px;
+            padding-bottom:5px;
+            }
+            h4{
+            font-size:14px;
+            margin-top:5px;
+            margin-bottom:5px;
+            padding-top:5px;
+            padding-bottom:5px;
+            }
+            .grid{
+            border:1px solid #888;
+            }
+            .silverbg{
+            background: #d3d3d3 none repeat scroll 0 0;
+            }
+            .grid td{
+            }
+            .bold{
+            font-weight:bold;
+            }
+            .small{
+            font-size:10px;
+            line-height:12px;
+            }
+            .gridlist td{
+            font-size:11px;
+            }
+            .left{
+            text-align:left;
+            }
+            .ttopthick{
+            border-top:1px solid #888;
+            }
+            .center{
+            text-align:center;
+            }
+            .right{
+            text-align:right;
+            }
+
+            .vertical-text {
+
+            /* Safari */
+            -webkit-transform: rotate(-90deg);
+
+            /* Firefox */
+            -moz-transform: rotate(-90deg);
+
+            /* IE */
+            -ms-transform: rotate(-90deg);
+
+            /* Opera */
+            -o-transform: rotate(-90deg);
+
+            /* Internet Explorer */
+            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+            }
+            .borderdot{
+            border-bottom:1px dotted #000;
+            }
+
+            </style>
+            
+                <div class="page">
+                    <!-- <div class="row">
+                <div class="col-lg-12"> -->
+                    <table class="grid padding_all">
+                        <tr>
+
+                		            <td colspan="2">
+                		            	<center>Payslip for the month of &amp;nbsp;<b><span t-field="doc.date_from" t-field-options="{&quot;format&quot;: &quot;MMMM y&quot;}"/></b></center>
+
+                		            </td>
+
+
+                        </tr>
+
+                        <tr>
+                            <td width="40%">
+                            	<table class="noborder">
+                            		<tr class="noborder">
+                            			<td class="padding_all" width="40%"><b>Name:</b></td>
+                            			<td class="padding_all"><span t-esc="doc.employee_id.name"/></td>
+                            		</tr>
+                            		<tr class="noborder">
+
+                            		</tr>
+                            		<tr class="noborder">
+                            			<td class="padding_all" width="40%"><b>Designation:</b></td>
+                            			<td class="padding_all"><span t-esc="doc.employee_id.job_id.name"/></td>
+                            		</tr>
+
+                              <tr class="noborder">
+                                <td class="padding_all" width="40%"><b>Department:</b></td>
+                                <td class="padding_all"><span t-esc="doc.employee_id.department_id.name"/></td>
+                              </tr>
+
+                              <tr class="noborder">
+                                <td class="padding_all" width="40%"><b>Employee ID:</b></td>
+                                <td class="padding_all" ><span t-esc="doc.employee_id.emp_id"/></td>
+                              </tr>
+
+                              <tr class="noborder">
+                                <td class="padding_all" width="40%"><b>City:</b></td>
+                                <td class="padding_all" ><span t-esc="doc.employee_id.work_location"/></td>
+                              </tr>
+
+                              
+
+                        </table>
+                                </td>
+
+                            <td width="60%">
+                                <table class="noborder">
+                                    <t t-set="lines" t-value="doc.get_payslip_lines_rec()"></t>
+                                    <tr class="noborder" >
+                                        <td class="padding_all" width="25%"><b>PF Number:</b></td>
+                                        <td class="padding_all" width="30%"><span t-esc="doc.employee_id.pf_number"/></td>
+                                        <td class="padding_all" width="25%" align = "left"><b>Standard Days:</b></td>
+                                        <td class="padding_all" width="25%" align = "right"><span t-esc="doc.employee_id.standard_days"/></td>
+
+                                    </tr>
+
+                                    <tr class="noborder" >
+                                        <td class="padding_all" width="25%"><b>Date of Join:</b></td>
+                                        <td class="padding_all" width="30%"><span t-esc="doc.employee_id.doj"/></td>
+                                         <td class="padding_all" width="25%" align = "left"><b>Worked Days:</b></td>
+                                        <td class="padding_all" width="25%" align = "right"><span t-esc="lines['worked_days']"/></td>
+
+                                    </tr>
+
+                                    <tr class="noborder" >
+                                        <td class="padding_all" width="25%"><b>UAN NO:</b></td>
+                                        <td class="padding_all" width="30%"><span t-esc="doc.employee_id.uan"/></td>
+                                        <td class="padding_all" width="25%" align = "left"><b>Paid Leaves:</b></td>
+                                        <td class="padding_all" width="25%" align="right"><span t-esc="doc.employee_id.leaves_count"/></td>
+
+                                    </tr>
+
+                                    <tr class="noborder" >
+                                        <td class="padding_all" width="25%"><b>PAN NO:</b></td>
+                                        <td class="padding_all" width="30%"><span t-esc="doc.employee_id.pancard_no"/></td>
+                                        <td class="padding_all" width="25%" align = "left"><b>UNPAID Days:</b></td>
+                                        <td class="padding_all" align="right" width="25%"><span t-esc="lines['unpaid_days']"/></td>
+
+                                    </tr>
+
+                                   <tr class="noborder">
+                                        <td class="padding_all" width="30%"><b>Gender:</b></td>
+                                        <td class="padding_all" width="30%"><span t-esc="doc.employee_id.gender"/></td>
+                                        <td class="padding_all"></td>
+                                        <td class="padding_all"></td>
+                                    </tr>
+
+                                </table>
+                             </td>
+
+                            <!--  <td width="30%">
+                                <table class="noborder">
+                                    <t t-set="lines" t-value="doc.get_payslip_lines_rec()"></t>
+                                    <tr class="noborder">
+                                        <td class="padding_all" width="25%" align = "left">Standard Days:</td>
+                                        <td class="padding_all" width="25%" align = "right"><span t-esc="doc.employee_id.standard_days"/></td>
+                                    </tr>
+
+                                    <tr class="noborder">
+                                        <td class="padding_all" width="25%" align = "left">Worked Days:</td>
+                                        <td class="padding_all" width="25%" align = "right"><span t-esc="lines['worked_days']"/></td>
+                                    </tr>
+
+                                    <tr class="noborder">
+                                        <td class="padding_all" width="25%" align = "left">Paid Leaves:</td>
+                                        <td class="padding_all" width="25%" align="right"><span t-esc="doc.employee_id.leaves_count"/></td>
+                                    </tr>
+
+                                    <tr class="noborder"> 
+                                        <td class="padding_all" width="25%" align = "left">UNPAID Days:</td>
+                                        <td class="padding_all" align="right" width="25%"><span t-esc="lines['unpaid_days']"/></td>
+                                    </tr>
+
+                                </table>
+                            </td> -->
+
+                           
+
+                        </tr>
+                        <tr>
+                        	<td class="padding_all" width = "30%" align = "center"><b>Earnings</b>
+                        	     	<table>
+                        	     		<thead class="noborder">
+                        	     			<tr>
+
+                        	     				<th class="padding_all" width = "10%">Name</th>
+
+                        	     				<th class="padding_all right" width = "10%">Total</th>
+
+                        	     			</tr>
+                        	     		</thead>
+                        	     		<tbody class="noborder">
+                                            <t t-set="unit_sum" t-value="0" />
+                        	     			<tr t-foreach="doc.line_ids" t-as="p">
+                        	     			<t t-if="p.category_id.code=='ALW' or p.category_id.code=='BASIC' or p.category_id.code=='Extra'">
+                        	     				<t t-if="p.total!= 0">
+                            	     				<td class="padding_all" align="left"><span t-field="p.name"/></td>
+                            	     				<t t-set="unit_sum" t-value="unit_sum + p.total"/>
+                            	     				<td class="padding_all" align="right"><span t-esc="p.total"/></td>
+                                                </t>
+                        	     			</t>
+                        	     			</tr>
+                                            <tr>
+                                                <t t-set="extra_unit_sum" t-value="0"/>
+                                                <t t-foreach="doc.line_ids" t-as="p">
+                                                    <t t-if="p.category_id.code=='EXTRA'">
+                                                        <t t-if="p.total != 0">
+                                                            <t t-set="extra_unit_sum" t-value="extra_unit_sum + p.total"/>
+                                                        </t>
+                                                    </t>
+                                                </t>
+                                                <!-- <td class="padding_all" align="left">Additional Conveyance</td> -->
+                                               <!--  <td class="padding_all" align="right"><span t-esc="extra_unit_sum"/></td> -->
+                                            </tr>
+                                            <tr>
+                                                <td class="padding_all" align="left"><strong>Total Earnings:</strong></td>
+                                                <td class="padding_all" align="right"><strong><span t-esc="unit_sum + extra_unit_sum"/></strong></td>
+                                            </tr>
+                        	     		</tbody>
+                        	     	</table>
+
+                        	</td>
+                        	<td class="padding_all" width = "30%" align = "center"><b>Deduction</b>
+                        	     	<table>
+                        	     		<thead class="noborder">
+                        	     			<tr>
+
+                        	     				<th class="padding_all" width = "10%">Name</th>
+
+                        	     				<th class="padding_all right" width = "10%">Total</th>
+
+                        	     			</tr>
+                        	     		</thead>
+                        	     		<tbody class="noborder">
+                                            <t t-set="unit_neg" t-value="0" />
+                        	     			<tr t-foreach="doc.line_ids" t-as="p">
+                            	     			<t t-if="p.category_id.code=='DED'">
+                            	     				<t t-if="p.total != 0">
+                                	     				<td class="padding_all" align="left"><span t-field="p.name"/></td>
+                                	     			    <t t-set="unit_neg" t-value="round(unit_neg - p.total,2)"/>
+                                	     				<td class="padding_all" align="right"><span t-esc="-(p.total)"/></td>
+                                                    </t>
+                            	     			</t>
+
+                        	     			</tr>
+                            
+                                            <tr>
+                                                <td class="padding_all" align="left"><strong>Total Deduction:</strong></td>
+                                                <td class="padding_all" align="right"><strong><span t-esc="unit_neg"/></strong></td>
+                                            </tr>
+
+                           
+
+                        	     		</tbody>
+                        	     	</table>
+
+                        	</td>
+                             
+                        </tr>
+                        <tr>
+                        <td colspan="2">
+                            <table class="noborder">
+
+                                <tr class="noborder">
+                                    <td class="noborder padding_all right" width="100%"><b>Net Salary:&amp;nbsp;</b> <span t-esc="round((unit_sum + extra_unit_sum)-unit_neg,2)"/></td>
+
+                                </tr>
+                            </table>
+                    </td>
+                    </tr>
+                            <!-- <tr>
+                         <td width="50%">
+                                 <table class="noborder">
+                                    <t t-set="lines" t-value="doc.get_payslip_lines_rec()"></t>
+                                    <tr class="noborder">
+                                        <td class="padding_all" width="25%" align = "left">Standard Days:</td>
+                                        <td class="padding_all" width="25%" align = "right"><span t-esc="doc.employee_id.standard_days"/></td>
+                                    </tr>
+                                    <tr class="noborder">
+                                        <td class="padding_all" width="25%" align = "left">Worked Days:</td>
+                                        <td class="padding_all" width="25%" align = "right"><span t-esc="lines['worked_days']"/></td>
+                                    </tr>
+                                </table>
+                        </td>
+                        <td width="50%">
+                                 <table>
+                                    <tr class="noborder">
+                                        <td class="padding_all" width="25%" align = "left">Paid Leaves:</td>
+                                        <td class="padding_all" width="25%" align="right"><span t-esc="doc.employee_id.leaves_count"/></td>
+                                    </tr>
+                                    <tr class="noborder"> 
+                                        <td class="padding_all" width="25%" align = "left">UNPAID Days:</td>
+                                        <td class="padding_all" align="right" width="25%"><span t-esc="lines['unpaid_days']"/></td>
+                                    </tr>
+                                </table>
+                        </td> 
+                        </tr>     -->
+
+                    </table>
+
+                <table>
+                <tr>
+                    <td class="padding_all" align = "center"><b>INCOME TAX CALCULATION</b>
+                        <table class="noborder">
+
+                            <thead class="noborder">
+                                            <tr>
+
+                                                <th class="padding_all" width = "15%">Name</th>
+
+                                                <th class="padding_all right" width = "10%">Cumulative</th>
+
+                                                <th class="padding_all right" width = "10%">Addition</th>
+
+                                                <th class="padding_all right" width = "10%">Less:Exempted</th>
+
+                                                <th class="padding_all right" width = "10%">Annual</th>
+
+                                                <th class="padding_all" width = "45%" align ="center">Investment Declaration</th>
+
+                                                <th class="padding_all" width = "45%" align ="right">Amount</th>
+
+
+
+
+                                            </tr>
+                            </thead>
+                            <tbody class="noborder">
+                                  <t t-set="lines" t-value="doc.get_payslip_lines_rec()"></t>
+                                   <!-- <t t-set="lines" t-value="doc.get_employee_tax_lines_rec"></t> -->
+
+
+                                  <tr class="noborder">
+                                  <td class="padding_all" width="20%" align="left">Basic Salary:</td>
+                                  <td class="padding_all" align="right"><span t-esc="lines['comm_sum_basic']"/></td>
+                                  <td class="padding_all" align="right"><span t-esc="lines['add_sum_basic']"/></td>
+                                  <td class="padding_all" align="right"><span t-esc="0"/></td>
+                                  <td class="padding_all" align="right"><span t-esc="lines['annual_sum_basic']"/></td>
+                                  <td class = "padding_all" width ="20%">Provident Fund-80C:</td>
+                                  <td class = "padding_all" width ="20%" align ="right"> <span t-esc = "doc.providentfund_80c"/></td>
+                                  
+                                  </tr>
+
+                                  <tr class="noborder">
+                                  <td class="padding_all" width="20%" align="left">House Rent Allowance:
+                                  </td>
+                                  <td class="padding_all" align="right"><span t-esc="round(lines['comm_sum_hra'])"/></td>
+                                  <td class="padding_all" align="right"><span t-esc="round(lines['add_sum_hra'])"/></td>
+                                  <td class="padding_all" align="right"><span t-esc="doc.hra_exemption"/></td>
+                                  <td class="padding_all" align="right"><span t-esc="round(lines['annual_sum_hra'])"/></td>
+                                  <td class = "padding_all" width ="20%">Housing Loan Principal Amount-80C:</td>
+                                <td class = "padding_all" width ="20%" align ="right"><span t-esc = "doc.housing_loan_principal_amount_80C"/></td>
+                                  </tr>
+
+                                  <tr class="noborder">
+                                  <td class="padding_all" width="20%" align="left">Special &amp; Flexible Allowance :</td>
+                                  <td class="padding_all" align="right"><span t-esc="lines['comm_sum_sfa']"/></td>
+                                  <td class="padding_all" align="right"><span t-esc="lines['add_sum_sfa']"/></td>
+                                  <td class="padding_all" align="right"><span t-esc="0"/></td>
+                                  <td class="padding_all" align="right"><span t-esc="lines['annual_sum_sfa']"/></td>
+                                   <td class ="padding_all" width="40%"></td>
+                                   <td class ="padding_all" width="40%"></td>
+
+
+                                  </tr>
+
+                                  <tr class="noborder">
+                                  <td class="padding_all" width="20%" align="left">Non Taxable Reimbursment:</td>
+                                  <td class="padding_all" align="right"><span t-esc="lines['comm_sum_ntar']"/></td>
+                                   <td class="padding_all" align="right"><span t-esc="lines['add_sum_ntar']"/></td>
+                                   <td class="padding_all" align="right"><span t-esc="0"/></td>
+                                   <td class="padding_all" align="right"><span t-esc="lines['annual_sum_ntar']"/></td>
+                                    <td class ="padding_all" width="40%"></td>
+                                    <td class ="padding_all" width="40%"></td>
+
+
+
+                                  </tr>
+
+                                  <!-- <tr class="noborder">
+                                  <td class="padding_all" width="20%" align="left">Flexible Pay:</td>
+                                  <td class="padding_all" align="right"><span t-esc="lines['comm_sum_fp']"/></td>
+                                  <td class="padding_all" align="right"><span t-esc="lines['add_sum_fp']"/></td>
+                                  <td class="padding_all" align="right"><span t-esc="0"/></td>
+                                  <td class="padding_all" align="right"><span t-esc="lines['annual_sum_fp']"/></td>
+                                <td class = "padding_all" width="40%"></td>
+                                <td class = "padding_all" width="40%"></td>
+
+                                  </tr> -->
+                                    
+                                </tbody>
+                        </table>
+
+                    </td>
+                       </tr>
+      </table>
+           <!--  <table> -->
+                <tr>
+                    <td width = "40%">
+                        <table class = "noborder">
+
+                            <tr>
+                                <td class="padding_all" width="40%"><b>Total Income:</b></td>
+                                <td class="padding_all" width="20%" align="right"><span t-esc="round(lines['annual_sum_basic']+lines['annual_sum_hra']+lines['annual_sum_sfa']+lines['annual_sum_ntar'])"/></td>
+                                <!-- <table> -->
+                                <th class = "padding_all" align = "center"><strong>HRA Rent Paid Details</strong></th>
+                                <th class = "padding_all" align = "center"><strong>Amount</strong></th>
+                              <!--   </table> -->
+                            </tr>
+
+                            <tr>
+                                <td class="padding_all" width="40%"><b>Add:Income Received From Previous Employer</b></td>
+                                <td class="padding_all" width="20%" align="right"><span t-esc="doc.contract_id.income_received_previous_employee"/>
+                                </td> 
+                                <td class = "padding_all" width="25%">Annual HRA Received </td>
+                                <td class = "padding_all" width="20%" align="right" > <span t-esc="round(doc.annual_hra_received)"/></td>
+                            </tr>
+
+                            <tr>
+                                <td class="padding_all" width="40%"><b>Gross Taxable Income</b></td>
+                                <td class="padding_all" width="20%" align="right"><span t-esc="round(lines['annual_sum_basic']+lines['annual_sum_hra']+lines['annual_sum_sfa']+lines['annual_sum_ntar']+doc.contract_id.income_received_previous_employee)"/>
+                                </td>
+                                <td class = "padding_all" width="25%">Actual Rent Paid - 10% of Basic Salary</td>
+                                <td class = "padding_all" width="20%" align="right"> <span t-esc="doc.actualhra_reduces_basic"/>
+                                </td> 
+                            </tr>
+                            
+                            <tr>
+                                <td class = "padding_all" width="40%">Less: Standard Deduction</td>
+                                <td class = "padding_all" width="20%" align="right"><span t-esc="doc.contract_id.standard_deduction"/>
+                                </td>
+                                <td class = "padding_all" width="25%">HRA Received 40% of Basic Salary </td>
+                                <td class = "padding_all" width="30%" align="right"> <span t-esc="doc.hra_40percent"/>
+                                </td>  
+                            </tr>
+
+                            <tr>
+                                <td class = "padding_all" width="40%">Less: Professional Tax</td>
+                                <td class = "padding_all" width="20%" align="right"> <span t-esc="-(lines['annual_sum_pt'])"/>
+                                </td>
+                                <td class = "padding_all" width="40%">HRA Exemption</td>
+                                <td class="padding_all" align="right"><span t-esc="round(doc.hra_exemption)"/></td>
+                            </tr>
+
+                            <tr>
+                                <td class = "padding_all" width="40%">Less:Previous Employer Prof.Tax</td>
+                                <td class = "padding_all" width="20%" align="right"> <span t-esc="doc.contract_id.previous_professional_tax"/></td>
+                                <td class = "padding_all" width="40%"></td>
+                                <td class = "padding_all" width="40%"></td>
+                                 
+                            </tr>
+
+                            <tr>
+                                <td class = "padding_all" width="40%">Less:Exemptions under section 10 &amp; 17</td>
+                                <td class = "padding_all" width="20%" align="right"> <span t-esc="doc.contract_id.exemptions_undersection"/>
+                                </td>
+                                <td class = "padding_all" width="40%"></td>
+                                <td class = "padding_all" width="40%"></td>
+
+                            </tr>
+
+                            <tr>
+                                <td class = "padding_all" width="40%">Add:Income Chargeable House Property</td>
+                                <td class = "padding_all" width="20%" align="right"> <span t-esc="doc.contract_id.income_chargeable_houseproperty"/>
+                                </td> 
+                                 <td class = "padding_all" width="40%"></td>
+                                <td class = "padding_all" width="40%"></td>
+                            </tr>
+
+                            <tr>
+                                <td class = "padding_all" width="40%">Add:Income Chargeable Other Head Sources</td>
+                                <td class = "padding_all" width="20%" align="right"> <span t-esc="doc.contract_id.income_chargeable_otherhead_sources"/>
+                                </td> 
+                                 <td class = "padding_all" width="40%"></td>
+                                <td class = "padding_all" width="40%"></td>
+                            </tr>
+
+                            <tr>
+                                <td class = "padding_all" width="40%">Less:Deduction Under Chapter VI-A</td>
+                                <td class = "padding_all" width="20%" align="right"> <span t-esc="doc.contract_id.deductions_underchapter_6a"/>
+                                </td> 
+                                 <td class = "padding_all" width="40%"></td>
+                                <td class = "padding_all" width="40%"></td>
+                            </tr>
+
+                            <tr>
+                                <td class = "padding_all" width="40%">Less:Deduction Under Section 80C &amp; 80CCD</td>
+                                <td class = "padding_all" width="20%" align="right"> <span t-esc="doc.contract_id.deductions_under80c_80ccd"/>
+                                </td> 
+                                 <td class = "padding_all" width="40%"></td>
+                                <td class = "padding_all" width="40%"></td>
+                            </tr>
+
+                            <tr>
+                                <td class = "padding_all" width="40%">Less:Any Other Deductions</td>
+                                <td class = "padding_all" width="20%" align="right"> <span t-esc="doc.contract_id.any_other_deductions"/>
+                                </td> 
+                                 <td class = "padding_all" width="40%"></td>
+                                <td class = "padding_all" width="40%"></td>
+                            </tr>
+
+                            <tr>
+                                <td class = "padding_all" width="40%">Net Taxable Income</td>
+                                <td class = "padding_all" width="20%" align="right"> <span t-esc="round(lines['annual_sum_basic']+lines['annual_sum_hra']+lines['annual_sum_sfa']+lines['annual_sum_ntar']+doc.contract_id.income_received_previous_employee)-doc.contract_id.standard_deduction+lines['annual_sum_pt']-doc.contract_id.previous_professional_tax-doc.contract_id.exemptions_undersection+doc.contract_id.income_chargeable_houseproperty+doc.contract_id.income_chargeable_otherhead_sources-doc.contract_id.deductions_underchapter_6a-doc.contract_id.deductions_under80c_80ccd"/>
+                                 <td class = "padding_all" width="40%"></td>
+                                <td class = "padding_all" width="40%"></td>
+                                </td> 
+                            </tr>
+
+                           <!--  <tr>
+                                <td class = "padding_all" width="40%">Income Chargeable to Tax(Rounded off) </td>
+                                <td class = "padding_all" width="20%" align="right"> <span t-esc="doc.contract_id.net_taxable_income"/></td> 
+                                 <td class = "padding_all" width="40%"></td>
+                                <td class = "padding_all" width="40%"></td>
+                            </tr> -->
+                        </table>
+                    </td>
+                <!-- <td width ="60%">
+                     <table>
+                            <tr>
+                                <td class = "padding_all" align = "center"><h2>HRA Rent Paid Details</h2></td>
+                            </tr>
+                            <tr>
+                                <td class = "padding_all" width="30%">Annual HRA Received </td>
+                                <td class = "padding_all" width="30%"> <span t-esc="doc.contract_id.hra_recieved"/>
+                                </td> 
+                            </tr>
+
+                            <tr>
+                                <td class = "padding_all" width="30%">Actual Rent Paid - 10% of Basic Salary</td>
+                                <td class = "padding_all" width="30%"> <span t-esc="doc.contract_id.actualhra_reduces_basic"/>
+                                </td> 
+                            </tr>
+
+                            <tr>
+                                <td class = "padding_all" width="30%">HRA Received 40% of Basic Salary </td>
+                                <td class = "padding_all" width="30%"> <span t-esc="doc.contract_id.hra_40percent"/>
+                                </td> 
+                            </tr>
+                        </table>
+                    </td> -->
+                </tr>
+            <!-- </table> -->
+           
+                    <!-- <p style="page-break:always;"> </p>
+           -->
+          <table>
+            <tr>
+                    <th class="padding_all" align = "center"><b>INCOME TAX DEDUCTION</b></th>
+            </tr>
+                <t t-set="lines" t-value="doc.get_payslip_lines_rec()"></t>
+
+                    <tr>
+                        <table class = "noborder">
+                            <tr>
+                           <th class = "padding_all" align ="left"><span><strong>Income Tax Payable</strong></span></th>
+                           <th class = "padding_all" align ="right"><span><strong>Amount</strong></span></th>
+                            </tr>
+
+                               
+                                <tr>
+                                <td class="padding_all" width="20%">Add:Surcharge On Income Tax</td>
+                                <td class="padding_all" width="20%"><span t-esc="doc.surcharge_on_income_tax"/></td>
+                                </tr> 
+
+                                <tr>
+                                <td class="padding_all" width="20%">Add:Cess</td>
+                                <td class="padding_all" width="20%"><span t-esc="doc.education_cess"/></td>
+                                </tr> 
+                                <tr>
+                            <!-- <strong>Total Income Tax Payable S/C and Cess Payable</strong> -->
+                                </tr>
+                          
+
+                            <tr>
+                                <td class="padding_all" width="20%">Annual TDS With S/C &amp; Cess to be Recovered</td>
+                                <td class="padding_all" width="20%"><span t-esc="doc.annual_tds_with_charges"/></td>
+                            </tr>
+              
+                            <tr>
+                                <td class="padding_all" width="20%">Income Tax S/C &amp; Cess to be Recovered till Current Month</td>
+                                <td class="padding_all" width="20%"><span t-esc="round(-(lines['comm_sum_tds']))"/></td>
+                            </tr>
+
+                            <tr>
+                                <td class="padding_all" width="20%">Previous Employer TDS</td>
+                                <td class="padding_all" width="20%"><span t-esc="doc.contract_id.previous_employer_tds"/></td>
+                            </tr>
+
+                            <tr>
+                                <td class="padding_all" width="20%">Balance Income Tax S/C  and Cess to be Recovered</td>
+                                <td class="padding_all" width="20%"><span t-esc="round(doc.annual_tds_with_charges+lines['comm_sum_tds']-doc.contract_id.previous_employer_tds)"/></td>
+                            </tr>
+
+                             <tr>
+                                <td class="padding_all" width="20%">Avg.Monthly Income Tax S/C and Cess to be Recoverd</td>
+                                <td class="padding_all" width="20%"><span t-esc="round(doc.annual_tds_with_charges+lines['comm_sum_tds']-doc.contract_id.previous_employer_tds)/lines['len_remaining_months']"/></td>
+                            </tr>
+                        </table>
+
+                <!--  </td> -->
+
+                </tr>
+            </table>
+
+         <table class = "noborder">
+                <tr>
+                    <td class="padding_all" align = "left" width = "20%"><b>Leave Details</b></td>
+                
+                             
+                     <td class="padding_all" align = "left"><p t-esc = "doc.contract_id.leave_details"/></td>
+                </tr>
+
+        </table>        
+        <p style="page-break-after:always"></p>
+
+              
+                </div>
+            </t>
+        </t>
+    </t>
+</div>
+</div>
+</div>
+</template>
+
+
+
+
+
+</odoo>

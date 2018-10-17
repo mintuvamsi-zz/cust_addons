@@ -1,0 +1,39 @@
+<?xml version="1.0"?> 
+<odoo> 
+  <report id="visitors_report_badge" 
+    string="visitors badge" 
+    model="visitors.visitors" 
+    report_type="qweb-pdf" 
+    name="visitors.visitors_report" 
+    file="visitors.visitors_report" 
+
+  /> 
+ 
+
+ 
+<record id="paperformat_lowmargin" model="report.paperformat">
+    <field name="name">European A4</field>
+    <field name="default" eval="True" />
+    <field name="format">A7</field>
+    <field name="page_height">0</field>
+    <field name="page_width">0</field>
+    <field name="orientation">Portrait</field>
+    <field name="margin_top">14</field>
+    <field name="margin_bottom">4</field>
+    <field name="margin_left">4</field>
+    <field name="margin_right">6</field>
+    <field name="header_line" eval="False" />
+    <field name="header_spacing">0</field>
+    <field name="dpi">90</field>
+</record>
+
+<record id="visitors.visitors_report_badge" model="ir.actions.report">
+    <field name="paperformat_id" ref="visitors.paperformat_lowmargin" />
+</record>
+
+
+
+
+</odoo> 
+
+

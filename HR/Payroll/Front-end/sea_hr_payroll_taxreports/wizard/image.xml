@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_id_view" model="ir.ui.view">
+        <field name="name">wizard.id.report</field>
+        <field name="model">pf.image</field>
+        <field name="arch" type="xml">
+
+				<form string='Instructions &#38; Reason Codes'>
+				  <sheet string='Instructions &#38; Reason Codes'>
+				    <div class="row">
+				    	<img src='/hr_payroll_taxreports/static/src/img/esi_Instructions.PNG'/>
+				    </div>
+				  </sheet>
+				</form>
+		</field>
+	</record>
+
+    <record id="wizard_id_gst_action" model="ir.actions.act_window">
+        <field name="name">Instructions to fill in the excel file</field>
+        <field name="res_model">pf.image</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+    </record>
+
+<menuitem id="esidd_menu" action="wizard_id_gst_action" parent="l10n_in_hr_payroll.menu_l10n_in_hr_payroll_report" name="Instructions &#38; Reason Codes"/>
+
+
+</odoo>

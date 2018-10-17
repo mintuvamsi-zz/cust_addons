@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_ideas_ideas_irc,ideas.ideas,model_ideas_ideas,group_hr_irc,1,1,1,1
+access_ideas_ideas_officer,ideas.ideas,model_ideas_ideas,hr.group_hr_user,1,1,1,0
+access_ideas_ideas_user,ideas.ideas,model_ideas_ideas,base.group_user,1,1,1,0
+
+
+
+access_ideas_tags,access_ideas_tags,model_ideas_tags,base.group_user,1,1,1,0
+access_ideas_collect,access_ideas_collect,model_ideas_collect,base.group_user,1,1,1,0
+access_ideas_outcome,access_ideas_outcome,model_ideas_outcome,base.group_user,1,1,1,0
+
+

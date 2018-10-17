@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+  	 <record id="employee_tree_view" model="ir.ui.view">
+                        <field name="name">employee.tax.tree</field>
+                        <field name="model">employee.taxdeduction.header</field>
+                        <field name="arch" type="xml">
+                          <tree>
+                                <field name="employee_id"/>
+                                <field name="date"/>
+                           
+                            </tree>
+                        </field>
+      </record>
+      <record id="employee_tax_form_view_id" model="ir.ui.view">
+      <field name="name">employee.taxheader.form</field>
+      <field name="model">employee.taxdeduction.header</field>
+      <field name="arch" type="xml">
+      <form>
+      <sheet>
+      	<group>
+          <group>
+            <field name="employee_id"/>
+
+          </group>
+          <group>
+                  <field name="date"/>
+          </group>
+          </group>
+
+          <notebook>
+            <page string="Section Details">
+               <field name="employee_header_id">
+                 <tree string="Employee tax Lines" editable="bottom">
+                  <field name="deduction_desc"/>
+                  <field name="section_id"/>
+                  <field name="limit_level"/>
+                  <field name="factor"/>
+                  <field name="deduction_limit"/>
+                  <field name="allowed_limit" groups= "hr.group_hr_manager "/>
+
+                  <field name="amount"/>
+                  <field name="employee_sectionlines" invisible="1" />
+                  </tree>
+                 </field>
+                    </page>
+         </notebook>
+              </sheet>  
+                  </form>
+                </field>
+          </record>
+
+
+        <record id="action_view_employee_tds" model="ir.actions.act_window">
+            <field name="name">Investment Declaration</field>
+            <field name="res_model">employee.taxdeduction.header</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name = 'Investment Declaration'
+            action="action_view_employee_tds"
+            id="tds_employee_view"
+            parent="hr_payroll.menu_hr_payroll_root"
+        />
+
+</data>
+</odoo>

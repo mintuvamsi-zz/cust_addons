@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="pf_ecr_monthly_pivot" model="ir.ui.view">
+            <field name="name">pf.ecr.monthly.pivot</field>
+            <field name="model">pf.ecr</field>
+            <field name="arch" type="xml">
+	            <pivot string="Product Meals">
+
+	                <field name="date"/>
+	                <field name="uan"/>
+	                <field name="name"/>
+	                <field name="gross_salary"/>
+	                <field name="basic_salary"/>
+	                <field name="eps"/>
+	                <field name="edli"/>
+	                <field name="epf_contribution"/>
+	                <field name="eps_contribution"/>
+	                <field name="epf_eps_amount_diff"/>
+	                <field name="ncp_days"/>
+	                <field name="refund_of_advances"/>
+
+				</pivot>
+			</field>
+		</record>
+
+	    <record id="pf_ecr_monthly_tree" model="ir.ui.view">
+	        <field name="name">pf.ecr.monthly.tree</field>
+	        <field name="model">pf.ecr</field>
+	        <field name="arch" type="xml">
+	            <tree>
+
+	                <field name="date"/>
+	                <field name="uan"/>
+	                <field name="name"/>
+	                <field name="gross_salary" sum="Gross Wages"/>
+	                <field name="basic_salary" sum="EPF Wages"/>
+	                <field name="eps" sum="EPS Wages"/>
+	                <field name="edli" sum="EDLI Wages"/>
+	                <field name="epf_contribution" sum="EPF Contribution remitted"/>
+	                <field name="eps_contribution" sum="EPS Contribution remitted"/>
+	                <field name="epf_eps_amount_diff" sum="EPF and EPS Diff remitted"/>
+	                <field name="ncp_days" sum="NCP Days"/>
+	                <field name="refund_of_advances" sum="Refund of Advances"/>
+
+	            </tree>
+	        </field>
+	    </record>
+
+	    <record id="pf_ecr_monthly_action" model="ir.actions.act_window">
+            <field name="name">PF ECR Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pf.ecr</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,pivot</field>         
+        </record>
+
+   	<menuitem	name="PF ECR Tax Report" id="pf_ecr_monthly_action_id" 
+    			parent="l10n_in_hr_payroll.menu_l10n_in_hr_payroll_report"
+    			sequence="4"
+              	action="pf_ecr_monthly_action"/>
+
+      <!--   	<menuitem id="pf_ecr_id" action="pf_ecr_monthly_action" parent="sub_menu_wizard_esi" name="PF ECR Reports"/> -->
+
+</odoo>

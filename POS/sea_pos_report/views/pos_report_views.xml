@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--         <record id="pos_report_form" model="ir.ui.view">
+            <field name="name">pos.report.form</field>
+            <field name="model">pos.report</field>
+            <field name="arch" type="xml">
+               <form string="Pos Report">
+                <group>
+                    <field name="id" />                       
+                    <field name="payment_modes" />
+                    <field name="short_code" />
+                    <field name="pos_payment_ref"/>
+                    <field name="payment_ref_no" />
+                    <field name="order_ref" />
+                    <field name="product_names" />
+                    <field name="quantity" />
+                    <field name="sales_price" />
+                    <field name="total_price" />
+                    <field name="date" />
+                    <field name="pos_reference" />
+                    <field name="session_ref" />
+                </group>
+                </form>
+            </field>
+        </record> -->
+
+        <record id="pos_report_pivot" model="ir.ui.view">
+            <field name="name">pos.report.pivot</field>
+            <field name="model">pos.report</field>
+            <field name="arch" type="xml">
+               <pivot string="Pos Report">
+                    <field name="id" />                       
+                    <field name="payment_modes" />
+                    <field name="short_code" />
+                    <field name="pos_payment_ref"/>
+                    <field name="payment_ref_no" />
+                    <field name="order_ref" />
+                    <field name="product_names" />
+                    <field name="quantity" />
+                    <field name="sales_price" />
+                    <field name="total_price" />
+                    <field name="date" />
+                    <field name="pos_reference" />
+                    <field name="session_ref" /> 
+                </pivot>
+            </field>
+        </record>
+
+        <record id="pos_report_tree" model="ir.ui.view">
+            <field name="name">pos.report.tree</field>
+            <field name="model">pos.report</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false">
+
+                    <field name="id" />                       
+                    <field name="payment_modes" />
+                    <field name="short_code" />
+                    <field name="pos_payment_ref"/>
+                    <field name="payment_ref_no" />
+                    <field name="order_ref" />
+                    <field name="product_names" />
+                    <field name="quantity" />
+                    <field name="sales_price" />
+                    <field name="total_price" />
+                    <field name="date" />
+                    <field name="pos_reference" />
+                    <field name="session_ref" /> 
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_report_pos_report_graph" model="ir.ui.view">
+            <field name="name">pos.report.graph</field>
+            <field name="model">pos.report</field>
+            <field name="arch" type="xml">
+                <graph string="Pos Report">
+                    <field name="payment_modes"/>
+                    <field name="payment_ref_no"/>
+                    <field name="product_names"/>
+                </graph>
+            </field>
+        </record>
+
+            <record id="view_report_pos_report_search" model="ir.ui.view">
+            <field name="name">pos.report.search</field>
+            <field name="model">pos.report</field>
+            <field name="arch" type="xml">
+                <search string="Pos Report">
+                    <field name="date"/>
+                    <separator/>
+                    <filter string="Payment modes" />
+                    <filter string="POS Payment reference" />
+                    <separator/>
+                    <filter string="Receipt order Reference No" />
+                    <filter string="POS Session Reference No" />
+                    <group expand="1" string="Group By">
+                        <filter string="Short code"  context="{'group_by':'short_code'}"/>
+                        <filter string="Payment Reference No" context="{'group_by':'payment_ref_no'}"/>
+                        <filter string="Order Reference" context="{'group_by':'order_ref'}"/>
+                        <separator/>
+                        <filter string="Product Names" context="{'group_by':'product_names'} "/>
+                        <filter string="Order Month" context="{'group_by':'date:month'}" help="Month of order date"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="pos_report_action" model="ir.actions.act_window">
+            <field name="name">Pos Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pos.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,pivot,graph</field>         
+        </record>
+
+       <menuitem id="menu_pos_report" name="Pos Report" action="pos_report_action" parent="point_of_sale.menu_point_rep" sequence="6"/>
+
+</odoo>

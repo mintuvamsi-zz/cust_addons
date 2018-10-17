@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <report id="pt_report_month_of_year_view" 
+    string="PT" 
+    model="pt.report" 
+    report_type="qweb-pdf" 
+    name="hr_payroll_taxreports.pt_report_year_month" 
+    file="hr_payroll_taxreports.pt_report_year_month" 
+
+  /> 
+  <data>
+        <template id="pt_report_year_month">
+          
+<!--           <div class="header">
+            <tr>
+              <td> <div align="center"> <h2> FORM V </h2> </div> </td> 
+              <td> <h3> Professional Tax Report </h3></td>
+            </tr>
+          </div> -->
+
+
+          <t t-call="web.external_layout">
+
+          <div class="fixed-top">
+
+            <table class="table table-bordered" style="margin-top: 200px; size:6;">
+              <thead style="background-color: #FAFAD2; size:6; " size="6">
+
+                <tr><th>Month Of Year</th>
+                    <th>Monthly Salaries</th>
+                    <th>Number of Employees</th>
+                    <th>Rate of Tax per month</th>
+                    <th>Amount of tax deduction</th>
+                  </tr>
+
+              </thead>
+              
+              <tbody>
+                <tr t-foreach="docs" t-as="doc" style="color: #000000; size:4;"  size="4">
+                  <td><span t-field="doc.date" style="color: #000000; size:4;"></span></td>
+                  <td><span t-field="doc.monthly_salaries" style="color: #000000; size:4;"></span></td>
+                  <td><span t-field="doc.number_of_employee" style="color: #000000; size:4;"></span></td>
+                  <td><span t-field="doc.rate_of_tax_per" style="color: #000000; size:4;"></span></td>
+                  <td><span t-field="doc.amount_of_tax_deduction" style="color: #000000; size:4;"></span></td>
+                </tr>
+              </tbody>
+
+            </table>
+            <span>
+             <!-- <div align="center"> <h2> FORM V </h2> </div> -->
+             <h3>Monthly Professional Tax Reports(FORM V)</h3>
+            </span>
+          </div>
+    </t>
+ 
+</template>
+</data>
+</odoo>
+
+    
+ 

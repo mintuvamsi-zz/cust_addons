@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="product_product_template_form_view" model="ir.ui.view">
+            <field name="name">product.template.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+              <field name="barcode" position="after">
+                <field name="purchased_invoice_no"/>
+                <field name="purity"/>
+                <field name="making_charges"/>
+                <field name="net_weight"/>
+                <field name="wastage"/>
+                <field name="type_selection"/>
+                <field name="active_serial_num" invisible="1"/>
+              </field>
+
+              <!-- <field name="list_price" position="before">
+                 <field name="sp_tax_selection" options="{'horizontal': true}" class="oe_edit_only" widget="radio"/>
+                  <field name="sp_total" attrs="{'required':[('sp_tax_selection','=','Inclusive')]}"/>
+              </field>
+              <field name="list_price" position="after">
+                 <field name="sp_tax_value" />
+              </field>
+
+              <field name="l10n_in_hsn_code" position="replace">
+                <field name="l10n_in_hsn_code" required="True"/>
+              </field>
+              <xpath expr="//group[@name='group_standard_price']/label[1]" position="replace"/>
+              <xpath expr="//field[@name='standard_price']" position="replace"/>
+
+            
+
+
+            <field name="sp_tax_value" position="after">
+                 <field name="cp_tax_selection" options="{'horizontal': true}" class="oe_edit_only" widget="radio"/>
+                  <field name="cp_total"  attrs="{'required':[('cp_tax_selection','=','Inclusive')]}"/>
+                  <field name="standard_price"  attrs="{'required':[('cp_tax_selection','=','Exclusive')]}"/>
+                   <field name="cp_tax_value"/>
+              </field>-->
+              
+            <xpath expr="//group[@name='traceability']/field[@name='tracking']" position="after">
+                        <field name="product_identification" attrs="{'invisible':[('tracking', 'in', ['lot', 'none'])]}"/>
+                        <field name="serial_sequence" attrs="{'invisible':[('tracking', 'in', ['lot', 'none'])]}"/>
+            </xpath>
+            <header>
+              <button name="%(open_product_template_wizard_action_id)d" string="Generate Serial Sequence" type="action" class="btn-primary" attrs="{'invisible':[('active_serial_num', '=', False)]}" />
+              <button string="Update Cost Price"  name="cost_price_updt" type="object" default_focus="1" class="btn-primary"/>
+            </header>
+          </field>
+            
+          
+          
+
+
+
+            <!-- <field name="uom_id" position="replace">
+                 <field name="uom_id" invisible="1"/>
+              </field>
+              <field name="uom_po_id" position="replace">
+                <field name="uom_po_id" invisible="1"/>
+              </field>
+            </field> -->
+      </record>
+
+      <!-- <record id="product_product_template_wastage_form_view" model="ir.ui.view">
+            <field name="name">product.template.wastage.form</field>
+            <field name="model">product.template.extended</field>
+            <field name="arch" type="xml">
+              <form string="Define Wastage">
+                <field name="wastage" />
+              </form>
+            </field>
+      </record> -->
+
+        
+
+       <!-- <record id="product_product_uom_form_view" model="ir.ui.view">
+            <field name="name">product.uom.form</field>
+            <field name="model">product.uom</field>
+            <field name="inherit_id" ref="product.product_uom_form_view"/>
+            <field name="arch" type="xml">
+              <field name="rounding" position="after">
+                <field name="ucq" required="True"/>
+              </field>
+            </field>
+       </record> -->
+  </data>
+</odoo>

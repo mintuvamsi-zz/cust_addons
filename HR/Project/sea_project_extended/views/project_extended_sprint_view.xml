@@ -1,0 +1,17 @@
+<openerp>
+  <data>
+      <record model="ir.ui.view" id="project_sprint_form">
+          <field name="name">project.sprint.form</field>
+          <field name="model">project.sprint</field>
+          <field name="inherit_id" ref="project_scrum.project_sprint_form"/>
+          <field name="arch" type="xml">
+              <xpath expr="//field[@name='name']" position="after">
+                      <field name="project_id"/>
+                      <field name="module_id"/>
+                      <field name="submodule_id"/>
+
+              </xpath>
+          </field>
+      </record>
+  </data>
+</openerp>

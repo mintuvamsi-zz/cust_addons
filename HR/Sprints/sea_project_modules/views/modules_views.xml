@@ -1,0 +1,78 @@
+<openerp>
+  <data>
+    <!-- explicit list view definition -->
+    <!--<record model="ir.ui.view" id="project_modules.list">
+      <field name="name">project_modules_list</field>
+      <field name="model">project.modules</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        
+        </tree>
+      </field>
+    </record> -->
+
+    <record model="ir.ui.view" id="project_modules_form">
+      <field name="name">project_modules_form</field>
+      <field name="model">project.modules</field>
+      <field name="arch" type="xml">
+        <form string="Modules">
+          <group>
+            <field name="name"/>
+            <field name="description"/>
+            <field name="project_id"/>
+            <field name="module_line_id">
+              <tree editable="bottom">
+                <field name="name"/>
+                <field name="description"/>
+              </tree>
+            </field>
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="project_modules_action_window">
+      <field name="name">Module</field>
+      <field name="res_model">project.modules</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="project_modules.action_server">
+      <field name="name">project_modules server</field>
+      <field name="model_id" ref="model_project_modules_project_modules"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="project_modules" id="project_modules.menu_root"/>
+    -->
+    <!-- menu categories -->
+
+    <menuitem name="Modules" id="project_modules_menu_1" parent="project.menu_project_management"
+            action="project_modules_action_window" sequence="16"/>
+
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="project_modules.menu_1_list" parent="project_modules.menu_1"
+              action="project_modules.action_window"/>
+    <menuitem name="Server to list" id="project_modules" parent="project_modules.menu_2"
+              action="project_modules.action_server"/>
+    -->
+  </data>
+</openerp>

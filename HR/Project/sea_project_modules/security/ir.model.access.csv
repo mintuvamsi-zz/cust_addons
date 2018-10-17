@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+project_module_manager_access,project.modules,model_project_modules,project.group_project_manager,1,1,1,1
+project_sub_module_manager_access,project.modules.line,model_project_modules_line,project.group_project_manager,1,1,1,1
+project_module_line_manager_access,submodules,model_submodules,project.group_project_manager,1,1,1,1
+project_module_project_user_access,project.modules,model_project_modules,project.group_project_user,1,0,0,0
+project_sub_module_project_user_access,project.modules.line,model_project_modules_line,project.group_project_user,1,0,0,0
+project_module_line_project_user_access,submodules,model_submodules,project.group_project_user,1,0,0,0
+project_module_user_access,project.modules,model_project_modules,base.group_portal,1,0,0,0
+project_sub_module_team_access,project.modules.line,model_project_modules_line,base.group_portal,1,0,0,0
+project_module_line_team_access,submodules,model_submodules,base.group_portal,1,0,0,0

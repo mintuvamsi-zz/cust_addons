@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_esi_view" model="ir.ui.view">
+        <field name="name">wizard.esi.report</field>
+        <field name="model">esi.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Enter your Month-Year">
+
+                        <group>
+                        <field name="month_year" placeholder="e.g. Jun-2018"/>
+                        </group>
+
+                <footer>
+                    <button name="print_esi_report" string="Generate Report" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="wizard_esi_gst_action" model="ir.actions.act_window">
+        <field name="name">ESI Return Report</field>
+        <field name="res_model">esi.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_esi_view"/>
+        <field name="target">new</field>
+    </record>
+
+	<menuitem id="esi_menu_top" action="wizard_esi_gst_action" parent="l10n_in_hr_payroll.menu_l10n_in_hr_payroll_report" sequence="4" name="ESI xlsx Report"/>
+</odoo>

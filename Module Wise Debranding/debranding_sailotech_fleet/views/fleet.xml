@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fleet.fleet_costs_reporting_action" model="ir.actions.act_window">
+      <field name="name">Costs Analysis</field>
+      <field name="res_model">fleet.vehicle.cost</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">graph,pivot</field>
+      <field name="view_id"></field>  <!-- force empty -->
+      <field name="context">{"search_default_parent_false" : True,}</field>
+      <field name="help" type="html">
+        <p>
+          SEA helps you managing the costs for your different vehicles
+          Costs are generally created from services and contract and appears here.
+        </p>
+        <p>
+          Thanks to the different filters, SEA can only print the effective
+          costs, sort them by type and by vehicle.
+        </p>
+      </field>
+    </record>
+    <record id="fleet.fleet_costs_reporting_non_effective_action" model="ir.actions.act_window">
+      <field name="name">Indicative Costs Analysis</field>
+      <field name="res_model">fleet.vehicle.cost</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">graph,pivot</field>
+     <field name="view_id"></field>  <!-- force empty -->
+      <field name="context">{"search_default_parent_true" : True,}</field>
+      <field name="help" type="html">
+        <p>
+          SEA helps you managing the costs for your different vehicles
+          Costs are generally created from services and contract and appears here.
+        </p>
+        <p>
+          Thanks to the different filters, SEA can only print the effective
+          costs, sort them by type and by vehicle.
+        </p>
+      </field>
+    </record>
+
+        <record id='fleet.fleet_vehicle_costs_action' model='ir.actions.act_window'>
+            <field name="name">Vehicle Costs</field>
+            <field name="res_model">fleet.vehicle.cost</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form,graph</field>
+            <field name="context">{"search_default_parent_false" : True, "search_default_groupby_vehicle_id" : True,}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new cost.
+              </p><p>
+                SEA helps you managing the costs for your different
+                vehicles. Costs are created automatically from services,
+                contracts (fixed or recurring) and fuel logs.
+              </p>
+            </field>
+        </record>
+      
+          <record id='fleet.fleet_vehicle_log_contract_action' model='ir.actions.act_window'>
+              <field name="name">Vehicles Contracts</field>
+              <field name="res_model">fleet.vehicle.log.contract</field>
+              <field name="view_type">form</field>
+              <field name="view_mode">tree,kanban,form,graph</field>
+              <field name="context">{'search_default_open': 1}</field>
+              <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                  Click to create a new contract.
+                </p><p>
+                  Manage all your contracts (leasing, insurances, etc.) with
+                  their related services, costs. SEA will automatically warn
+                  you when some contracts have to be renewed.
+                </p><p>
+                  Each contract (e.g.: leasing) may include several services
+                  (reparation, insurances, periodic maintenance).
+                </p>
+              </field>
+          </record>
+
+          <record id='fleet.fleet_vehicle_action' model='ir.actions.act_window'>
+              <field name="name">Vehicles</field>
+              <field name="res_model">fleet.vehicle</field>
+              <field name="view_type">form</field>
+              <field name="view_mode">kanban,tree,form</field>
+              <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                  Click to create a new vehicle.
+                </p><p>
+                  You will be able to manage your fleet by keeping track of the
+                  contracts, services, fixed and recurring costs, odometers and
+                  fuel logs associated to each vehicle.
+              </p><p>
+                  SEA will warn you when services or contract have to be
+                  renewed.
+                </p>
+              </field>
+          </record>
+
+            <record id='fleet.fleet_vehicle_log_services_action' model='ir.actions.act_window'>
+                <field name="name">Vehicles Services Logs</field>
+                <field name="res_model">fleet.vehicle.log.services</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,kanban,form,graph</field>
+                <field name="help" type="html">
+                  <p class="oe_view_nocontent_create">
+                    Click to create a new service entry.
+                  </p><p>
+                    SEA helps you keeping track of all the services done
+                    on your vehicle. Services can be of many type: occasional
+                    repair, fixed maintenance, etc.
+                  </p>
+                </field>
+            </record>
+
+</odoo>

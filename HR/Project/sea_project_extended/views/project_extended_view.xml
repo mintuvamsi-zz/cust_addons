@@ -1,0 +1,42 @@
+<odoo>
+  <data>
+      <record model="ir.ui.view" id="project_extended_form">
+          <field name="name">project.project.form</field>
+          <field name="model">project.project</field>
+          <field name="inherit_id" ref="project.edit_project"/>
+          <field name="arch" type="xml">
+              <xpath expr="//notebook/page/group/field[@name='user_id']" position="before">
+                      <h3>
+                        <field name="project_new_id" placeholder="Project Id" string="Project Id" invisible="True"/>
+
+                      </h3>
+              </xpath>
+              <xpath expr="//field[@name='partner_id']" position="after">
+                      <field name="description"/>
+                      <!-- <field name="alias_model" invisible="True"/> -->
+              </xpath>
+              <!-- <xpath expr="//field[@name='user_id']" position="replace">
+               <field name="user_id" string="Project Manager"
+                                  attrs="{'readonly':[('state','in',['close', 'cancelled'])]}"
+                                  context="{'default_groups_ref': ['base.group_user', base.group_partner_manager',project.group_project_manager']}"/>
+              </xpath> -->
+              <!-- <xpath expr="//h1/field[@name='name']" position="replace">
+                <field name="name" placeholder="Project ID"/>
+              </xpath> -->
+          </field>
+      </record>
+
+      <record id="hide" model="res.groups">
+        <field name="name">Hide</field>
+        <field name="comment">Hide.</field>
+      </record>
+      
+      <menuitem id="project.project_task_menu_activity"
+        name="Next Activities"
+        parent="project.menu_project_management"
+        action="project.project_task_action_activity"
+        groups="hide"
+        sequence="25"/>  
+
+  </data>
+</odoo>

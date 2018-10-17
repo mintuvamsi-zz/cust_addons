@@ -1,0 +1,132 @@
+<odoo>
+	<data>
+		<record id="hr_recruitment_crm_case_form_view_job" model="ir.ui.view">
+			<field name="name">hr.applicant</field>
+			<field name="model">hr.applicant</field>
+			<field name="inherit_id" ref="hr_recruitment.crm_case_form_view_job"/>
+			<field name="arch" type="xml">
+                
+            <xpath expr="//field[@name='stage_id']" position="before">
+                <button string="Move to Next Stage" name="%(action_applicant_next_form_lines)d" type="action"/>
+            </xpath>
+
+				<!-- <button name="create_employee_from_applicant" position="after">
+                <button string="Move to Next Stage" name="%(action_applicant_next_form_lines)d" type="action"/>
+                </button> -->
+                <field name="stage_id" position="replace">
+                 	<field name="stage_id" widget="statusbar" options="{'fold_field': 'fold'}"/>
+             	</field>
+
+				<xpath expr="//group[1]" position="after">
+
+                    <group string="Feedback of Interviews">
+                        <field name="summary_details" nolabel="1" readonly="1">
+                            <tree editable="botttom" string="Feedback of Interviews" default_order='date'>
+                                <field name="name"/>
+                                <field name="date"/>
+                                <field name="by_user"/>
+                                <field name="next_responsible"/>
+                            </tree>
+                        </field>
+                    </group>
+                </xpath>
+
+                <xpath expr="//group//group//field[@name='department_id']" position="before">
+                    <field name="requisition"/>
+                </xpath>
+
+                <xpath expr="//group//group//field[@name='department_id']" position="after">
+                    <field name="skill_set"/>
+                </xpath>  
+
+                <xpath expr="//group//group[4]" position="replace">
+                    <group string="Contract">
+                        <label for="salary_expected" groups="hr_recruitment.group_hr_recruitment_user,group_hr_recruitment_recruiter_emp,project.group_project_manager"/>
+                        <div>
+                            <field name="salary_expected" class="oe_inline"  groups="hr_recruitment.group_hr_recruitment_user,group_hr_recruitment_recruiter_emp,project.group_project_manager"/>
+                            <span class="oe_inline" attrs="{'invisible':[('salary_expected_extra','=',False)]}"> + </span>
+                            <field name="salary_expected_extra" class="oe_inline"  groups="hr_recruitment.group_hr_recruitment_user,group_hr_recruitment_recruiter_emp,group_hr_recruitment_recruiter_emp,project.group_project_manager" placeholder="Extra advantages..."/>
+                        </div>
+                        <label for="salary_proposed"  groups="hr_recruitment.group_hr_recruitment_user,group_hr_recruitment_recruiter_emp,project.group_project_manager"/>
+                        <div>
+                            <field name="salary_proposed"  groups="hr_recruitment.group_hr_recruitment_user,group_hr_recruitment_recruiter_emp,project.group_project_manager" class="oe_inline"/>
+                            <span class="oe_inline" attrs="{'invisible':[('salary_proposed_extra','=',False)]}"> + </span>
+                            <field name="salary_proposed_extra" class="oe_inline"  groups="hr_recruitment.group_hr_recruitment_user,group_hr_recruitment_recruiter_emp,project.group_project_manager" placeholder="Extra advantages..."/>
+                        </div>
+                        <field name="current_ctc" groups="hr_recruitment.group_hr_recruitment_user,group_hr_recruitment_recruiter_emp,project.group_project_manager"/>
+                        <field name="current_company"/>
+                        <field name="current_location"/>
+                        <field name="preffered_location"/>
+                        <field name="notice_period"/>
+                        <field name="availability"/>
+                        <field name="emp_id" invisible="1"/>
+                            
+                    </group>
+                </xpath>
+
+               <!--  <xpath expr="//group//group//field[@name='availability']" position="before">
+                    <field name="current_ctc" groups="hr_recruitment.group_hr_recruitment_user,project.group_project_manager"/>
+                    <field name="current_company"/>
+                    <field name="current_location"/>
+                    <field name="preffered_location"/>
+                    <field name="notice_period"/>
+                    
+                </xpath>   -->
+
+
+                <xpath expr="//form//sheet//separator[1]" position="replace">
+                    <separator string="Screening Status"/>
+                     
+                </xpath>
+
+
+                <xpath expr="//form//sheet//field[@name='description']" position="replace">
+                     <field name="description" placeholder="Screening inputs(if any)"/>
+                </xpath>
+
+
+                <xpath expr="//group//group//field[@name='priority']" position="replace"/>           
+                <xpath expr="//field[@name='description']" position="before">
+                    <group> 
+                    <field name="priority" string="Status"/>
+                    </group>
+                </xpath>
+
+                 
+			</field>
+		</record>
+
+
+        <record id="hr_recruitment_job" model="ir.ui.view">
+            <field name="name">hr.job</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref="hr.view_hr_job_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='user_id']" position="attributes">
+                    <attribute name="string">Recruiter Responsible</attribute>
+                </xpath>
+
+
+            </field>
+
+        </record>
+
+
+        <menuitem
+        name="Recruitment"
+        id="hr_recruitment.menu_hr_recruitment_root"
+        web_icon="hr_recruitment.hr_recruitment,static/description/icon.png"
+        groups="hr_recruitment.group_hr_recruitment_user,group_hr_recruitment_recruiter_emp,project.group_project_manager"
+        sequence="80"/>
+
+        <menuitem id="hr_recruitment.menu_hr_recruitment_configuration" name="Configuration" parent="hr_recruitment.menu_hr_recruitment_root"
+        groups="hr_recruitment.group_hr_recruitment_user"
+        sequence="100"/>
+
+        <menuitem name="Reports" id="hr_recruitment.report_hr_recruitment" parent="hr_recruitment.menu_hr_recruitment_root" sequence="99" 
+        groups="hr_recruitment.group_hr_recruitment_user" action="hr_recruitment.hr_applicant_action_analysis"/>
+         
+
+	</data>
+</odoo>

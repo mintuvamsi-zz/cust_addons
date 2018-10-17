@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+
+access_sea_messages_master,access_sea_messages_master,model_sea_messages_master,hr.group_hr_user,0,0,0,0
+access_sea_payroll_messages,access_sea_payroll_messages,model_sea_payroll_messages,hr.group_hr_user,1,1,1,1

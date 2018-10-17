@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        
+         <record id="view_visitors_by_month" model="ir.ui.view">
+            <field name="name">visitor.month</field>
+            <field name="model">visitors.report.month</field>
+            <!-- <field name="inherit_id" ref="visitors.Visitors_form_view"/> -->
+            <field name="arch" type="xml">
+            <form>
+            
+                <p>Start Date<field name="start_date" /></p>
+                <p>End Date<field name="end_date"/></p>
+                <!-- <xpath expr="//field[@name='date_from']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_to']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath> -->
+            
+            </form>
+        </field>
+        </record>
+
+        <record id="action_visitors_by_month" model="ir.actions.act_window">
+            <field name="name">Visitors Report by month</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">visitors.report.month</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <!-- <field name="target">new</field> -->
+        </record>
+
+
+        <menuitem name="Reports" 
+            id="visitors_menu_sub_report" 
+            parent="visitors_menu_parent"/> 
+      
+        <menuitem name="Visitors Report By Month" 
+			id="visitors_menu_list_report" 
+			parent="visitors_menu_sub_report" 
+			action="action_visitors_by_month"
+			sequence="125"/>
+</odoo>

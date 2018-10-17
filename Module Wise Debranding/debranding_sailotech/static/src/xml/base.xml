@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" inherit_id="web.template">
+<t t-name="web.UserMenu">
+    <li class="o_user_menu">
+        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">
+<!--             <img class="img-circle oe_topbar_avatar" t-att-src="_s + '/debranding_sailotech/static/src/img/favicon.ico'"/> -->
+            <span class="oe_topbar_name"/>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+            <t t-call="UserMenu.Actions"/>
+        </ul>
+    </li>
+</t>
+
+<t t-name="UserMenu.Actions">
+    <!-- <li><a href="#" data-menu="documentation">Documentation</a></li>
+    <li><a href="#" data-menu="support">Support</a></li>
+    <a href="http://www.Sailotech.com" target="_blank"> <span> Sailotech</span></a> </td>
+    <li class="divider"/>
+    <li><a href="#" data-menu="settings">Preferences</a></li> 
+    <li><a href="#" data-menu="account">My Odoo.com account</a></li> -->
+    <li><a href="http://www.Sailotech.com" target="_blank"> <span> Support </span></a></li>
+    <li><a href="#" data-menu="logout">Log out</a></li>
+</t>
+
+<!-- 
+
+
+<t t-name="web.EnterpriseUpgrade">
+    <div class="row">
+        <div class="col-xs-6">
+            Get this feature and much more with Sailotech Enterprise!
+            <ul class="list-unstyled">
+                <li><i class="fa fa-check"></i> Access to all Enterprise Apps</li>
+                <li><i class="fa fa-check"></i> New design</li>
+                <li><i class="fa fa-check"></i> Mobile support</li>
+                <li><i class="fa fa-check"></i> Upgrade to future versions</li>
+                <li><i class="fa fa-check"></i> Bugfixes guarantee</li>
+                <li><a href="http://www.odoo.com/editions" target="_blank"><i class="fa fa-plus"></i></a></li>
+            </ul>
+        </div>
+        <div class="col-xs-6">
+            <img class="img-responsive" t-att-src='_s + "/web/static/src/img/enterprise_upgrade.jpg"' draggable="false"/>
+        </div>
+    </div>
+</t> -->
+
+</templates>

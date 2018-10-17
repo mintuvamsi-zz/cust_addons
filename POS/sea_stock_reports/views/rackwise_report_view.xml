@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="1esi_monthly_form" model="ir.ui.view">
+            <field name="name">1esi.monthly.form</field>
+            <field name="model">rackwise.report</field>
+            <field name="arch" type="xml">
+               <form string="Rack Wise Report">
+                <group>
+                    <field name="id" />                       
+                    <field name="name" />
+                    <field name="quantity" />
+                    <field name="complete_name" />
+                    <field name="date" />                       
+                </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="1esi_monthly_pivot" model="ir.ui.view">
+            <field name="name">1esi.monthly.pivot</field>
+            <field name="model">rackwise.report</field>
+            <field name="arch" type="xml">
+               <pivot string="Rack Wise Report">
+                    <field name="id" />                       
+                    <field name="name" />
+                    <field name="quantity" />
+                    <field name="complete_name" />
+                    <field name="date" /> 
+                </pivot>
+            </field>
+        </record>
+
+        <record id="1esi_monthly_tree" model="ir.ui.view">
+            <field name="name">1esi.monthly.tree</field>
+            <field name="model">rackwise.report</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false">
+
+                    <field name="id" />                       
+                    <field name="name" />
+                    <field name="quantity" />
+                    <field name="complete_name" />
+                  <!--   <field name="date" />  -->
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_rackwise_stock_filter" model="ir.ui.view">
+            <field name="name">rackwise.invoice.select</field>
+            <field name="model">rackwise.report</field>
+            <field name="arch" type="xml">
+                <search string="Search Invoice">
+                    <filter string="Date" context="{'group_by':'date'}"/>
+                    <filter string="Product" context="{'group_by':'name'}"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="1esi_monthly_action" model="ir.actions.act_window">
+            <field name="name">Rack Wise Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rackwise.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,pivot</field> 
+            <field name="context">{'group_by':'complete_name'}</field> 
+            <field name="search_view_id" ref= "view_rackwise_stock_filter" />         
+        </record>
+
+       <menuitem name="Rack Wise Report" id="7m_marzin_pivot_id" action="1esi_monthly_action" parent="stock.menu_warehouse_report"/>
+
+
+
+</odoo>

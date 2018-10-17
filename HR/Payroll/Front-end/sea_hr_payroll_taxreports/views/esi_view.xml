@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="esi_monthly_form" model="ir.ui.view">
+            <field name="name">esi.monthly.form</field>
+            <field name="model">esi.rtrn</field>
+            <field name="arch" type="xml">
+	           <form string="ESI Return Report">
+	            <group>
+	                <field name="date"/>
+	                <field name="ip_number"/>
+	                <field name="ip_name"/>
+	                <field name="no_of_days"/>
+	                <field name="wage"/>
+	                <field name="employees_contribution"/>
+	                <field name="employers_contribution"/>
+	                <field name="reason_code"/>
+	                <field name="last_working_day" placeholder="DD-MM-YYYY"/>
+	            </group>
+				</form>
+			</field>
+		</record>
+
+
+		<record id="esi_monthly_pivot" model="ir.ui.view">
+            <field name="name">esi.monthly.pivot</field>
+            <field name="model">esi.rtrn</field>
+            <field name="arch" type="xml">
+	           <pivot string="ESI Return Report">
+	                <field name="date"/>
+	                <field name="ip_number"/>
+	                <field name="ip_name"/>
+	                <field name="no_of_days"/>
+	                <field name="wage"/>
+	                <field name="employees_contribution"/>
+	                <field name="employers_contribution"/>
+	                <field name="reason_code"/>
+	                <field name="last_working_day"/>
+				</pivot>
+			</field>
+		</record>
+
+	    <record id="esi_monthly_tree" model="ir.ui.view">
+	        <field name="name">esi.monthly.tree</field>
+	        <field name="model">esi.rtrn</field>
+	        <field name="arch" type="xml">
+	            <tree>
+
+	                <field name="date"/>
+	                <field name="ip_number"/>
+	                <field name="ip_name"/>
+	                <field name="no_of_days"/>
+	                <field name="wage"/>
+	                <field name="employees_contribution"/>
+	                <field name="employers_contribution"/>
+	                <field name="reason_code"/>
+	                <field name="last_working_day"/>
+
+	            </tree>
+	        </field>
+	    </record>
+
+	    <record id="esi_monthly_action" model="ir.actions.act_window">
+            <field name="name">ESI Return Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">esi.rtrn</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,pivot</field>         
+        </record>
+
+	<menuitem id="esi_menu122" action="esi_monthly_action" parent="l10n_in_hr_payroll.menu_l10n_in_hr_payroll_report" sequence="2" name="ESI  Report"/>
+
+
+
+</odoo>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pending_between_view" model="ir.ui.view">
+        <field name="name">pending.between.report</field>
+        <field name="model">pending.between</field>
+        <field name="arch" type="xml">
+            <form string="Choose your date">
+                <p class="oe_gray">
+                    <b>Choose a Dates of Pending Time Sheet's</b>
+                </p>
+                        <group>
+                        <field name="start_date"/>
+                        </group>
+                        <group>
+                        <field name="end_date"/>
+                        </group>
+                <footer>
+                    <button name="pending_timesheets" string="Update" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+
+            </form>
+        </field>
+    </record>
+    <record id="pending_between_action" model="ir.actions.act_window">
+        <field name="name">Pending Timesheets</field>
+        <field name="res_model">pending.between</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="pending_between_view"/>
+        <field name="target">new</field>
+    </record>       
+
+	<menuitem id="menu_pending_timesheet_view" 
+              action="pending_between_action" 
+              name="Timesheet Report"
+              parent="hr_timesheet.menu_timesheets_reports_timesheet" 
+              sequence="44"/>
+            <!--   groups="hr_timesheet.group_timesheet_manager" -->
+            
+
+</odoo>

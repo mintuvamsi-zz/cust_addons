@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="stock_report_form" model="ir.ui.view">
+            <field name="name">stock.purchase.report.form</field>
+            <field name="model">stock.report</field>
+            <field name="arch" type="xml">
+               <form string="Supplier Wise Stock Report">
+                <group>
+                    <field name="id" />                       
+                    <field name="partner" />
+                    <field name="product" />
+                    <field name="recived_qty" />
+                    <field name="scheduled_date" />   
+                    <field name="sold_qty" />
+                    <field name="remain_date" />
+                    <field name="rem_qty" />                    
+                </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="stock_report_pivot" model="ir.ui.view">
+            <field name="name">stock.report.pivot</field>
+            <field name="model">stock.report</field>
+            <field name="arch" type="xml">
+               <pivot string="Supplier Wise Stock Report">
+                    <field name="id" />                       
+                    <field name="partner" />
+                    <field name="product" />
+                    <field name="recived_qty" />
+                    <field name="scheduled_date" />   
+                    <field name="sold_qty" />
+                    <field name="remain_date" />
+                    <field name="rem_qty" />  
+                </pivot>
+            </field>
+        </record>
+
+        <record id="stock_report_tree" model="ir.ui.view">
+            <field name="name">stock.purchase.report.tree</field>
+            <field name="model">stock.report</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false">
+
+                    <!-- <field name="id" />   -->                     
+                    <field name="partner" />
+                   <!--  <field name="product" /> -->
+                    <field name="recived_qty" />
+                    <field name="scheduled_date" />   
+                    <field name="sold_qty" />
+                    <field name="remain_date" />
+                    <field name="rem_qty" />  
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_account_stock_filter" model="ir.ui.view">
+            <field name="name">stock.invoice.select</field>
+            <field name="model">stock.report</field>
+            <field name="arch" type="xml">
+                <search string="Search Invoice">
+                    <filter string="Products" context="{'group_by':'product'}"/>
+                    <filter string="Supplier" context="{'group_by':'partner'}"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="stock_report_action" model="ir.actions.act_window">
+            <field name="name">Supplier Wise Stock Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,pivot,kanban</field>
+            <field name="context">{'group_by':'product'}</field>    
+            <field name="search_view_id" ref= "view_account_stock_filter" />     
+        </record>
+
+
+       <menuitem name="Supplier Wise Stock Report" id="stock_report_action_id" action="stock_report_action" 
+        parent="point_of_sale.menu_point_rep"/>
+
+
+<record model="ir.ui.view" id="stock_report_kanban">
+            <field name="name">stock.report.kanban</field>
+            <field name="model">stock.report</field>
+            <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                    <field name="partner" type= "action"/>
+                    <field name="product" widget="monetary" />
+                    <field name="recived_qty" widget="monetary" />
+                    <field name="rem_qty" widget="monetary" />
+                    <field name="sold_qty" widget="monetary" />
+                <templates>
+                              <t t-name="kanban-box"> 
+                                <div class="oe_product_desc">
+                                    <h4>
+                                        <a type="open">
+                                        <p> 
+
+                                          <br>
+                                            <span style="color: #02075D;font-weight:bold">
+                                           <span> Partner : </span> </span>
+                                           <span style="color: #013220;font-weight:bold">
+                                          <field name="partner" /> </span>
+                                          </br>
+
+                                          <br>
+                                            <span style="color: #02075D;font-weight:bold">
+                                           <span> Product : </span> </span>
+                                           <span style="color: #013220;font-weight:bold">
+                                          <field name="product" /> </span>
+                                          </br>
+
+                                          <br>
+                                            <span style="color: #02075D;font-weight:bold">
+                                           <span> Received Quantity : </span> </span>
+                                           <span style="color: #013220;font-weight:bold">
+                                          <field name="recived_qty" /> </span>
+                                          </br>
+
+                                            <br>
+                                            <span style="color: #02075D;font-weight:bold">
+                                           <span> Sold Quantity : </span> </span>
+                                           <span style="color: #013220;font-weight:bold">
+                                          <field name="sold_qty" /> </span>
+                                          </br>
+
+                                         <br>
+                                          <span style="color: #02075D;font-weight:bold">
+                                          <span>     Remaining Quantity : </span></span>
+                                          <span style="color: #013220;font-weight:bold">
+                                          <field name="rem_qty" /> </span>
+                                        </br>
+
+                                       </p> 
+                                     </a>
+                                    </h4>
+                                   </div> 
+                                  </t>
+                </templates>
+            </kanban>
+            </field>
+        </record>
+
+</odoo>

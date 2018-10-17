@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="traceability_matrix_tree" model="ir.ui.view">
+            <field name="name">traceability.matrix.tree</field>
+            <field name="model">traceability.matrix</field>
+            <field name="arch" type="xml">
+                <tree string="Traceability Matrix">
+                    <field name="project_name"/>
+                    <field name="author"/>
+                    <field name="tower_name"/>
+                    <field name="responsible"/>
+                    <field name="module_id"/>
+                    <field name="responsible_line"/>
+                    <field name="iteration_release"/>
+                    <field name="date_creation"/>
+                    <field name="last_updated_date1"/>
+                    <field name="last_reviewed_by"/>
+                    <field name="current_status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="traceability_matrix_form" model="ir.ui.view">
+            <field name="name">traceability.matrix.form</field>
+            <field name="model">traceability.matrix</field>
+            <field name="arch" type="xml">
+                <form string="Traceability Matrix">
+
+
+                    <sheet>
+                <h2 style="color:#008080;">
+                    <spaan>Requirement ID:
+                    <field name="id"/></spaan></h2>
+                            <group>
+                                <group>
+                                    <field name="project_name"/>
+                                    <field name="author"/>
+                                    <field name="iteration_release"/>
+                                </group>
+
+                                <group col='2'>
+                                    <field name="tower_name"/>
+                                    <field name="responsible"/>
+                                    <field name="date_creation"/>
+                                    <field name="last_updated_date1"/>
+                                </group>
+                            </group>
+<!--  <table style = "width:100%; heaight:100%;">
+                                <group class="form-group table table-bordered"
+                                  style ="padding: 10px; border: 1px solid #000; "> -->
+        <notebook>
+<!--    General   -->
+            <page string="General" name="General">
+                <table style = "width:100%; heaight:100%;">
+                <group>           
+                    <field name="module_id"/>
+                    <field name="sub_module_name"/>
+                    <field name="technical_name"/>
+                    <field name="custom_module"/>
+                    <field name="responsible_line"/>
+                    <field name="current_status" />
+                </group>
+            </table>
+            </page>
+
+ <!--    Functional   -->
+            <page string="Functional" name="Functional">
+                <group >
+
+                    <group >
+                        <field name="fsd_status"/>
+                        <field name="fsdname"/>
+                        <field name="fsdname_link" widget='url'/>
+                        <field name="fsd_last_updated_by"/> 
+                        <field name="fsd_last_updated_date"/> 
+                    </group>
+
+                    <group col='2'>
+                        <field name="fsd_review_date"/>   
+                        <field name="fsd_rev"/>
+                        <field name="fsd_review"/> 
+                        <field name="fsd_review_com"/>
+                    </group>
+
+                    <group colspan='5'>  
+                       <!--  <field name="requirements_id"/> -->     
+                        <field name="features_requirements"/>
+                    </group>
+
+                    <group colspan='3'>
+                        <field name="requirements_specification"/>
+                    </group>
+
+                </group>
+            </page>
+
+
+<!--    Technical   -->
+            <page string="Technical" name="Technical">
+
+<!--                     <group>
+                    <field name="design_components"/>
+                    </group> -->
+
+                <group>
+                    
+                   <group string='Technical Document'>
+                        <field name="td_status"/>
+                        <field name="tdname"/>            
+                        <field name="tdname_link" widget='url'/>
+                        <field name="td_last_updated_date"/>
+                        <field name="td_last_updated_by"/>
+                        <field name="td_review"/>
+                        <field name="td_reviewed"/>
+                        <field name="td_reviewed_date"/>
+                        <field name="td_reviewed_com"/>
+ 
+                    </group>
+
+                    <group string='SVN' col="2">
+                        <field name="svn_commits"/>
+                        <field name="svn_folder_path"/>
+                        <field name="svn_commit_date"/>
+                        <field name="svn_last_updated_by"/>
+                        <field name="svn_last_updated_date"/> 
+                        <field name="code_review"/>
+                        <field name="code_reviewed_by"/>
+                        <field name="code_reviewed_date"/>
+                        <field name="code_review_com"/>
+                    </group>
+
+                    <group string='Unit Test'>
+                        <field name="unittest_status"/>
+                        <field name="unit_test_case_link" widget='url'/>
+                        <field name="unit_test_results"/>
+                    </group>
+
+                </group>
+            </page>
+
+  <!--    QA   -->
+            <page string="QA" name="QA">
+                <group>    
+                    <group>  
+                        <field name="automation_status"/>
+                        <field name="automation_code_link" widget='url' />
+                        <field name="automation_results"/>
+                        <field name="qa_last_updated_date"/>
+                        <field name="qa_last_updated_by"/>
+                    </group>
+                    <group col="2">
+                        <field name="qa_reviewed_by"/>
+                        <field name="qa_reviewed_date"/>
+                        <field name="qa_review_com"/>
+                    </group>
+            </group>
+                <group>
+                    <group>
+                    <field name="integration_system_test_cases"/>
+                    </group>
+                    <group col="2">
+                    <field name="integration_system_test_results"/>
+                    </group>
+                </group>
+           
+            </page>
+
+  <!--    Management   -->
+            <page string="Management" name="Management">
+                <group>      
+                    <field name="user_manuals_link" widget='url' />
+                    <field name="democript"/>
+                    <field name="sales_decks"/>
+                </group>
+            </page>
+
+<!--    Misc   -->
+            <page string="Misc" name="Misc">
+                <group>           
+                    <field name="last_reviewed_by"/>
+                    <field name="last_review_date"/>
+                    <field name="last_review_comments"/>
+                </group>
+            </page>
+        </notebook>
+
+        </sheet>
+            <div class="oe_chatter"> 
+                <field name="message_follower_ids" widget="mail_followers"/> 
+                <field name="message_ids" widget="mail_thread"/> 
+              </div> 
+    </form>
+</field>
+</record>
+
+<!-- Search view -->
+
+        <record id="traceability_matrix_filters" model="ir.ui.view">
+            <field name="name">traceability.matrix.filters</field>
+            <field name="model">traceability.matrix</field>
+            <field name="arch" type="xml">
+                <search string="Search Traceability Matrix Status">
+                    <filter string="Code Review" context="{'group_by':'code_review'}"/>
+                    <filter string="SVN Commits" context="{'group_by':'svn_commits'}"/>
+                    <filter string="TD Review" context="{'group_by':'td_review'}"/>
+                    <filter string="Technical Document" context="{'group_by':'td_status'}"/>
+                    <filter string="Automation Status" context="{'group_by':'automation_status'}"/>
+                    <filter string="Project Name" context="{'group_by':'project_name'}"/>
+                    <filter string="Tower Name" context="{'group_by':'tower_name'}"/>
+                    <filter string="Tower Owner" context="{'group_by':'responsible'}"/>
+                    <filter string="Responsible" context="{'group_by':'responsible_line'}"/>
+                    <filter string="Current Status" context="{'group_by':'current_status'}"/>
+                    <filter string="Module Name" context="{'group_by':'module_id'}"/>
+                    <filter string="Sub-Module Name" context="{'group_by':'sub_module_name'}"/>
+                    <filter string="Functional Document" context="{'group_by':'fsd_status'}"/>
+                    <filter string="FSD Review" context="{'group_by':'fsd_rev'}"/>
+                </search>
+            </field>
+        </record>
+
+<!-- Action Record -->
+
+        <record id="traceability_matrix_action" model="ir.actions.act_window">
+            <field name="name">Traceability Matrix</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">traceability.matrix</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>         
+        </record>
+
+       <menuitem name="Traceability Matrix" id="traceability_matrix_pmenu" web_icon="traceability_matrix,description/logo.png" />
+
+       <menuitem name="Traceability Matrix" id="traceability_matrix_smenu" parent="traceability_matrix_pmenu"
+        sequence="1"/>
+
+       <menuitem name="Traceability Matrix" id="traceability_matrix_cmenu" parent="traceability_matrix_smenu"
+        action="traceability_matrix_action"/>
+
+    </odoo>

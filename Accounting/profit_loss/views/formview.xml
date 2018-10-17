@@ -1,0 +1,52 @@
+<record model="ir.ui.view" id="profit_loss.form">
+      <field name="name">profit loss form</field>
+      <field name="model">profit.loss</field>
+      <field name="arch" type="xml">
+        <form string="Visitors Form" create="false" edit="false">
+            <sheet>
+                
+            <group><sheet>
+
+                <group>
+                    <!-- <field name="incrownum"/>
+                    <field name="incid"/> -->
+                    <field name="incname"/>
+                    <field name="incproductname"/>
+                    <field name="incentityname"/>
+                    <field name="inccredit"/>
+                    <field name="incdebit"/>
+                    <field name="opincomecredit"/>
+                    <field name="opincomedebit"/>
+                    <field name="grossincomecredit"/>
+                    <field name="grossincomedebit"/>
+                    <field name="totincomecredit"/>
+                    <field name="totincomedebit"/>
+                    <field name="totincome"/>
+                </group>
+
+                <group>
+                    <!-- <field name="exprownum"/>
+                    <field name="expid"/> -->
+                    <field name="expname"/>
+                    <field name="expproductname"/>
+                    <field name="expentityname"/>
+                    <field name="expcredit"/>
+                    <field name="expdebit"/>
+                    <field name="opexpensecredit"/>
+                    <field name="opexpensedebit"/>
+                    <field name="grossexpensecredit"/>
+                    <field name="grossexpensedebit"/>
+                    <field name="totexpensecredit"/>
+                    <field name="totexpensedebit"/>
+                    <field name="totexpense"/>
+                    <field name="grossprofit"/> 
+                </group>
+
+                
+              </sheet>
+              
+            </group></sheet>                
+            </form>
+      </field>
+    </record>
+    

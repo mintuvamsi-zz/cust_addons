@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_job_requisition_manager,job.requisition,model_job_requisition,hr_recruitment.group_hr_recruitment_manager,1,1,1,1
+access_job_requisition_line_manager,job.requisition.line,model_job_requisition_line,hr_recruitment.group_hr_recruitment_manager,1,1,1,1
+access_job_requisition_officer,job.requisition,model_job_requisition,hr_recruitment.group_hr_recruitment_user,1,1,0,0
+access_job_requisition_line_officer,job.requisition.line,model_job_requisition_line,hr_recruitment.group_hr_recruitment_user,1,1,0,0
+access_job_requisition_recruiter,job.requisition,model_job_requisition,hr_recruitment_extended.group_hr_recruitment_recruiter_emp,1,0,0,0
+access_job_requisition_line_recruiter,job.requisition.line,model_job_requisition_line,hr_recruitment_extended.group_hr_recruitment_recruiter_emp,1,0,0,0
+access_hr_job_manager,hr.job,model_hr_job,hr_recruitment.group_hr_recruitment_manager,1,1,1,1
+access_hr_job_officer,hr.job,model_hr_job,hr_recruitment.group_hr_recruitment_user,1,1,1,1
+access_hr_job_recruiter,hr.job,model_hr_job,hr_recruitment_extended.group_hr_recruitment_recruiter_emp,1,0,0,0
+access_job_requisition_projectmanager,job.requisition,model_job_requisition,project.group_project_manager,1,1,1,1
+access_job_requisition_line_projectmanager,job.requisition.line,model_job_requisition_line,project.group_project_manager,1,1,1,1
+access_hr_job_pmanager,hr.job,model_hr_job,project.group_project_manager,1,1,1,1
+
+
+
+

@@ -1,0 +1,314 @@
+ Volume in drive E is New Volume
+ Volume Serial Number is 60A1-0107
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\account_standard_report
+
+06/18/2018  10:18 AM                88 __init__.py
+06/18/2018  10:18 AM               814 __manifest__.py
+               2 File(s)            902 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\account_standard_report\data
+
+06/18/2018  10:18 AM               953 data_account_standard_report.xml
+06/18/2018  10:18 AM               743 report_paperformat.xml
+06/18/2018  10:18 AM               421 res_currency_data.xml
+               3 File(s)          2,117 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\account_standard_report\migrations\10.0.1.1
+
+06/18/2018  10:18 AM               259 post-00-regenrate-shorted.py
+               1 File(s)            259 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\account_standard_report\models
+
+06/18/2018  10:18 AM               455 account.py
+06/18/2018  10:18 AM               259 res_currency.py
+06/18/2018  10:18 AM                74 __init__.py
+               3 File(s)            788 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\account_standard_report\report
+
+06/18/2018  10:18 AM            29,481 report_account_standard_report.xml
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\account_standard_report\report
+
+06/18/2018  10:18 AM            21,923 report_account_standard_excel.py
+06/18/2018  10:18 AM                69 __init__.py
+               3 File(s)         51,473 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\account_standard_report\views
+
+06/18/2018  10:18 AM             7,350 account_standard.xml
+06/18/2018  10:18 AM               627 account_view.xml
+06/18/2018  10:18 AM               544 res_currency_views.xml
+               3 File(s)          8,521 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\account_standard_report\wizard
+
+06/18/2018  10:18 AM             4,066 account_standard_report_view.xml
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\account_standard_report\wizard
+
+06/18/2018  10:18 AM            49,254 account_standard_report.py
+06/18/2018  10:18 AM                63 __init__.py
+               3 File(s)         53,383 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\report_xlsx
+
+06/18/2018  10:18 AM               139 __init__.py
+06/18/2018  10:18 AM               756 __manifest__.py
+               2 File(s)            895 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\report_xlsx\controllers
+
+06/18/2018  10:18 AM             1,882 main.py
+06/18/2018  10:18 AM                19 __init__.py
+               2 File(s)          1,901 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\report_xlsx\demo
+
+06/18/2018  10:18 AM               396 report.xml
+               1 File(s)            396 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\report_xlsx\models
+
+06/18/2018  10:18 AM             1,251 ir_report.py
+06/18/2018  10:18 AM                24 __init__.py
+               2 File(s)          1,275 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\report_xlsx\report
+
+06/18/2018  10:18 AM               504 report_partner_xlsx.py
+06/18/2018  10:18 AM               945 report_xlsx.py
+06/18/2018  10:18 AM                60 __init__.py
+               3 File(s)          1,509 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\report_xlsx\tests
+
+06/18/2018  10:18 AM               844 test_report.py
+06/18/2018  10:18 AM                26 __init__.py
+               2 File(s)            870 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\report_xlsx\views
+
+06/18/2018  10:18 AM               417 webclient_templates.xml
+               1 File(s)            417 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_gstr1_gstr2_report
+
+06/11/2018  05:07 PM                88 __init__.py
+07/13/2018  11:52 AM             1,004 __manifest__.py
+               2 File(s)          1,092 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_gstr1_gstr2_report\data
+
+06/11/2018  05:07 PM               349 fiscal_data.xml
+               1 File(s)            349 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_gstr1_gstr2_report\models
+
+06/11/2018  05:07 PM             2,195 gst_code.py
+06/11/2018  05:07 PM                48 __init__.py
+               2 File(s)          2,243 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_gstr1_gstr2_report\report
+
+06/11/2018  05:07 PM               234 b2b.xml
+06/11/2018  05:07 PM               237 b2cl.xml
+06/11/2018  05:07 PM               242 b2cs.xml
+06/11/2018  05:07 PM               252 export.xml
+06/11/2018  05:07 PM             4,221 gst_invoice_pdf.xml
+06/11/2018  05:07 PM            16,433 gst_sales_invoice_pdf.xml
+06/11/2018  05:07 PM               237 hsn.xml
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_gstr1_gstr2_report\report
+
+07/13/2018  11:52 AM            18,136 b2b.py
+07/13/2018  11:52 AM            21,594 b2cl.py
+06/11/2018  05:07 PM             4,173 b2cs.py
+06/11/2018  05:07 PM             4,388 export.py
+06/11/2018  05:07 PM             3,434 hsn.py
+06/11/2018  05:07 PM               120 __init__.py
+              13 File(s)         73,701 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_gstr1_gstr2_report\views
+
+06/11/2018  05:07 PM             1,865 gst_code.xml
+06/11/2018  05:07 PM             1,460 port_code.xml
+               2 File(s)          3,325 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_gstr1_gstr2_report\wizard
+
+06/11/2018  05:07 PM             1,565 b2b_wizard.xml
+06/11/2018  05:07 PM             1,469 b2cl_wizard.xml
+06/11/2018  05:07 PM             1,468 b2cs_wizard.xml
+06/11/2018  05:07 PM             1,492 export_wizard.xml
+06/11/2018  05:07 PM             1,472 hsn_wizard.xml
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_gstr1_gstr2_report\wizard
+
+07/13/2018  11:52 AM               767 b2b_wizard.py
+06/11/2018  05:07 PM               765 b2cl_wizard.py
+06/11/2018  05:07 PM               746 b2cs_wizard.py
+06/11/2018  05:07 PM               754 export_wizard.py
+06/11/2018  05:07 PM               743 hsn_wizard.py
+06/11/2018  05:07 PM               130 __init__.py
+              11 File(s)         11,371 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_res_partner_extended
+
+06/11/2018  05:07 PM               127 __init__.py
+06/11/2018  05:07 PM               696 __manifest__.py
+               2 File(s)            823 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_res_partner_extended\models
+
+06/11/2018  05:07 PM               462 res_company.py
+06/11/2018  05:07 PM             3,527 res_partner.py
+06/11/2018  05:07 PM               159 __init__.py
+               3 File(s)          4,148 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_res_partner_extended\security
+
+03/29/2018  11:06 AM             7,430 account_security.xml
+               1 File(s)          7,430 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_res_partner_extended\views
+
+03/29/2018  11:06 AM               771 res_company_view.xml
+03/29/2018  11:06 AM               438 res_country_view.xml
+03/29/2018  11:06 AM             1,442 res_partner_views.xml
+               3 File(s)          2,651 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax
+
+06/11/2018  05:07 PM               149 __init__.py
+06/11/2018  05:07 PM             1,064 __manifest__.py
+               2 File(s)          1,213 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\models
+
+06/11/2018  05:07 PM            22,043 account_invoice.py
+06/11/2018  05:07 PM             6,445 product.py
+06/11/2018  05:07 PM            52,803 purchase.py
+06/11/2018  05:07 PM               462 res_company.py
+06/11/2018  05:07 PM             3,395 res_partner.py
+06/11/2018  05:07 PM             2,024 sale.py
+06/11/2018  05:07 PM             7,216 stock.py
+01/24/2018  07:43 PM               903 transactions.py
+06/11/2018  05:07 PM             2,115 xattax_config_setting.py
+06/11/2018  05:07 PM               415 __init__.py
+              10 File(s)         97,821 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\report
+
+11/28/2017  03:02 PM               784 invoice_report.xml
+11/29/2017  07:55 PM             7,894 invoice_template.xml
+               2 File(s)          8,678 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\security
+
+11/16/2017  11:59 AM             7,430 account_security.xml
+               1 File(s)          7,430 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\views
+
+03/07/2018  11:56 AM            12,910 account_invoice_views.xml
+11/27/2017  07:15 PM             6,168 portal_templates.xml
+01/23/2018  08:27 PM             3,023 product_views.xml
+11/27/2017  07:15 PM               673 purchase_template.xml
+11/27/2017  07:15 PM            39,376 purchase_views.xml
+12/06/2017  07:56 PM               771 res_company_view.xml
+01/09/2018  03:11 PM            12,880 res_config_settings_views.xml
+01/09/2018  08:59 PM             1,351 res_partner_views.xml
+02/15/2018  06:26 PM               764 sale_view.xml
+01/22/2018  04:57 PM               524 sale_views.xml
+11/27/2017  07:15 PM             1,806 stock_views.xml
+01/25/2018  03:55 PM             3,265 transactions_view.xml
+12/18/2017  10:06 AM            12,113 xattax_config_settings_views.xml
+              13 File(s)         95,624 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\wizard
+
+02/20/2018  07:56 PM               829 account_invoice_refund_view.xml
+02/20/2018  12:03 PM             1,200 account_invoice_state_view.xml
+02/19/2018  03:25 PM             2,546 gstr2_gstin_report_xls_view.xml
+01/25/2018  03:57 PM             2,564 invoice_xattax_view.xml
+02/14/2018  01:38 PM             2,549 xattax_report_xls_view.xml
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\wizard
+
+02/20/2018  07:56 PM             2,004 account_invoice_refund.py
+02/20/2018  12:00 PM               897 account_invoice_state.py
+04/17/2018  12:54 PM            19,233 gstr2_gstin_report_xls.py
+04/17/2018  12:53 PM             7,405 invoice_xatax.py
+04/16/2018  07:14 PM            18,528 xattax_report_xls.py
+02/20/2018  07:59 PM               202 __init__.py
+              11 File(s)         57,957 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\xattax
+
+11/29/2017  08:30 PM               143 __init__.py
+11/29/2017  08:30 PM               629 __manifest__.py
+               2 File(s)            772 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\xattax\models
+
+11/29/2017  08:30 PM             1,018 account_invoice.py
+11/29/2017  08:30 PM            52,798 purchase.py
+11/29/2017  08:30 PM             1,335 res_company.py
+11/29/2017  08:30 PM             1,489 res_partner.py
+11/29/2017  08:30 PM             7,211 stock.py
+11/29/2017  08:30 PM             1,155 stock_config_settings.py
+11/29/2017  08:30 PM               307 __init__.py
+               7 File(s)         65,313 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\xattax\views
+
+11/29/2017  08:30 PM             2,197 account_invoice_views.xml
+11/29/2017  08:30 PM             6,168 portal_templates.xml
+11/29/2017  08:30 PM               673 purchase_template.xml
+11/29/2017  08:30 PM            39,376 purchase_views.xml
+11/29/2017  08:30 PM            12,680 res_config_settings_views.xml
+11/29/2017  08:30 PM             6,152 res_partner_views.xml
+11/29/2017  08:30 PM             1,806 stock_views.xml
+12/18/2017  09:51 AM            12,740 xattax_config_settings_views.xml
+               8 File(s)         81,792 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\xattax\wizard
+
+11/29/2017  08:30 PM             1,206 account_invoice_state_view.xml
+11/29/2017  08:30 PM             2,490 invoice_xattax_view.xml
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sailotech_xattax\xattax\wizard
+
+11/29/2017  08:30 PM               901 account_invoice_state.py
+11/29/2017  08:30 PM             6,213 invoice_xatax.py
+11/29/2017  08:30 PM               165 __init__.py
+               5 File(s)         10,975 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sea_multi_quot_single_select
+
+06/11/2018  05:07 PM               127 __init__.py
+06/11/2018  05:07 PM               613 __manifest__.py
+               2 File(s)            740 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sea_multi_quot_single_select\models
+
+06/11/2018  05:07 PM             1,331 sale_order.py
+06/11/2018  05:07 PM               160 __init__.py
+               2 File(s)          1,491 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sea_multi_quot_single_select\security
+
+06/11/2018  05:07 PM             7,430 account_security.xml
+               1 File(s)          7,430 bytes
+
+ Directory of E:\prathiba_code\Odoo\SailotechEnterpiseApp\v11.0\Custom Module\Accounting\sea_multi_quot_single_select\views
+
+06/11/2018  05:07 PM               536 sale_order_views.xml
+               1 File(s)            536 bytes
+
+     Total Files Listed:
+             138 File(s)        669,611 bytes
+               0 Dir(s)  677,323,247,616 bytes free

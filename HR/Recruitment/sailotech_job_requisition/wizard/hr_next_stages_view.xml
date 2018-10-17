@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+    <record id="applicant_next_form" model="ir.ui.view">
+        <field name="name">applicant.next.form</field>
+        <field name="model">next.summary.details</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Next stage details">
+                <group>
+                    <group>
+                        
+                        <field name="next_responsible" />
+                        
+                    </group>
+                    <group>
+                        <field name="stage_id"  />                     
+                        
+                                     
+                    </group>
+                </group>                
+                <group colspan="4" string="Summary" >
+                    <field name="observation" nolabel="1"/>
+                </group>
+
+                <footer>
+                    <button name="button_subbmit" type="object" string="Submit Details" class="oe_highlight" />
+                </footer>   
+            </form>
+        </field>
+    </record>
+            
+    <record id="action_applicant_next_form_lines" model="ir.actions.act_window">
+        <field name="name">Move to Next Stage</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">next.summary.details</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+        <field name="target">new</field>
+    </record>
+
+
+
+    </data>
+</openerp>  

@@ -1,0 +1,139 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="ideas.list">
+      <field name="name">iDeas list</field>
+      <field name="model">ideas.ideas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="idea_initiator"/>
+          <field name="idea_title"/>
+          <field name="pain_area"/>
+          <field name="idea_source"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form View -->
+
+    <record model="ir.ui.view" id="ideas_form_view">
+      <field name="name">ideas.form.view</field>
+      <field name="model">ideas.ideas</field>
+      <field name="arch" type="xml">
+        <form string="Ideas">
+          <sheet>
+
+            <group>
+            <sheet>
+
+            <group>
+              <group>
+                <div id="o_ideas_container">    
+                <div id="o_ideas_main">
+                     <div class="oe_title">
+                      <h4>Idea Initiator: 
+                        <field name="idea_initiator"/>
+                      </h4>
+                      <label class="oe_edit_only" for="name" string="Idea Title"/>
+                      <h2 style="float:right">
+                        <field name="idea_title"/>
+                      </h2>                    
+                      <field name="tag_ids" widget="many2many_tags" placeholder="eg.,Tags.."/>
+                      <h4 groups="hr.group_hr_user">
+                        <h4 groups="hr.group_hr_manager">
+                          <label class="oe_edit_only" for="idea status" string="Status"/>
+                          <field name="idea_status" widget='radio' options="{'horizontal': true}"/>
+                        </h4>
+                      </h4>
+                    </div>
+                </div> 
+                </div> 
+              </group>
+              
+              <group>
+              <div class="oe_title" align="center">
+                <h6>Date:
+                  <field name="date" readonly="1" attrs="{'invisible':[('name','=','/')]}"/>
+                </h6>
+                <h2>
+                  <field name="name" readonly="1" />
+                </h2>
+              </div>
+              </group>
+            </group>
+            
+            </sheet>
+            </group>
+
+            <group><sheet>
+
+                <group>
+                  <group>                   
+                    <!-- <field name="idea_initiator"/>  -->                   
+                    <field name="pain_area"/>
+                    <field name="idea_source"/>
+                    <field name="suggested_solution" string="Idea Solution"/>
+                    <field name="category"/>
+                    <field name="outcome_of_idea"/>                    
+                  </group>
+
+                  <group>
+                    <field name="Prerequisites"/>
+                    <field name="business_benefit"/>
+                    <field name="next_step"/>
+                    <field name="created_by"/>
+                    <field name="update_by"/>
+                    <field name="duplicate_idea" string="Duplicate Idea"/>
+                    <field name="related_idea" string="Related Idea" widget="many2many_tags" placeholder="eg.,If related to others" groups="hr.group_hr_user"/>                    
+                    <!-- <field name="column_one" invisible="1"/> -->
+                  </group>
+                </group>
+
+                <group>
+                  <field name='remarks' groups="hr.group_hr_user"/>
+                </group>
+
+              </sheet></group>
+            </sheet>          
+              <div class="oe_chatter"> 
+                <field name="message_follower_ids" widget="mail_followers"/> 
+                <field name="message_ids" widget="mail_thread"/> 
+              </div> 
+        </form>
+      </field>
+    </record>
+    
+
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="ideas.action_window">
+      <field name="name">iDeas</field>
+      <field name="res_model">ideas.ideas</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+  
+    <!-- Top menu item -->
+    
+    <menuitem name="iDeas" id="ideas.menu_root" web_icon="ideas,static/src/img/logo2.jpg"/>
+    
+    <!-- menu categories -->
+    
+    <menuitem name="Menu" id="ideas.menu_1" parent="ideas.menu_root"/>
+    <!-- <menuitem name="Menu 2" id="ideas.menu_2" parent="ideas.menu_root"/> -->
+    
+    <!-- actions -->
+    
+    <menuitem name="iDeas List" id="ideas.menu_1_list" parent="ideas.menu_1"
+              action="ideas.action_window"/>
+
+    <!-- .xml file for sequence -->
+    <record id="seq_ideas" model="ir.sequence">
+        <field name="name">ideas_sequencer</field>
+        <field name="code">ideas.ideas</field>
+        <field name="prefix">iD-</field>
+        <field name="padding">1</field>
+    </record>
+  </data>
+</odoo>

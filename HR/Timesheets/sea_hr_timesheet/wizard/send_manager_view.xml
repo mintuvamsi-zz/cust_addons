@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+
+        <record id="send_manger_view" model="ir.ui.view">
+            <field name="name">send.manager.form</field>
+            <field name="model">send.manager</field>
+            <field name="arch" type="xml">
+                <form string="Confirm Transffer">
+                    <p class="oe_grey">
+                        Send To Manager
+                    </p>
+                    <footer>
+                        <button string="Send To Manager" name="send_to_manager" type="object" default_focus="1" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="send_manger_transfer_transffer"
+            multi="True"
+            key2="client_action_multi" name="Send to Manager"
+            res_model="send.manager" src_model="account.analytic.line"
+            view_mode="form" target="new" view_type="form" />
+
+    </data>
+</odoo>

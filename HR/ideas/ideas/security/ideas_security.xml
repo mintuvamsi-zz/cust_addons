@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="group_hr_irc" model="res.groups">
+                <field name="name">IRC</field>
+                <field name="category_id" ref="base.module_category_human_resources"/>
+                <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+                <field name="comment">the user will be Higher authority of Ideas</field>
+                
+        </record>  
+
+        <!-- <record id="base_group_user_irc" model="ir.rule">
+            <field name="name">Employee can see only his Ideas</field>
+            <field name="model_id" ref="model_ideas_ideas"/>
+            <field name="domain_force">[('user_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+ -->
+        <!-- <record id="hr_ideas_ideas_rule" model="ir.rule">
+            <field name="name">Employee Can CRUD his Own</field>
+            <field name="model_id" ref="model_hr_department"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+    </record>
+ -->
+
+    </data>
+</odoo>

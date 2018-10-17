@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--######################### Inherit product.Product ######################################### -->
+
+<!--         <record id="product_normal_form_view_extend" model="ir.ui.view">
+            <field name="name">product.normal.form.view.extend</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+
+            	<field name = 'barcode' position = 'after'>
+            		<field name="purchase_cost" widget='monetary'/>
+            	</field>
+
+            </field>
+        </record> -->
+
+<!--######################### Inherit product.template ######################################### -->
+
+        <record id="product_template_form_view_extend" model="ir.ui.view">
+            <field name="name">product.template.form.view.extend</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+
+            	<field name = 'barcode' position = 'after'>
+            		<field name="purchase_cost" widget='monetary'/>
+            	</field>
+
+              
+               	<page name ="sales" position = "after">
+	              	<page name ="Meal item" string = "Meal item">
+	              	<field name="meals_id" widget="one2many_list"> 
+	              	<tree string = "Meal item" editable='bottom'>
+			                <field name="meal_id"/> 
+			                <field name="rate"/>
+							<field name="notes"/>
+					      </tree>
+					        </field>
+					    </page>
+					</page>
+			
+
+            </field>
+        </record>        
+
+<!--######################### Product Meal View with Action ################################### -->
+
+        <record id="product_meal_normal_form_view_extend" model="ir.ui.view">
+            <field name="name">product.meal.normal.form.view.extend</field>
+            <field name="model">product.meal</field>
+            <field name="arch" type="xml">
+	            <form string="Product Meals">
+	              <group>
+	                <field name="name"/>
+	                <field name="bill"/>
+	                <field name="test"/>
+	                <field name="meal_date"/>
+	                <field name="user_id"/>
+	                <field name="notes"/>
+	              </group>
+		<!--#### Product Meal Line View ######## -->
+	              <notebook>
+	              	<page name ="Meal item" string = "Meal item">
+	              	<field name="item_ids" widget="one2many_list"> 
+	              	<tree string = "Meal item" editable='bottom'>
+			                <field name="item_id"/> 
+			                <field name="servings"/>
+			                
+			                <field name="notes"/>
+					            </tree>
+					        </field>
+					    </page>
+					</notebook>
+				</form>
+			</field>
+		</record>
+
+	    <record id="product_meal_value_view_tree" model="ir.ui.view">
+	        <field name="name">product.meal.value.view.tree</field>
+	        <field name="model">product.meal</field>
+	        <field name="arch" type="xml">
+	            <tree>
+	                <field name="name"/>
+	                <field name="bill" sum = 'bill'/>
+	                <field name="meal_date"/>
+	                <field name="user_id"/>
+	                <field name="notes"/>
+	            </tree>
+	        </field>
+	    </record>
+
+	    <record id="meal_action" model="ir.actions.act_window">
+            <field name="name">Product Meal</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.meal</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field> 
+            <field name ="help" type ='html'>
+             <p> <h2> Click to Define New Meal.</h2> </p>
+             </field>           
+        </record>
+
+  <menuitem id = 'meal_product' action='meal_action' parent='sale.product_menu_catalog'/>
+
+<!--#################### Product Meals Lines Form With Action ################################ -->
+
+   <!--      <record id="product_meal_line_normal_form_view_extend" model="ir.ui.view">
+            <field name="name">product.meal.line.normal.form.view.extend</field>
+            <field name="model">product.meals.lines</field>
+            <field name="arch" type="xml">
+	            <form string="Product Meals">
+	              <group>
+	                <field name="meal_id" />
+	                <field name="item_id"/>
+	                <field name="servings"/>
+	                <field name="notes"/>
+	              </group>
+	            </form>
+            </field>
+        </record>
+
+        <record id="product_meal_line_value_view_tree" model="ir.ui.view">
+	        <field name="name">product.meal.line.value.view.tree</field>
+	        <field name="model">product.meals.lines</field>
+	        <field name="arch" type="xml">
+	            <tree>
+	                <field name="meal_id" />
+	                <field name="item_id"/>
+
+	                <field name="servings"/>
+	                <field name="notes"/>
+	            </tree>
+	        </field>
+	    </record>
+
+	    <record id="meal_line_action" model="ir.actions.act_window">
+            <field name="name">Product Meal</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.meals.lines</field>
+            <field name="view_type">form</field>
+            <field name="view_#00000080mode">tree,form</field>           
+        </record> -->
+
+<!--######################################################################################## -->
+
+
+
+
+</odoo>

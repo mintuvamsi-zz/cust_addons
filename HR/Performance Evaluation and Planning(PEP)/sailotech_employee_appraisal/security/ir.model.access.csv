@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_category_user,appraisal.periodic.category,model_appraisal_periodic_category,base.group_user,0,0,0,0
+access_category_hr_user,appraisal.periodic.category,model_appraisal_periodic_category,hr.group_hr_user,1,0,0,0
+access_category_hr_manager,appraisal.periodic.category,model_appraisal_periodic_category,hr.group_hr_manager,1,1,1,1
+access_emp_appraisal_user,employee.appraisal,model_employee_appraisal,base.group_user,1,1,0,0
+access_emp_appraisal_hr_user,employee.appraisal,model_employee_appraisal,hr.group_hr_user,1,1,1,1
+access_emp_appraisal_hr_manager,employee.appraisal,model_employee_appraisal,hr.group_hr_manager,1,1,1,1
+access_rating_user,employee.rating,model_employee_rating,base.group_user,1,1,0,0
+access_rating_hr_user,employee.rating,model_employee_rating,hr.group_hr_user,1,1,1,1
+access_rating_hr_manager,employee.rating,model_employee_rating,hr.group_hr_manager,1,1,1,1
+access_job_req_user,employee.job.requirement,model_employee_job_requirement,base.group_user,1,1,0,0
+access_job_req_hr_user,employee.job.requirement,model_employee_job_requirement,hr.group_hr_user,1,1,1,1
+access_job_req_hr_manager,employee.job.requirement,model_employee_job_requirement,hr.group_hr_manager,1,1,0,0
+access_rating_name_user,rating.name,model_rating_name,base.group_user,1,1,0,0
+access_rating_name_hr_user,rating.name,model_rating_name,hr.group_hr_user,1,1,0,0
+access_rating_name_hr_manager,rating.name,model_rating_name,hr.group_hr_manager,1,1,1,1

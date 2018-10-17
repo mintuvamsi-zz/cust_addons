@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_compoff_employee,hr.compoff,model_hr_compoff,base.group_user,1,1,1,1
+access_hr_compoff_user,hr.compoff,model_hr_compoff,hr_holidays.group_hr_holidays_user,1,1,1,1
+access_hr_compoff_status_manager,hr.compoff,model_hr_compoff,hr_holidays.group_hr_holidays_manager,1,1,1,1
+access_hr_holidays_super_manager,hr.holidays,model_hr_holidays,group_hr_holidays_super_manager,1,1,1,1
+access_hr_super_manager_employee,hr.super_manager,model_hr_super_manager,base.group_user,1,1,1,1
+access_hr_super_manager_user,hr.super_manager,model_hr_super_manager,hr_holidays.group_hr_holidays_user,1,1,1,1
+access_hr_super_manager_status_manager,hr.super_manager,model_hr_super_manager,hr_holidays.group_hr_holidays_manager,1,1,1,1
+access_hr_super_manager_super_manager,hr.super_manager,model_hr_super_manager,group_hr_holidays_super_manager,1,1,1,1

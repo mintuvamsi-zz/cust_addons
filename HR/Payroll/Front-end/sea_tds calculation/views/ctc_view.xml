@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="hr_contract_ctc_form" model="ir.ui.view">
+            <field name="name">hr.contract.form.ctc</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+            <data>
+            
+            <xpath expr="/form/sheet/notebook/page[1]/group[1]" position="before">
+              <group>            
+             <group col ='2' colspan ='1'>
+               <label for="cost_to_company"/>
+                  <div class="o_row" name="cost_to_company">
+                  <field name = "cost_to_company" nolabel="1"/>   
+                  </div>
+               <label for="gross_salary"/>
+                  <div class="o_row" name="gross_salary">
+                  <field name = "gross_salary" nolabel="1"/>   
+                  </div>                                  
+              </group>
+             <group col ='2' colspan = '1'>
+                <label for="net_taxable_income"/>
+                  <div class="o_row" name="net_taxable_income">
+                  <field name = "net_taxable_income" nolabel="1"/>   
+                  </div>
+              </group>
+            </group>
+         
+                </xpath>
+                 <!-- <xpath expr="page[2]//field[@name ='schedule_pay']" position="after">
+                          <group>
+                          <label for="leave_details"/>
+                          <div class="o_row" name="leave_details">
+                          <field name = "leave_details" nolabel="1"/>   
+                          </div>
+                        </group>
+                  </xpath>
+ -->
+
+                <xpath expr="//page[2][@name ='other']" position="after">
+
+                        <page string='Previous Details'>
+                          <group col='4' colspan = '2'>
+                          <group col='2' colspan = '2'>
+                          <label for="income_received_previous_employee"/>
+                          <div class="o_row" name="income_received_previous_employee">
+                          <field name = "income_received_previous_employee" nolabel="1"/>   
+                          </div>
+                           </group>
+                        <group col='2' colspan = '2'>
+                          <label for="previous_professional_tax"/>
+                          <div class="o_row" name="previous_professional_tax">
+                          <field name = "previous_professional_tax" nolabel="1"/>   
+                          </div>
+                        </group>
+                      </group>
+                        <group col='4' colspan = '2'>
+                          <group col='2' colspan = '2'>
+                          <label for="previous_employer_tds"/>
+                          <div class="o_row" name="previous_employer_tds">
+                          <field name = "previous_employer_tds" nolabel="1"/>   
+                          </div>
+                        </group>
+                        <group col='2' colspan = '2'>
+                          <label for="any_other_deductions"/>
+                          <div class="o_row" name="any_other_deductions">
+                          <field name = "any_other_deductions" nolabel="1"/>   
+                          </div>
+                        </group>
+                      </group>
+                          
+                        </page>
+                </xpath>
+
+                <xpath expr="/form/sheet/notebook/page[1]//field[@name='wage']" position="inside">
+                <group>
+                  <label for="basic_salary_percentage" invisible = '1'/>
+                  <div class="o_row" name="basic_salary_percentage" align="pull-right">
+                  <field name = "basic_salary_percentage" style="min-width: 20px;" options="{'horizontal': true}"  widget = "radio" nolabel="1"/>
+                </div>
+                </group>
+                </xpath>
+            
+        
+                <field name = "wage" colspan ='2'/>
+              
+               <xpath expr="/form/sheet/notebook/page[1]/group[2]" position="after">
+                <group col ='4'>
+                <group colspan ='1'  width="20%%">
+                  <label for="special_allowance"/>
+                  <div class="o_row" name="special_allowance">
+                  <field name = "special_allowance" colspan ='1' width="100px" nolabel="1"/>
+                </div>
+                </group>
+              
+                <group>
+                <button name = "calculate_cashcomponents" string = "CALCULATE COMPONENTS" type="object" 
+                  action='calculate_cashcomponents' style="color: #ececf9; background-color: #8b8bda; font-size: 9.5px; padding: 8px 5px"/>
+               </group>
+               <group >
+                  <label for="basic_salary_percentage"/>
+                  <div class="o_row" name="basic_salary_percentage" align="pull-right">
+                  <field name = "basic_salary_percentage" style="min-width: 20px;" options="{'horizontal': true}"  widget = "radio" nolabel="1" />
+                </div>
+                </group>
+              </group>
+             
+                <group col ='2' colspan ='1'>
+                  <group>
+                  <label for="employee_pf"/>
+                  <div class="o_row" name="employee_pf">
+                  <field name = "employee_pf" nolabel="1"/>
+                </div>
+                  <label for="employeepf_exempt"/>
+                  <div class="o_row" name="employeepf_exempt">
+                  <field name = "employeepf_exempt" nolabel="1"/>
+                </div>
+                  </group>
+                  <group col ='2' colspan ='1'>
+                  <label for="employers_pf"/>
+                  <div class="o_row" name="employers_pf">
+                  <field name = "employers_pf" nolabel="1"/>
+                </div>
+                <label for="employerspf_exempt"/>
+                  <div class="o_row" name="employerspf_exempt">
+                  <field name = "employerspf_exempt" nolabel="1"/>
+                  </div>
+                </group>
+              </group>
+           <group col ='2' colspan='1'>
+              <group>
+                  <label for="employee_esi"/>
+                  <div class="o_row" name="employee_esi">
+                  <field name = "employee_esi" nolabel="1"/>
+                  </div>
+                  <label for="employeeesi_exempt"/>
+                  <div class="o_row" name="employeeesi_exempt">
+                  <field name = "employeeesi_exempt" nolabel="1"/>
+                  </div>
+             </group>
+              <group col ='2' colspan='1'>
+                  <label for="employers_esi"/>
+                  <div class="o_row" name="employers_esi">
+                  <field name = "employers_esi" nolabel="1"/>
+                  </div>
+                  <label for="employersesi_exempt"/>
+                  <div class="o_row" name="employersesi_exempt">
+                  <field name = "employersesi_exempt" nolabel="1"/>
+                  </div>
+              </group>
+            </group>
+              <group col = '2' colspan = '1'>
+              <group>
+                <label for="flexible_pay"/>
+                  <div class="o_row" name="flexible_pay">
+                  <field name = "flexible_pay" nolabel="1"/>
+                  </div>
+                <label for="flexiblepay_exempt"/>
+                  <div class="o_row" name="flexiblepay_exempt">
+                  <field name = "flexiblepay_exempt" nolabel="1"/>
+                  </div>
+              </group>
+              <group>
+                <label for="conveyance_allowance"/>
+                  <div class="o_row" name="conveyance_allowance">
+                  <field name = "conveyance_allowance" nolabel="1"/>
+                  </div>
+                <label for="conveyanceallowance_exempt"/>
+                  <div class="o_row" name="conveyanceallowance_exempt">
+                  <field name = "conveyanceallowance_exempt" nolabel="1"/>
+                  </div>
+              </group>
+            </group>
+
+
+
+              <group>
+                <group col='2' colspan='1'>
+                <label for="gratuity"/>
+                  <div class="o_row" name="gratuity">
+                  <field name = "gratuity" nolabel="1"/>
+                </div>
+                <label for="gratuity_exempt"/>
+                  <div class="o_row" name="gratuity_exempt">
+                  <field name = "gratuity_exempt" nolabel="1"/>
+                </div>
+              </group>
+
+              <group col ='2' colspan='1'>
+                <label for="petrol_bill"/>
+                  <div class="o_row" name="petrol_bill">
+                  <field name = "petrol_bill" nolabel="1"/>
+                </div>
+                <label for="petrolbill_exempt"/>
+                  <div class="o_row" name="petrolbill_exempt">
+                  <field name = "petrolbill_exempt" nolabel="1"/>
+                </div>
+              </group>
+
+              <group col ='2' colspan='1'>
+                <label for="lta"/>
+                  <div class="o_row" name="lta">
+                  <field name = "lta" nolabel="1"/>
+                </div>
+                <label for="lta_exempt"/>
+                  <div class="o_row" name="lta_exempt">
+                  <field name = "lta_exempt" nolabel="1"/>
+                </div>
+              </group>
+
+              <group col ='2' colspan='1'>
+                <label for="telephone_bill"/>
+                  <div class="o_row" name="telephone_bill">
+                  <field name = "telephone_bill" nolabel="1"/>
+                </div>
+                <label for="telephonebill_exempt"/>
+                  <div class="o_row" name="telephonebill_exempt">
+                  <field name = "telephonebill_exempt" nolabel="1"/>
+                </div>
+              </group>
+
+              <group col ='2' colspan='1'>
+                  <label for="meal_vouchers"/>
+                  <div class="o_row" name="meal_vouchers">
+                  <field name = "meal_vouchers" nolabel="1"/>
+                  </div>
+                  <label for="mealvouchers_exempt"/>
+                  <div class="o_row" name="mealvouchers_exempt">
+                  <field name = "mealvouchers_exempt" nolabel="1"/>
+                  </div>
+             </group>
+
+              <group col ='2' colspan='1'>
+                  <label for="nontaxable_reimbursment"/>
+                  <div class="o_row" name="nontaxable_reimbursment">
+                  <field name = "nontaxable_reimbursment" nolabel="1"/>
+                  </div>
+                  <!-- <label for="insurance_exempt"/>
+                  <div class="o_row" name="insurance_exempt">
+                  <field name = "insurance_exempt" nolabel="1"/>
+                  </div> -->
+              </group>
+             <!--  <group col ='2' colspan='1'>
+                  <label for="nontaxable_reimbursment"/>
+                  <div class="o_row" name="nontaxable_reimbursment">
+                  <field name = "nontaxable_reimbursment" nolabel="1"/>
+                  </div> -->
+              </group>
+              <group>
+               <group col ='2' colspan='1'>
+                  <label for="driver_salary"/>
+                  <div class="o_row" name="driver_salary">
+                  <field name = "driver_salary" nolabel="1"/>
+                  </div>
+                  <label for="driver_salary_exempt"/>
+                  <div class="o_row" name="driver_salary_exempt">
+                  <field name = "driver_salary_exempt" nolabel="1"/>
+                  </div>
+                </group>
+                <group col ='2' colspan='1'>
+                  <label for="professional_tax"/>
+                  <div class="o_row" name="professional_tax">
+                  <field name = "professional_tax" nolabel="1"/>
+                  </div>
+                  <!-- <label for="professional_tax_exempt"/>
+                  <div class="o_row" name="professional_tax_exempt">
+                  <field name = "professional_tax_exempt" nolabel="1"/>
+                  </div> -->
+               </group>
+             </group>
+              <group>
+               <group col ='2' colspan='1'>
+                  <label for="project"/>
+                  <div class="o_row" name="project">
+                  <field name = "project" nolabel="1"/>
+                  </div>
+                </group>
+                <group col ='2' colspan='1'>
+                  <label for="incentives"/>
+                  <div class="o_row" name="incentives">
+                  <field name = "incentives" nolabel="1"/>
+                  </div>
+              </group>
+            </group>
+              <group>
+               <group col ='2' colspan='1'>
+                  <label for="shift_allowance"/>
+                  <div class="o_row" name="shift_allowance">
+                  <field name = "shift_allowance" nolabel="1"/>
+                  </div>
+                </group>
+              </group>
+              
+           
+              </xpath>
+              
+           
+           
+            </data>
+            </field>        
+          </record>
+        
+                  <record id="hr_contract_ctc_action" model="ir.actions.act_window">
+                    <field name="name">hr.contract.ctc.action</field>
+                    <field name="res_model">hr.contract</field>
+                    <field name="view_type">form</field>
+                    <field name="view_mode">form</field>
+                 </record>
+</odoo> 

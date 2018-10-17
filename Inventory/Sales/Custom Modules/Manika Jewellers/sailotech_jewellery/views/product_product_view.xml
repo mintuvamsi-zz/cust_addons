@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="product_product_form_view" model="ir.ui.view">
+            <field name="name">product.product.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+              <field name="barcode" position="after">
+                <field name="purchased_invoice_no"/>
+                <field name="purity"/>
+                <field name="making_charges"/>
+                <field name="net_weight"/>
+                <field name="wastage"/>
+                <field name="type_selection"/> 
+              </field>
+            </field>
+      </record>
+        -->
+
+       <!-- <record id="product_product_uom_form_view" model="ir.ui.view">
+            <field name="name">product.uom.form</field>
+            <field name="model">product.uom</field>
+            <field name="inherit_id" ref="product.product_uom_form_view"/>
+            <field name="arch" type="xml">
+              <field name="rounding" position="after">
+                <field name="ucq" required="True"/>
+              </field>
+            </field>
+       </record> -->
+  </data>
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<report
+			id="gstr_hsn_report"
+			model="wizard.hsn"
+			string="GSTR-HSN"
+			report_type="xlsx"
+			name="gst.hsn"
+			file="gst_hsn"
+			attachment_use="False"
+		/>
+	</data>
+</odoo>

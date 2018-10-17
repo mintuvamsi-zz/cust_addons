@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_only_form_view2" model="ir.ui.view">
+    <field name="name">product.template.only.form.view2</field>
+    <field name="model">product.template</field>
+    <field name="inherit_id" ref="product.product_template_only_form_view"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='list_price']" position="before">
+          <field name="partner_id" string="Address"/>
+          <field name="mfg_date"/>
+          <field name="exp_date"/>
+        </xpath>
+		<xpath expr="//field[@name='list_price']" position="replace">
+          <field name="list_price" string="MRP" />
+        </xpath>
+    </field>
+    </record>
+  <!--This has been reviewed, all the field are visible and working fine , PDF is downloaded after clicking the Product Lable button-->
+</odoo>

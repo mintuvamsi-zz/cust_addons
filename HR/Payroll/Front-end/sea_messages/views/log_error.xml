@@ -1,0 +1,29 @@
+<odoo>
+   <!-- explicit list view definition for messages master -->
+    <record model="ir.ui.view" id="sea_log_error">
+      <field name="name">sea log error</field>
+      <field name="model">sea.payroll.log.error</field>
+      <field name="arch" type="xml">
+        <tree string="Log Error" create="false" edit="false">
+          <field name="emp_id"/>
+          <field name="function_name"/>
+          <field name="error_location"/>
+          <field name="error_description"/>
+          <field name="log_timestamp"/>
+          <field name="contract_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="sea_log_error_action">
+      <field name="name">Log Messages</field>
+      <field name="res_model">sea.payroll.log.error</field>
+      <field name="view_mode">tree</field>
+    </record>
+
+
+    <!-- menu categories -->
+    <menuitem name="Log Errors" id="sea_messages.menu_4" parent="l10n_in_hr_payroll.menu_l10n_in_hr_payroll_report"
+              action="sea_log_error_action" sequence="103"/>
+</odoo>

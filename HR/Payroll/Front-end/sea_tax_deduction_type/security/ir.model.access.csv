@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+
+access_employee_taxlines,access_employee_taxlines,model_employee_taxlines,,1,0,0,0
+
+access_employee_taxdeduction_header,access_employee_taxdeduction_header,model_employee_taxdeduction_header,,1,0,0,0
+
+access_employee_taxlines,access_employee_taxlines,model_employee_taxlines,hr.group_hr_manager ,0,0,0,0

@@ -1,0 +1,26 @@
+<odoo>
+   <!-- explicit list view definition for messages master -->
+    <record model="ir.ui.view" id="sea_master_list">
+      <field name="name">SEA Master</field>
+      <field name="model">sea.messages.master</field>
+      <field name="arch" type="xml">
+        <tree string="Master" create="false" edit="false">
+          <field name="msg_code"/>
+          <field name="message"/>
+          <field name="remarks"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="sea_master_action">
+      <field name="name">Master</field>
+      <field name="res_model">sea.messages.master</field>
+      <field name="view_mode">tree</field>
+    </record>
+
+
+    <!-- menu categories -->
+    <menuitem name="Messages Master" id="sea_messages.menu_2" parent="l10n_in_hr_payroll.menu_l10n_in_hr_payroll_report"
+              action="sea_master_action" sequence="101" groups="hr.group_hr_user"/>
+</odoo>

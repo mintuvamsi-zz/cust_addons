@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record model="ir.actions.act_window" id="visitors_action_window_report_view">
+	      <field name="name">Visitors Report</field>
+	      <field name="res_model">visitors.visitorreports</field>
+	      <field name="view_mode">form</field>
+    </record>
+    
+        
+	<menuitem name="Reports" 
+      id="visitors_menu_sub_007" 
+      parent="visitors_menu_parent"/>  
+
+      
+	<menuitem name="Visitors Report" 
+      id="visitors_menu_list_007" 
+      parent="visitors_menu_sub_007" 
+      action="visitors_action_window_report_view"   />
+	</data>
+</odoo>

@@ -1,0 +1,49 @@
+<odoo>
+  <data>
+   <record id="employee_skills_tree" model="ir.ui.view">
+      <field name="name">hr.employee.skills</field>
+      <field name="model">hr.employee.skills</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="employee_id"/>
+          <field name="name"/>
+          <field name="skill_category"/>
+          <field name="level"/>
+          <field name="years"/>
+        </tree>
+      </field>
+    </record>
+  
+    <record id="employee_skills" model="ir.ui.view">
+            <field name="name">hr.employee.skills</field>
+            <field name="model">hr.employee.skills</field>
+            <field name="arch" type="xml">
+                <form string="Skills">
+                    <group>
+					<group>
+
+                        <field name="employee_id"/>
+                        <field name="name"/>
+                        <field name="skill_category"/>
+</group>
+<group>
+                        <field name="level"/>
+                        <field name="years"/>
+</group>
+                    </group>
+                </form>
+            </field>
+    </record>
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="employee_skills_action_window">
+      <field name="name">Employee Skills</field>
+      <field name="res_model">hr.employee.skills</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem name="Employee Skills" id="employee_skills_list" parent="hr.menu_hr_root" sequence="76"
+              action="employee_skills_action_window"/>
+  </data>
+</odoo>

@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+
+        <record id="manager_approval_view" model="ir.ui.view">
+            <field name="name">manager.approval.form</field>
+            <field name="model">manager.approval</field>
+            <field name="arch" type="xml">
+                <form string="Confirm Transffer">
+                    <p class="oe_grey">
+                        Manager Approve
+                    </p>
+                    <footer>
+                        <button string="Manager Approve" name="manager_approve" type="object" default_focus="1" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="manager_approval_transfer_transffer"
+            multi="True"
+            key2="client_action_multi" name="Manager Approval"
+            res_model="manager.approval" src_model="account.analytic.line"
+            view_mode="form" target="new" view_type="form" />
+
+    </data>
+</odoo>

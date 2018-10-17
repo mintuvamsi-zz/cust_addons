@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   	 <template id="assets_login" inherit_id="web.assets_frontend">
+   	 	<xpath expr="." position="inside">
+   	 		<link rel="stylesheet" href="/debranding_sailotech/static/src/css/web_login_style.css"/>
+   	 	</xpath>
+    </template>
+</odoo>

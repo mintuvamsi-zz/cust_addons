@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="view_visitors_summary_dept" model="ir.ui.view">
+            <field name="name">visitors.summary.dept.form</field>
+            <field name="model">visitors.per.month.summary</field>
+            <!-- <field name="inherit_id" ref="visitors.visitors.Visitors_form_view"/> -->
+            <field name="arch" type="xml">
+            <form string="Leaves by Department">
+                <footer>
+                    <group>
+
+                        <field name="start_date" />
+                        <field name="end_date"/>
+                        <!-- <field name="visited_date" /> -->
+                    
+                    </group>
+                    <xpath expr="//field[@name='generate']" position="before">
+                        <button name="generate_report" string="Generate Report" type="object" action='reportmonth'
+                              style="color: #ececf9; background-color: #8b8bda; font-size: 9.5px; padding: 8px 5px"
+                        />
+                        <!-- <field name="month_by"/> -->
+                        <!-- <field name="visited_date" /> -->
+                    </xpath>
+                </footer>
+
+                <!-- <group>
+
+                    <field name="start_date" />
+                    <field name="end_date"/>
+                    <field name="visited_date" />
+                    
+                </group> -->
+                <!-- <footer>
+                    <button name="print_report" string="Print" type="object" class="btn-primary"/>
+                    <button string="Cancel" special="cancel" class="btn-default"/>
+                </footer> -->
+            </form>
+            </field>
+        </record>
+
+        <record id="action_visitors_by_month2" model="ir.actions.act_window">
+            <field name="name">Visitors Report by month</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">visitors.per.month.summary</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <!-- <field name="target">new</field> -->
+        </record>
+
+       <!--  <menuitem
+            name="Leaves by Department"
+            parent="menu_hr_holidays_report"
+            action="action_hr_holidays_summary_dept"
+            id="menu_hr_holidays_summary_dept"/> -->
+
+        <menuitem name="Reports2" 
+            id="visitors_menu_sub_report2" 
+            parent="visitors_menu_parent"/> 
+      
+        <menuitem name="Visitors Report By Month" 
+            id="visitors_menu_list_report2" 
+            parent="visitors_menu_sub_report2" 
+            action="action_visitors_by_month2"
+            sequence="145"/>
+
+</odoo>

@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+
+
+        <record id="first_course_item" model="rating.name">
+            <field name="name">Productivity</field>
+        </record>
+
+        <record id="second_course_item" model="rating.name">
+            <field name="name">Dependability</field>
+
+        </record>
+        <record id="third_course_item" model="rating.name">
+            <field name="name">Interpersonal Relationships</field>
+        </record>
+
+        <record id="fourth_course_item" model="rating.name">
+            <field name="name">Initiative</field>
+        </record>
+
+        <record id="fifth_course_item" model="rating.name">
+            <field name="name">Knowledge of Job</field>
+        </record>
+
+        <record id="sixth_course_item" model="rating.name">
+            <field name="name">Self Organizing and Time Management</field>
+        </record>
+
+        <record id="seventh_course_item" model="rating.name">
+            <field name="name">Punctuality/Leave Management</field>
+        </record>
+
+        <record id="eighth_course_item" model="rating.name">
+            <field name="name">Quality of Deliverables</field>
+        </record>
+        <record id="ningth_course_item" model="rating.name">
+            <field name="name">Active participation in Company Events/Programs</field>
+        </record>
+        <record id="ningth_course_item" model="rating.name">
+            <field name="name">Adherence to the Policies</field>
+        </record>
+
+</data>
+</odoo>

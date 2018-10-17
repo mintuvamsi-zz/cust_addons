@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="hr_contract_form_in_tds" model="ir.ui.view">
+            <field name="name">hr.contract.form.in.tds</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="l10n_in_hr_payroll.hr_contract_form_in_inherit"/>
+            <field name="arch" type="xml">
+            <data>
+            <xpath expr="//field[@name='tds']" position="before">
+                <button name="tds_cal_auto" string="CALCULATE TDS" type="object" action='tds_cal_auto'
+                      style="color: #ececf9; background-color: #8b8bda; font-size: 9.5px; padding: 8px 5px"/>
+
+
+
+            </xpath>
+              <xpath expr="//field[@name='tds']" position="after">
+                <field name = "annual_tds_with_sur_cess_charges"/>
+                <!-- <field name = "tds_upto_current_month_with_sur_cess_charges"/>
+                <field name = "balance_tds_recovered_with_charges"/>
+                <field name = "avg_bal_tds_with_charges"/> -->
+
+              </xpath>
+
+            <xpath expr="//field[@name='job_id']" position="after">
+                    <div class="oe_title">
+                    <h1>Tax Computation</h1>
+                    </div>
+                  <field name = "income_chargeable_houseproperty"/>
+                   <field name = "income_chargeable_otherhead_sources"/>                
+                   <field name = "exemptions_undersection"/>
+                   <field name = "deductions_underchapter_6a"/>
+                   <field name = "deductions_under80c_80ccd"/>
+                   <!-- <field name = "deductions_under80c" invisible = "1"/> -->
+
+            </xpath>
+            <xpath expr="//field[@name='house_rent_allowance_metro_nonmetro']" position="after">
+              
+              <field name = "hra_exempt"/>
+            </xpath>
+             <xpath expr="//field[@name='medical_insurance']" position="after">
+              <field name = "medicalinsurance_exempt"/>
+            </xpath>
+
+            <!-- <xpath expr="//field[@name='supplementary_allowance']" position="after">
+              <field name = "hra_recieved"/>
+              <field name = "hra_exemption"/>
+
+
+            </xpath> -->
+
+               <field name = "tds"/>
+
+           
+                       
+            </data>
+            </field>
+        </record>
+        
+                  <record id="tds_cal_auto_action" model="ir.actions.act_window">
+                    <field name="name">Update TDS</field>
+                    <field name="res_model">hr.contract</field>
+                    <field name="view_type">form</field>
+                    <field name="view_mode">form</field>
+                    </record>
+</odoo> 

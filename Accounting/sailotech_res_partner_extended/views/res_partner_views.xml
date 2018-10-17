@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <record id="base_view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="category_id" position="after" >
+               <field name="gst_export_name" attrs="{'invisible' : [('supplier', '=', True)]}"/>
+
+                <field name="vendor_type" attrs="{'invisible' : [('customer', '=', True)]}"/>
+                        
+            </field>
+            <field name="country_id" position="replace">
+                <field name="country_id" required="True" placeholder="Country"  options="{'no_create': True, 'no_create_edit':True}" />
+            </field>
+            <xpath expr="//page[1]/field/form/sheet/group/group/field[@name='name']" position="after">
+                <field name="gst_export_name" attrs="{'invisible' : [('supplier', '=', True)]}"/>
+
+                <field name="vendor_type" attrs="{'invisible' : [('customer', '=', True)]}"/>
+            </xpath>
+
+            <field name="state_id" position="replace"  >
+                <field name="state_id" attrs="{'required' : True}" placeholder="State"  options="{'no_create': True, 'no_create_edit':True}" />
+            </field>
+
+            
+           
+        </field>
+    </record>
+</data>
+</odoo>

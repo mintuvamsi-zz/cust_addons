@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- explicit list/Tree view definition -->
+    
+    <record model="ir.ui.view" id="visitors.list">
+      <field name="name">visitors.list.view</field>
+      <field name="model">visitors.visitors</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="from_name"/>
+          <field name="mobile"/>
+          <field name="email"/>
+          <field name="visited_date"/>
+          <field name="status_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Kanban view -->
+    
+    <record id="Visitors_kanban_view" model="ir.ui.view">
+        <field name="name">visitors.kanban.view</field>
+        <field name="model">visitors.visitors</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="from_name"/>
+                <field name="name"/>
+                <field name="mobile"/>
+                <field name="email"/>
+                <field name="status_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            
+                            <div style="float:right">
+                                <field name="image" widget='image' class="oe_avatar" 
+                                  options='{"preview_image":"image_medium"}' height="90" width="90"/>
+                            </div>
+                            
+                            <div class="oe_kanban_details">
+                              <strong class="o_kanban_record_title" style="color: #3B5998;font-weight:bold">
+                                <font size="4">
+                                  <field name="from_name"/><br/>
+                                  <field name="name"/>
+                                </font>
+                              </strong>
+                            <div/>
+
+                                <ul>
+                                  <li>Visited Date:<field name="visited_date"/></li>
+                                  <li>Mobile:<field name="mobile"/></li>
+                                  <li>Email:<field name="email"></field></li>
+                                  <li>Status:<field name="status_id"></field></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- pivot report -->
+
+    <record id="visitors_view_pivot" model="ir.ui.view" >
+      <field name="name">visitors.view.pivot</field>
+      <field name="model">visitors.visitors</field>
+      <field name="arch" type="xml">
+        <pivot string="Visitors" disable_linking="True">
+          <!-- <field name="visited_date" type="row"/> -->
+          <field name="time_from" type="row"/>
+          <field name="time_to" type="col"/>
+        </pivot>
+      </field>
+    </record> 
+
+    <!-- group report -->
+
+    <record model="ir.ui.view" id="view_visitor_report_search">
+      <field name="name">visitor.report.search</field>
+      <field name="model">visitors.visitors</field>
+      <field name="arch" type="xml">
+        <search string="Visitor report by month">
+          <field name="visited_date" string="visited date"/>
+          <field name="time_from" string="Entry time"/>
+          <field name="time_to" string="Exit time"/>
+          <group expand="1" string="Group By">
+              <filter string="Monthly Report" context="{'group_by': 'visited_date'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!-- Form view -->
+
+    <record model="ir.ui.view" id="Visitors_form_view">
+    	<field name="name">visitors.form.view</field>
+    	<field name="model">visitors.visitors</field>
+    	<field name="arch" type="xml">
+    		<form string="Visitors Form">
+    			<sheet>
+            <group>
+            <div id="o_visitors_container">    
+              <div id="o_visitors_main">
+                <field name="image" widget="image" class="oe_avatar"/>
+                  <div class="oe_title">
+                      <label class="oe_edit_only" for="name" string="Name" />
+                    <h2 style="float:right">
+                      <field name="from_name"/>
+                    </h2>
+                    <h4>
+                      <field name="gender_type" widget='radio' options="{'horizontal': true}"/>
+                    </h4>
+                    <h5>Date:  
+                        <field name="visited_date"/>
+                    </h5>
+                  </div>
+              </div> 
+            </div>
+            <div class="oe_title" align="center">
+              <h1 >
+                <field name="name" readonly="1" attrs="{'invisible':[('name','=','/')]}"/>
+              </h1>
+            </div>
+            </group>
+
+            <group><sheet>
+
+                <group>
+
+          				<group>     
+      	    				<field name='mobile'/>
+      	    				<field name='email'/>                        
+                    <field name='vistor_type'/>
+                  </group>
+
+      	    			<group>
+                    <field name='coming_from'/>
+      	    				<field name='visit_purpose' 
+                      placeholder="e.g. Intern, Interview"/>
+      	    				<field name='department_id'/>
+                    <field name='person_meet'/>
+      	    			</group>
+                  
+                </group>
+
+                <group>
+                  <group>
+                    <field name='personal_details'/>
+                  </group>
+                  <group>
+                    <field name='company_details'/>
+                  </group>
+                </group>
+                
+                <group>
+      	    			
+                  <group>
+                    <!-- <field name='visited_date'/> -->
+      	    				<field name='time_from'/>
+      	    				<field name='time_to'/>
+                    <field name='id_card'/>
+                    <field name='id_type'/>
+                  </group>
+                    
+                  <group>
+                    <field name='status_id' widget="selection"/>
+                    <!-- <field name='badge_no'/> -->
+      	    				<field name='valid_from'/>
+      	    				<field name='valid_to'/> 
+                    <field name='accessories_items'/>
+                  </group>
+
+                </group>
+
+                <group>
+                    <field name='collect_items'/>
+                </group>
+              
+              </sheet></group>
+
+              </sheet>    			
+              <div class="oe_chatter"> 
+                <field name="message_follower_ids" widget="mail_followers"/> 
+                <field name="message_ids" widget="mail_thread"/> 
+              </div> 
+    		</form>
+    	</field>
+    </record>    
+
+
+
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="visitors_action_window">
+      <field name="name">Visitors Form</field>
+      <field name="res_model">visitors.visitors</field>
+      <field name="view_mode">tree,form,kanban,pivot</field>
+      <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Click here to create a new Visitor.
+      </p>
+      <p>
+        Visitors app allows you to easily register and contact guests, customers or leads.
+      </p></field>
+    </record>
+    
+
+    
+
+    <!-- Top menu item -->
+    
+    <menuitem name="Visitors" 
+    	id="visitors_menu_parent"
+      web_icon="visitors,static/src/img/logo2.jpg"
+      />
+    
+    <!-- menu categories -->
+    
+    <menuitem name="Contacts" 
+    	id="visitors_menu_sub" 
+    	parent="visitors_menu_parent"/>
+    
+    <!-- actions -->
+    
+    <menuitem name="Visitors" 
+    	id="visitors_menu_list" 
+    	parent="visitors_menu_sub" 
+    	action="visitors_action_window" 
+    	/>
+
+    <!-- .xml file for sequence -->
+    <record id="seq_visitors" model="ir.sequence">
+        <field name="name">visitors_sequencer</field>
+        <field name="code">visitors.visitors</field>
+        <field name="prefix">BDG/%(month)s/%(day)s/</field>
+        <field name="padding">1</field>
+    </record>
+    
+  </data>
+</odoo>

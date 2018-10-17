@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+
+access_timesheet_hr_manager,pending.between,model_pending_between,hr.group_hr_manager,1,1,1,1
+
+access_timesheet_hr_manager1,pending.between,model_pending_between,hr_timesheet.group_timesheet_manager,1,1,1,1
+
+access_timesheet_pending_hr_manager,pending.timesheet.rp,model_pending_timesheet_rp,hr.group_hr_manager,1,1,1,1
+
+access_manager_timesheet_pending_hr_manager,pending.timesheet.rp,model_pending_timesheet_rp,hr_timesheet.group_timesheet_manager,1,1,1,1
+
+

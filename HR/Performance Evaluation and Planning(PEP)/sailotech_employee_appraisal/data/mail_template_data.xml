@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data noupdate="1">
+
+      <record id="employee_email_template" model="mail.template">
+          <field name="name">PEP-Employee</field>
+          <field name="email_from">${object.name.parent_id.work_email}</field>
+          <field name="subject">Goal Setting by Manager</field>
+          <field name="email_to">${object.name.work_email}</field>
+          <field name="email_cc">joshua.tippanna@sailotech.com</field>
+          <field name="lang">${object.lang}</field>
+          <field name="model_id" ref="sailotech_employee_appraisal.model_employee_appraisal"/>
+          <field name="auto_delete" eval="True"/>
+                <field name="body_html">
+                    <![CDATA[
+                <p>Dear&nbsp; ${object.name.name},</p>
+                <p><br></p>
+                <p>You have a notification from ${object.name.parent_id.name} on goal setting FY ${object.appraisal_period_id.name}.
+                </p><p>Click the below link to review and respond.</p><p>http://intranet.sailotech.com:8069/web/login</p>
+                <p><br></p><p>Thank you,</p><p>${object.name.parent_id.name}<br>
+              </p>
+                ]]>
+                </field>
+      </record>
+
+      <record id="manager_email_template" model="mail.template">
+          <field name="name">PEP-Manager</field>
+          <field name="email_from">${object.name.work_email}</field>
+          <field name="subject">Goal Setting by Manager(Reply from Emp)</field>
+          <field name="email_to">${object.name.parent_id.work_email}</field>
+          <field name="email_cc">joshua.tippanna@sailotech.com</field>
+          <field name="lang">${object.lang}</field>
+          <field name="model_id" ref="sailotech_employee_appraisal.model_employee_appraisal"/>
+          <field name="auto_delete" eval="True"/>
+                <field name="body_html">
+                    <![CDATA[
+                <p>Dear&nbsp; ${object.name.parent_id.name},</p>
+                <p><br></p>
+                <p>You have a notification from ${object.name.name} on goal setting.
+                </p><p>Click the below link to review and respond.</p><p>http://intranet.sailotech.com:8069/web/login</p>
+                <p><br></p><p>Thank you,</p><p>${object.name.name}<br>
+              </p>
+                ]]>
+                </field>
+      </record>
+
+
+      <record id="hr_email_template" model="mail.template">
+          <field name="name">PEP-HR</field>
+          <field name="email_from">${object.name.parent_id.work_email}</field>
+          <field name="subject">PEP Review finalized and submitted to HR</field>
+          <field name="email_to">joshua.tippanna@sailotech.com</field>
+          <field name="email_cc">${object.name.work_email}</field>
+          <field name="lang">${object.lang}</field>
+          <field name="model_id" ref="sailotech_employee_appraisal.model_employee_appraisal"/>
+          <field name="auto_delete" eval="True"/>
+                <field name="body_html">
+                    <![CDATA[
+                <p>Dear&nbsp; Joshua,</p>
+                <p><br></p>
+                <p>PEP Review of Employee ${object.name.name} have been finalized and submitted to you.
+                </p><p>Click the below link to review and respond.</p><p>http://intranet.sailotech.com:8069/web/login</p>
+                <p><br></p><p>Thank you,</p><p>${object.name.parent_id.name}<br>
+              </p>
+                ]]>
+                </field>
+      </record>
+     <record id="hr_reject_email_template" model="mail.template">
+        <field name="name">PEP-HR-Manager</field>
+        <field name="email_from">joshua.tippanna@sailotech.com</field>
+        <field name="subject">Rejecting by HR Manager</field>
+        <field name="email_to">${object.name.parent_id.work_email}</field>
+      <!--   <field name="email_cc">joshua.tippanna@sailotech.com</field> -->
+        <field name="lang">${object.lang}</field>
+        <field name="model_id" ref="sailotech_employee_appraisal.model_employee_appraisal"/>
+        <field name="auto_delete" eval="True"/>
+              <field name="body_html">
+                  <![CDATA[
+              Dear&nbsp; ${object.name.parent_id.name},
+              <p>     You have a notification from Joshua on goal setting.
+              </p><p>Click the below link to review and respond.</p><p>http://intranet.sailotech.com:8069/web/login</p>
+              <p><br></p><p>Thank you,</p><p>Joshua<br>
+            </p>
+              ]]>
+              </field>
+      </record>
+      <record id="md_email_template" model="mail.template">
+          <field name="name">PEP-MD</field>
+          <field name="email_from">joshua.tippanna@sailotech.com</field>
+          <field name="subject">PEP Review finalized and submitted to MD</field>
+          <field name="email_to">suresh.babu@sailotech.com</field>
+          <field name="lang">${object.lang}</field>
+          <field name="model_id" ref="sailotech_employee_appraisal.model_employee_appraisal"/>
+          <field name="auto_delete" eval="True"/>
+                <field name="body_html">
+                    <![CDATA[
+                <p>Dear&nbsp; Suresh,</p>
+                <p><br></p>
+                <p>PEP Review of Employee ${object.name.name} have been finalized and submitted to you.
+                </p><p>Click the below link to review and respond.</p><p>http://intranet.sailotech.com:8069/web/login</p>
+                <p><br></p><p>Thank you,</p><p>Joshua<br>
+              </p>
+                ]]>
+                </field>
+      </record>
+
+
+    </data>
+</odoo>

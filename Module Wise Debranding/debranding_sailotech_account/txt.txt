@@ -1,0 +1,19 @@
+ Volume in drive E is New Volume
+ Volume Serial Number is D2DB-5460
+
+ Directory of E:\SVN\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech_account
+
+07/13/2018  09:22 AM               102 __init__.py
+07/13/2018  04:15 PM               456 __manifest__.py
+               2 File(s)            558 bytes
+
+ Directory of E:\SVN\SailotechEnterpiseApp\v11.0\Custom Module\Module Wise Debranding\debranding_sailotech_account\views
+
+07/13/2018  09:22 AM            36,091 account_config_settings.xml
+07/13/2018  09:22 AM            42,338 account_planner.xml
+07/13/2018  09:22 AM             4,685 inum.xml
+               3 File(s)         83,114 bytes
+
+     Total Files Listed:
+               5 File(s)         83,672 bytes
+               0 Dir(s)  636,260,098,048 bytes free

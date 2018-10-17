@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	    <record id="pt_report_action_pivot" model="ir.ui.view">
+	        <field name="name">pt_report_action_pivot</field>
+	        <field name="model">pt.report</field>
+	        <field name="arch" type="xml">
+
+	            <pivot>
+	            	
+	            	<field name="date"/>
+
+	                <field name="monthly_salaries"/>
+	              
+	                <field name="number_of_employee"/>
+	           
+	                <field name="rate_of_tax_per"/>
+	    
+	                <field name="amount_of_tax_deduction"/>
+
+	            </pivot>
+
+	        </field>
+	    </record>
+
+	   <record id="pt_report_action_tree" model="ir.ui.view">
+	        <field name="name">pt_report_action_tree</field>
+	        <field name="model">pt.report</field>
+	        <field name="arch" type="xml">
+
+	            <tree>
+
+	            	<field name="date" />
+	            	
+	                <field name="monthly_salaries"  />
+	              
+	                <field name="number_of_employee" sum =  "Number of Employee"/>
+	           
+	                <field name="rate_of_tax_per" sum = "Rate of Tax per month"/>
+	    
+	                <field name="amount_of_tax_deduction" sum = "Total Amount of tax deduction"/>   
+
+	            </tree>
+
+	        </field>
+	    </record>
+
+	    <record id="pt_report_action" model="ir.actions.act_window">
+            <field name="name">PT Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pt.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,pivot</field>       
+        </record>
+
+        	<menuitem id="pt_id" action="pt_report_action" parent="l10n_in_hr_payroll.menu_l10n_in_hr_payroll_report" sequence="1" name="PT Reports"/>
+
+        </odoo>

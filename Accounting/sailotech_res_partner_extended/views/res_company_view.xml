@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   
+   
+    <record id="base_view_company_form" model="ir.ui.view">
+        <field name="name">res.company.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[1]" position="after" >
+                <page string="Ecom GSTIN">
+                <field name="ecom_gst_id">
+                    <tree editable="bottom">
+                        <field name="name"/>
+                        <field name="ecom_gstin"/>
+                    </tree>
+                </field>
+            </page>
+            </xpath>
+            
+           
+        </field>
+    </record>
+    
+</odoo>

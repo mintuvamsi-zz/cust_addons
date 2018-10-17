@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="sea_pos_stock_quantity.assets" inherit_id="point_of_sale.assets" name="point_of_sale assets">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/sea_pos_stock_quantity/static/src/css/stock_qty.css"/>
+                <script type="text/javascript" src="/sea_pos_stock_quantity/static/src/js/pos_stock.js"></script>
+                <script type="text/javascript" src="/sea_pos_stock_quantity/static/src/js/popup.js"></script>
+            </xpath>
+        </template>
+    </data>
+</odoo>

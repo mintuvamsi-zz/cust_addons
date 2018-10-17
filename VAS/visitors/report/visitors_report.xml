@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="visitors_report">
+
+          <div class="header">
+          
+          </div>
+
+
+          <t t-call="web.external_layout">
+             <t t-foreach="docs" t-as="doc">
+            <div class="pull-right"/>
+              <!-- <div class="jumbotron"> -->
+              <div class="container-fluid">    
+              <div class="col-md-8; ">
+              <div class="row" >
+              <!-- <div class="col-md-4"></div> -->
+
+            <div style="margin-top: 20px;">
+              <table  class="table table-striped" 
+                style= " background-color: white;
+                width: 300px;
+                border: 3px solid black;">
+
+                <thead>
+                  
+                  <div align="center">
+                    <!-- <th><img t-if="docs.from_name" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', docs.from_name, 400, 70)" style="max-height:30pt;max-width:50%;" /></th> -->
+                  </div>
+                  
+
+                  <tr>
+                    <td><img src='visitors/static/src/img/logo1.png' 
+                      style="left : 120px;  width: 100px; height:80px;"  
+                      class="pull-left"/> 
+                    </td>
+                  
+                  
+                  
+                  <td>
+                    <div style="right: 120px; width: 60px; height:80px; "
+                      t-field="doc.image" t-field-options='{"widget": "image"}' class="pull-right" />
+                    </td>
+                  </tr>
+
+                   <tr align="left">
+                  <td style="width: 20px;" ><b>Badge Number</b></td>
+                    <td>
+                    <div t-field="doc.name" />
+                    </td>
+                    </tr>
+
+
+                    <tr align="left">
+                  <td style="width: 20px;" ><b>Name</b></td>
+                    <td>
+                    <div t-field="doc.from_name" />
+                    </td>
+                    </tr>
+
+                    <tr align="left">
+                    <td style="width: 20px;"><b>Coming From</b></td>
+                    <td>
+                    <div t-field="doc.coming_from" />
+                    </td>
+                    </tr>
+
+                    <tr align="left">
+                    <td style="width: 20px; "><b>Visit Purpose</b></td>
+                    <td>
+                    <div t-field="doc.visit_purpose" />
+                    </td>
+                    </tr>
+
+                  <!--   <tr>
+                    <td style="width: 20px;  " ><b>Badge Number</b></td>
+                    <td>
+                    <p t-field="doc.badge_no" />
+                    </td>
+                    </tr> -->
+
+                    <tr>
+                <td style="width: 20px; " ><b>Badge Valid From</b></td>
+                    <td>
+                    <p t-field="doc.valid_from" />
+                    </td>
+                    </tr>
+
+                    <tr>
+                    <td style="width: 20px;  " ><b>Badge Valid To</b></td>
+                    <td>
+                    <p t-field="doc.valid_to" />
+                    </td>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class="footer"></div>
+
+          </div>
+        </div>
+      </div>
+    </t>
+  </t>
+  
+ 
+</template>
+</data>
+</odoo>
+
+    
+

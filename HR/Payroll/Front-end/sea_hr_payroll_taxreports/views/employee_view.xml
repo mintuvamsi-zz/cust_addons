@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+           <record id="view_employee_form_extend" model="ir.ui.view">
+            <field name="name">view_employee_form_extend</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+
+          <xpath expr="//page[@name='personal_information']/group" position="inside">
+
+                <group string = 'Tax Information'>
+                    <field name="uan"/>
+                    <field name="ip_number" />
+                    <field name="last_day"/>
+                    <field name="reason_code" placeholder="Note: Without Reason Mention 0(Zero)"/>
+                </group>
+
+              </xpath>
+            </field>
+          </record>
+        </data>
+      </odoo>

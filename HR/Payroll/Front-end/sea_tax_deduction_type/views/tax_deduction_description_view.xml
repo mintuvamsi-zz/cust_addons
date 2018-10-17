@@ -1,0 +1,52 @@
+<odoo>
+
+    <record model="ir.ui.view" id="tax_deduction_type_view_id">
+      <field name="name">tax.deduction.form.view</field>
+      <field name="model">tds.taxdeduction.description</field>
+      <field name="arch" type="xml">
+        <tree>
+          
+            <field name="deduction_desc"/>
+            <field name="employee_id"/>
+            <field name="section_id"/>
+            <field name="amount"/>
+        
+        </tree>
+      </field>
+    </record>
+    
+
+    <record id="view_hr_payroll_view_tds_desc_new_id" model="ir.ui.view">
+            <field name="name">tds.taxdeduction.desc.form</field>
+            <field name="model">tds.taxdeduction.description</field>
+            <field name="arch" type="xml">
+                <form>
+                  <sheet><group>
+                      <group>
+                        <field name="deduction_desc"/>
+                        <field name="employee_id"/>
+                      </group>
+                      <group>
+                        
+                        <field name="section_id"/>
+                        <field name="amount"/>
+                      </group>
+                  </group></sheet>
+                </form>
+          </field>
+        </record> 
+
+        <record id="action_view_tds_desc" model="ir.actions.act_window">
+            <field name="name">TDS</field>
+            <field name="res_model">tds.taxdeduction.description</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            action="action_view_tds_desc"
+            id="tds_desc_menu"
+            parent="hr_payroll.menu_hr_payroll_root"
+        />
+
+</odoo>

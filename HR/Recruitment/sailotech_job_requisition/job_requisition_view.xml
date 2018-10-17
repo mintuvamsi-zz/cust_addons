@@ -1,0 +1,133 @@
+<odoo>
+	<data>
+		<record id="job_requisition_tree_view" model="ir.ui.view">
+								<field name="name">job.requisition.tree</field>
+								<field name="model">job.requisition</field>
+								<field name="arch" type="xml">
+									<tree>
+										<field name="job_code"/>
+										
+										<field name="name"/>
+										<field name="job_id"/>
+										<field name="num_positions"/>				
+										<field name="start_date"/>
+									</tree>
+							</field>
+		</record>
+		<record id="job_requisition_form_view_job" model="ir.ui.view">
+			<field name="name">job.requisition.form</field>
+			<field name="model">job.requisition</field>
+			<field name="arch" type="xml">
+				<form string="Job Requisition">
+					<header>
+						<button name="button_send_to_pm" string="Level1 Approval" type="object" attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
+						<button name="button_send_to_hr" string="Level2 Approval" type="object" attrs="{'invisible': [('state', 'not in', ['draft','level1'])]}"/>
+						<button name="button_send_to_md" string="Level3 Approval" type="object" attrs="{'invisible': [('state', 'not in', ['level2'])]}"/>
+						<button name="approve_requisition" string="Approve" type="object" groups="project.group_project_manager" attrs="{'invisible': [('state', 'not in', ['level3'])]}"/>
+						<field name="state" widget="statusbar" statusbar_visible="draft,level1,level2,level3,approved"/>
+
+					</header>
+
+
+					<sheet>
+						<group>
+							<group>
+								<field name="job_code"/>		
+								<field name="name" required="True"/>
+								<field name="job_id" required="True"/>		
+								<field name="cost_center" required="True"/>
+								<field name="employment_state" required="True"/>
+							</group>
+
+							<group>
+								<field name="num_positions" required="True"/>
+								<field name="designation" required="True"/>
+								
+								<field name="end_date" invisible="1"/>
+								<field name="position_status" required="True"/>	
+							</group>
+
+							<group>
+								<field name="description" string="Job Description" required="True"/>
+							</group>
+
+						</group>
+
+								
+						<group>
+							<field name="department_head" required="True"/>
+							<field name="reporting_head" required="True"/>
+							<field name="position_allocation" required="True"/>
+							<field name="replacement_details" required="True" attrs="{'invisible':['|',('position_allocation','not in',('replacement',))]}"/>
+							<field name="qualification" required="True"/>
+							<field name="desired_exp" required="True"/>
+							<field name="suggested_ctc"/>
+							<field name="skills" required="True"/>
+							<field name="place_of_work" required="True"/>	
+						</group>
+								
+						<group>
+
+							<group>
+								<field name="requested_by" required="True"/>
+								<field name="head_hr" required="True"/>
+								<field name="approved_by" required="True"/>
+							</group>
+							<group>
+								<field name="start_date" required="True"/>
+								<field name="hr_date"/>
+								<field name="approval_date"/>
+							</group>	
+						</group>
+
+					</sheet>
+					<div class="oe_chatter">
+							<field name="message_follower_ids" widget="mail_followers"/>
+							<field name="activity_ids" widget="mail_activity"/>
+							<field name="message_ids" widget="mail_thread"/>
+					</div>
+				</form>
+
+			</field>
+		</record>
+		<record id="job_requisition_action" model="ir.actions.act_window">
+				<field name="name">Job Requisition</field>
+				<field name="res_model">job.requisition</field>
+				<field name="view_type">form</field>
+				<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Job Requisition" id="action_job_requisition" action="job_requisition_action" parent="hr_recruitment.menu_hr_recruitment_root"  groups="hr_recruitment.group_hr_recruitment_user,hr_recruitment_extended.group_hr_recruitment_recruiter_emp,project.group_project_manager" sequence="7"/>
+
+
+
+		<record id="hr_view_hr_job_form" model="ir.ui.view">
+			<field name="name">hr.job.form</field>
+			<field name="model">hr.job</field>
+			<field name="inherit_id" ref="hr.view_hr_job_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//form/sheet" position="inside">
+					<h4>Requisition</h4>
+					<field name="requisition_id" >
+						<tree editable="bottom">
+							<field name="start_date"/>
+							<field name="end_date"/>
+							<field name="name"/>
+							<field name="job_id"/>
+							<field name="num_positions"/>
+							<field name="description"/>
+						</tree>
+					</field>
+
+				</xpath>
+
+                <xpath expr="//field[@name='address_id']" position="after">
+                    <field name="recruitment_type"/>
+                </xpath>
+
+
+			</field>
+		</record>
+
+	</data>
+</odoo>

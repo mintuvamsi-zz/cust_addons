@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<report
+			id="gstr_b2cl_report"
+			model="wizard.b2cl"
+			string="GSTR-2"
+			report_type="xlsx"
+			name="gst.b2cl"
+			file="gstr_2"
+			attachment_use="False"
+		/>
+	</data>
+</odoo>

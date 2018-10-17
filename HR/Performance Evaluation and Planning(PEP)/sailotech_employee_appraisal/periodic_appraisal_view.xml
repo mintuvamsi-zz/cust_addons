@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+      <!-- Top menu item -->
+        <menuitem name="Appraisal"
+            id="menu_hr_appraisal"
+            web_icon="sailotech_employee_appraisal,static/img/appraisal.png"
+            sequence="1"/>
+
+        <menuitem id="menu_category_id" name="Configuration"
+                 parent="menu_hr_appraisal" sequence="4"/>
+
+      <!-- Holidays status -->
+
+      <record id="view_appraisal_periodic_category_form" model="ir.ui.view" >
+          <field name="name">appraisal.periodic.category.form</field>
+          <field name="model">appraisal.periodic.category</field>
+          <field name="arch" type="xml">
+              <form string="Period Type">
+                  <group>
+                      <group>
+                          <field name="name" required="True"/>
+                          <field name="date_from" required="True"/>
+                          <field name="date_to" required="True"/>
+                      </group>
+                      <group>
+                          <field name="active"/>
+                          <field name="active_date"/>
+                      </group>
+                  </group>
+              </form>
+          </field>
+      </record>
+
+      <record  id="view_appraisal_periodic_category_tree" model="ir.ui.view">
+          <field name="name">appraisal.periodic.category.tree</field>
+          <field name="model">appraisal.periodic.category</field>
+          <field name="arch" type="xml">
+              <tree string="Period Type">
+                  <field name="name"/>
+                  <field name="active"/>
+              </tree>
+          </field>
+      </record>
+
+      <record id="open_view_appraisal_periodic_category" model="ir.actions.act_window">
+         <field name="name">Period Types</field>
+         <field name="res_model">appraisal.periodic.category</field>
+         <field name="view_type">form</field>
+         <field name="view_mode">tree,form</field>
+         <field name="domain">[]</field>
+         <field name="context">{}</field>
+         <field name="view_id" eval="False"/>
+         <!-- <field name="search_view_id" ref="view_hr_holidays_status_search"/> -->
+     </record>
+
+     <menuitem id="menu_open_view_appraisal_periodic_category"
+           parent="menu_category_id" sequence="5" action="open_view_appraisal_periodic_category"/>
+
+
+        <record id="view_employee_appraisal_form" model="ir.ui.view">
+            <field name="name">employee.appraisal.form</field>
+            <field name="model">employee.appraisal</field>
+            <field name="arch" type="xml">
+			        <form string="Employee">
+                <header>
+                  <field name="state" widget="statusbar" statusbar_visible="draft,empsent,to_approve,to_md" />
+                    <button name="button_send_employee" type="object" states="draft" string="Send to Employee" attrs="{'invisible': ['|', ('state','not in', ('draft',))]}"/>
+                    <button name="button_send_manager" type="object" states="to_emp" string="Send to Manager"/>
+                    <button name="button_send_hr" type="object" states="sent" string="Send to HR"/>
+                    <button name="button_send_md" type="object" states="to_approve" string="Send to MD"/>
+
+                </header>
+
+							<sheet>
+								<group>
+									<field name="appraisal_period_id" attrs="{'required':[('state','in',['draft'])], 'readonly': ['|', ('state','not in', ('draft',))]}"/>
+
+									<field name="name" invisible="1"/>
+								</group>
+									<group>
+									<group>
+										<field name="name" attrs="{'required':[('state','in',['draft'])],'readonly': ['|', ('state','not in', ('draft',))]}"/>
+										<field name="location" attrs="{'required':[('state','in',['draft'])],'readonly': ['|', ('state','not in', ('draft',))]}"/>
+										<field name="designation" attrs="{'required':[('state','in',['draft'])],'readonly': ['|', ('state','not in', ('draft',))]}"/>
+										<field name="department_id" attrs="{'required':[('state','in',['draft'])],'readonly': ['|', ('state','not in', ('draft',))]}"/>
+										<field name='user_id' invisible="True"/>
+
+									 </group>
+									 <group>
+										<field name="doj" attrs="{'required':[('state','in',['draft'])],'readonly': ['|', ('state','not in', ('draft',))]}"/>
+										<field name="reviewers_name" attrs="{'required':[('state','in',['draft'])],'readonly': ['|', ('state','not in', ('draft',))]}"/>
+										<field name="todays_date" attrs="{'required':[('state','in',['draft'])],'readonly': ['|', ('state','not in', ('draft',))]}"/>
+										<field name="appraisal_active" invisible="1"/>
+									 </group>
+								</group>
+								<group>
+								   <table style="width: 100%; height: 100%; margin-left: auto; margin-right: auto;" border="1" cellpadding="2">
+									<caption><B><U>Rating Guide</U></B></caption>
+									<tbody>
+											<tr style="height: 21px;">
+											<td style="width: 10%; height: 21px; text-align: center;"> 5</td>
+											<td style="width: 22.8264%; height: 21px;"> Far Exceeds Expectations</td>
+											<td style="width: 64.1736%; height: 21px;"> Consistently exceeds all requirements; superior performance</td>
+											</tr>
+											<tr style="height: 21px;">
+											<td style="width: 10%; height: 21px; text-align: center;"> 4</td>
+											<td style="width: 22.8264%; height: 21px;"> Exceed Expectations</td>
+											<td style="width: 64.1736%; height: 21px;"> Generally exceeds requirements with a minimum of guidance; Well Above Average Performance</td>
+											</tr>
+											<tr style="height: 21px;">
+											<td style="width: 10%; height: 21px; text-align: center;"> 3</td>
+											<td style="width: 22.8264%; height: 21px;"> Met Expectations</td>
+											<td style="width: 64.1736%; height: 21px;"> Responsibilities met in a wholly satisfactory manner; normal guidance and supervision Required</td>
+											</tr>
+											<tr style="height: 21px;">
+											<td style="width: 10%; height: 21px; text-align: center;"> 2</td>
+											<td style="width: 22.8264%; height: 21px;"> Below Expectations</td>
+											<td style="width: 64.1736%; height: 21px;"> Improvement needed in some key job areas; considerable guidance and supervision required</td>
+											</tr>
+											<tr style="height: 21px;">
+											<td style="width: 10%; height: 21px; text-align: center;"> 1</td>
+											<td style="width: 22.8264%; height: 21px;"> Never Met</td>
+											<td style="width: 64.1736%; height: 21px;">Major shortcomings in performance; performance improvement plan required to improve performance within a set time frame</td>
+											</tr>
+									</tbody>
+									</table>
+								</group>
+
+
+								<notebook>
+									<page name="part_a" string="Part A">
+										<field name="employee_rating_id" >
+											<tree editable="bottom">
+												<field name="state" invisible="1"/>
+												<field name="name" />
+                        <field name="appr_active_rel" invisible="1"/>
+												<field name="self_rating" style="text-align:center;" attrs="{'required':[('state','in',['to_emp'])],'readonly': ['|', ('state','not in', ('to_emp',))]}"/>
+												<field name="employee_comments" attrs="{'required':[('state','in',['to_emp'])],'readonly': ['|', ('state','not in', ('to_emp',))]}"/>
+												<field name="manager_rating" attrs="{'required':[('state','in',['sent'])],'readonly': ['|', ('state','not in', ('sent',))]}"/>
+												<field name="manager_comments" attrs="{'required':[('state','in',['sent'])],'readonly': ['|', ('state','not in', ('sent',))]}"/>
+											</tree>
+
+                      <form>
+                        <group>
+                         <field name="name"  readonly="True"/>
+                         <field name="self_rating"  readonly="True"/>
+                         <field name="employee_comments"  readonly="True"/>
+                         <field name="manager_rating"  readonly="True"/>
+                         <field name="manager_comments"  readonly="True"/>
+                        </group>
+                      </form>
+									</field>
+									<group>
+										<field name="emp_avg_jr_rating" readonly="True"/>
+										<field name="mng_avg_jr_rating" readonly="True"/>
+									</group>
+
+
+										<field name="employee_job_requirement_id" >
+											<form>
+												<group>
+													<field name="status" invisible="True"/>
+                          <field name="appr_active_kra_rel" invisible="1"/>
+                          <field name="kra_type" attrs="{'required':[('status','not in',['draft'])],'readonly': ['|',('status','in', ('to_emp','sent','to_approve','to_md'))]}"/>
+													<field name="kra_1" attrs="{'required':[('status','not in',['draft'])],'readonly': ['|', ('status','in', ('to_emp','sent','to_approve','to_md'))]}"/>
+													<field name="kra_description" attrs="{'required':[('status','not in',['draft'])],'readonly': ['|', ('status','in', ('to_emp','sent','to_approve','to_md'))]}"/>
+													<field name="weightage" attrs="{'readonly': ['|', ('status','in', ('to_emp','sent','to_approve','to_md'))]}"/>
+													<field name="emp_rating" attrs="{'required':[('status','in',['to_emp'])],'readonly': ['|', ('status','not in', ('to_emp',))]}"/>
+													<field name="sop" attrs="{'required':[('status','in',['to_emp'])],'readonly': ['|',('status','not in', ('to_emp',))]}"/>
+													<field name="man_rating" attrs="{'required':[('status','in',['sent'])],'readonly': ['|', ('status','not in', ('sent',))]}"/>
+													<field name="results" attrs="{'required':[('status','in',['sent'])],'readonly': ['|', ('status','not in', ('sent',))]}"/>
+												</group>
+											</form>
+
+											<tree >
+												<!-- <field name="status"/> -->
+                        <field name="kra_type" />
+												<field name="kra_1"/>
+												<field name="weightage"/>
+												<field name="emp_rating" />
+												<field name="man_rating" />
+											</tree>
+										</field>
+
+										<group>
+										  <field name="total_weightage" readonly="True"/>
+										  <field name="emp_avg_kra_rating" readonly="True"/>
+										  <field name="mng_avg_kra_rating" readonly="True"/>
+										</group>
+
+											<group>
+												<!-- <field name="overall_rating" attrs="{'required':[('state','in',['sent'])],'invisible': ['|', ('state','in', ('draft','to_emp',))], 'readonly':[('state','not in',('sent','to_approve','to_md'))]}"/> -->
+												<field name="overall_evaluation_of_performance" attrs="{'required':[('state','in',['sent'])],'invisible': ['|', ('state','in', ('draft','to_emp',))], 'readonly':[('state','in',('to_approve','to_md',))]}"/>
+												<field name="comments_by_hr" attrs="{'invisible': ['|', ('state','in', ('draft','to_emp','sent',))], 'readonly':[('state','in',('to_md',))]}"/>
+												<field name="comments_by_md" attrs="{'invisible': ['|', ('state','in', ('draft','to_emp','sent','to_approve',))]}"/>
+												<field name="employee_comment_set" invisible="True"/>
+											</group>
+
+									    </page>
+
+                 			<page name="salary_adjustment_request" string="Salary Adjustment Request" groups="hr.group_hr_manager">
+                    			<group>
+                        			<field name="date" attrs="{'required':[('state','in',['to_approve'])]}"/>
+                        			<field name="time_in_current_position"/>
+                        			<field name="time_with_company" readonly="True"/>
+                        			<field name="evaluation_list" attrs="{'required':[('state','in',['to_approve'])]}"/>
+                    			</group>
+                				<group string="SALARY INFORMATION">
+                        			<field name="job_grade" />
+                        			<field name="proposed_merit_increase"/>
+                        			<field name="current_salary" />
+                    			</group>
+                    			<group string="SALARY ADJUSTMENT PROPOSAL">
+
+                        			<field name="proposed_salary" />
+                        			<field name="proposed_promotion_list"/>
+                        			<field name="proposed_designation"/>
+                    			</group>
+                			</page>
+
+								</notebook>
+							</sheet>
+
+							<div class="oe_chatter">
+								<field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+								<field name="message_ids" widget="mail_thread"/>
+							</div>
+
+
+                </form>
+            </field>
+        </record>
+
+        <record id="view_employee_appraisal_tree" model="ir.ui.view">
+            <field name="name">employee.appraisal.tree</field>
+            <field name="model">employee.appraisal</field>
+            <field name="arch" type="xml">
+                <tree string="Employees Appraisal">
+                    <field name="appraisal_period_id"/>
+                    <field name="name"/>
+                    <field name="location"/>
+                    <field name="doj"/>
+                    <field name="department_id"/>
+                    <field name="reviewers_name"/>
+                    <field name="todays_date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_view_employee_appraisal_list_my" model="ir.actions.act_window">
+            <field name="name">Employees Appraisal</field>
+            <field name="res_model">employee.appraisal</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state', 'in', ('draft','to_emp','to_approve','to_md'))]</field>
+            <field name="context">{}</field>
+            <field name="view_id" eval="False"/>
+
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new Employee Appraisal.
+              </p><p>
+
+              </p>
+            </field>
+        </record>
+
+        <menuitem action="open_view_employee_appraisal_list_my" id="menu_open_view_employee_appraisal_list_my"
+          sequence="2" parent="menu_hr_appraisal"/>
+
+
+        <record id="open_view_employee_appraisal_manager" model="ir.actions.act_window">
+            <field name="name">Manager Approval</field>
+            <field name="res_model">employee.appraisal</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state', '=', ('sent'))]</field>
+            <field name="context">{}</field>
+            <field name="view_id" eval="False"/>
+
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to approve Employee Appraisal.
+              </p><p>
+
+              </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_open_view_employee_appraisal_manager_id" action="open_view_employee_appraisal_manager" name="Manager Approval" parent="menu_hr_appraisal" sequence="3" groups="hr.group_hr_user,hr.group_hr_manager"/>
+
+
+    </data>
+</odoo>

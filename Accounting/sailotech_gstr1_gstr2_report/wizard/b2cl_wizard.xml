@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_b2cl_view" model="ir.ui.view">
+        <field name="name">wizard.b2cl.report</field>
+        <field name="model">wizard.b2cl</field>
+        <field name="arch" type="xml">
+            <form string="Choose your date">
+                <p class="oe_gray">
+                    <b>Choose a Dates of Invoice To Generate GSTR-2 Report in Xlsx.</b>
+                </p>
+                        <group>
+                        <field name="start_date"/>
+                        </group>
+                        <group>
+                        <field name="end_date"/>
+                        </group>
+                <footer>
+                    <button name="print_b2cl_report" string="Generate Report" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="wizard_b2cl_gst_action" model="ir.actions.act_window">
+        <field name="name">GSTR-2 Report Between Choosen Dates</field>
+        <field name="res_model">wizard.b2cl</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_b2cl_view"/>
+        <field name="target">new</field>
+    </record>
+
+	<menuitem id="menu_b2cl" action="wizard_b2cl_gst_action" parent="main_menu_wizard_gstr" name="GSTR-2"/>
+</odoo>

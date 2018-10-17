@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <report id="visitors_report_month_view" 
+    string="visitors report" 
+    model="visitors.visitors" 
+    report_type="qweb-pdf" 
+    name="visitors.visitors_report_month" 
+    file="visitors.visitors_report_month" 
+
+  /> 
+  <data>
+        <template id="visitors_report_month">
+          <t t-call="web.external_layout">
+
+            <table class="table table-condensed table table-striped table table-bordered" style="margin-top: 200px;">
+              <thead style="background-color: #3498DB;">
+                <tr>
+                  <th>Badge Number</th>
+                  <th>Name</th>
+                  <th>Mobile</th>
+                  <th>Coming From</th>
+                  <th>Visit Purpose</th>
+                  <th>Badge Valid From</th>
+                  <th>Badge Valid To</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr t-foreach="docs" t-as="doc">
+                  <td><span t-field="doc.name"></span></td>
+                  <td><span t-field="doc.from_name"></span></td>
+                  <td><span t-field="doc.mobile"></span></td>
+                  <td><span t-field="doc.coming_from"></span></td>
+                  <td><span t-field="doc.visit_purpose"></span></td>
+                  <td><span t-field="doc.valid_from"></span></td>
+                  <td><span t-field="doc.valid_to"></span></td>
+                </tr>
+              </tbody>
+
+            </table>
+    </t>
+ 
+</template>
+</data>
+</odoo>
+
+    
+

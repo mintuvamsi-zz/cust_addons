@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_applicant_user,summary.detail,model_summary_detail,hr_recruitment.group_hr_recruitment_user,1,1,1,1
+access_hr_applicant_category_manager,summary.detail,model_summary_detail,hr_recruitment.group_hr_recruitment_manager,1,1,1,1
+access_hr_applicant_recruiter,summary.detail,model_summary_detail,group_hr_recruitment_recruiter_emp,1,1,1,1
+accecc_hr_applicant_recruiter,hr.applicant,model_hr_applicant,group_hr_recruitment_recruiter_emp,1,1,1,1
+access_hr_recruitment_stage_recruiter,hr.recruitment.stage.user,hr_recruitment.model_hr_recruitment_stage,group_hr_recruitment_recruiter_emp,1,0,0,0
+access_hr_recruitment_stage_recruiter,hr.recruitment.stage.manager,hr_recruitment.model_hr_recruitment_stage,group_hr_recruitment_recruiter_emp,1,1,1,1
+access_hr_recruitment_degree_recruiter,hr.recruitment.degree,hr_recruitment.model_hr_recruitment_degree,group_hr_recruitment_recruiter_emp,1,1,1,1
+access_hr_applicant_pmanager,hr.applicant.pmanager,model_hr_applicant,project.group_project_manager,1,1,1,1
+access_hr_recruitment_stage_pmanager,hr.recruitment.stage.pmanager,hr_recruitment.model_hr_recruitment_stage,project.group_project_manager,1,1,1,1
+access_summary_detail_pmanager,summary.detail,model_summary_detail,project.group_project_manager,1,1,1,1
+

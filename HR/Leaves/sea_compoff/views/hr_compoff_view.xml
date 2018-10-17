@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <!-- Holidays: Allocation Request -->
+        <record id="edit_holiday_new" model="ir.ui.view">
+            <field name="name">Comp-Off Request form</field>
+            <field name="model">hr.compoff</field>
+            <field name="arch" type="xml">
+                <form string="Leave Request">
+                <field name="can_reset" invisible="1"/>
+                <!-- <field name="type" invisible="1"/> -->
+               <!--  <field name="can_reset" invisible="1"/> -->
+
+                <header>
+                    <button string="Confirm" name="action_confirm" states="draft" type="object" class="oe_highlight"/>
+                     <button string="Approve" name="action_approve" states="confirm" type="object" groups="hr_holidays.group_hr_holidays_user" class="oe_highlight"/>
+                    <!-- <button string="Validate" name="action_validate" states="validate" type="object" groups="hr_holidays.group_hr_holidays_manager" class="oe_highlight"/> -->
+                    <button string="Refuse" name="action_refuse" states="confirm,validate," type="object" groups="hr_holidays.group_hr_holidays_user"/>
+                    <button string="Reset to Draft" name="action_draft" type="object" attrs="{'invisible': ['|', ('can_reset', '=', False), ('state', 'not in', ['confirm', 'refuse'])]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirm,validate,refuse,cancel"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="display_name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="type"/>
+                            <field name="holiday_status_id" attrs="{'readonly' : [('state', 'in', ['confirm','validate','refuse'])]}"/>
+                            <field name="name" attrs="{'readonly' : [('state', 'in', ['confirm','validate','refuse'])]}"/>
+                            <!-- <field name="holiday_status_id" context="{'employee_id':employee_id}"/> -->
+                            <label for="number_of_days_temp" string="Duration" attrs="{'readonly' : [('state', 'in', ['confirm','validate','refuse'])]}"/>
+                            <div>
+                                <div>
+                                    <field name="date_from" class="oe_inline" attrs="{'readonly' : [('state', 'in', ['confirm','validate','refuse'])]}"/>
+                                    <label string="-" class="oe_inline"/>
+                                    <field name="date_to" class="oe_inline" attrs="{'readonly' : [('state', 'in', ['confirm','validate','refuse'])]}"/>
+                                </div>
+                                <div>
+                                    <field name="number_of_days_temp" class="oe_inline" attrs="{'readonly' : [('state', 'in', ['confirm','validate','refuse'])]}"/> days
+                                </div>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="holiday_type" string="Mode" />
+                            <field name="employee_id"  groups="hr_holidays.group_hr_holidays_user"/>
+                            <field name="category_id" />
+                            <field name="department_id" groups="hr_holidays.group_hr_holidays_user" />
+                            <field name="payslip_status" groups="hr_holidays.group_hr_holidays_manager" attrs="{'invisible':[('type','=','add')]}" widget="toggle_button"/>
+                        </group>
+                        <group>
+                            <separator string="Comment by Employee"/>
+                            <field name="notes" nolabel="1" colspan="4" placeholder="Add a comment/reason..." attrs="{'readonly' : [('state', 'in', ['confirm','validate','refuse'])]}"/>
+                        </group>
+                        <!-- <div groups="hr_holidays.group_hr_holidays_manager" attrs="{'invisible':[('type','=','add')]}">
+                            <separator string="Comment by Manager"/>
+                            <field name="report_note" placeholder="e.g. Add a reason......"/>
+                        </div> -->
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+                 
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_compoff_simple" model="ir.ui.view">
+            <field name="name">hr.compoff.report_tree</field>
+            <field name="model">hr.compoff</field>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <tree decoration-danger="state == 'refuse'" decoration-info="state == 'draft'" string="Leaves Summary">
+                    <field name="employee_id"/>
+                    <!-- <field name="category_id" invisible="1"/> -->
+                    <field name="department_id" invisible="1"/>
+                    <field name="type"/>
+                    <field name="name"/>
+                    <!-- <field name="number_of_days" string="Number of Days" sum="Remaining Days"/> -->
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <!-- <field name="holiday_status_id"/> -->
+                    <!-- <field name="manager_id" invisible="1"/> -->
+                    <!-- <field name="user_id" invisible="1"/> -->
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="open_comp_off_allocation" model="ir.actions.act_window">
+            <field name="name">Compoff Allocation Request</field>
+            <field name="res_model">hr.compoff</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click here to create a new Comp-Off request.
+                </p>
+            </field>
+        </record>
+
+
+        <!-- <record id="view_super_approval" model="ir.ui.view">
+            <field name="name">super.manager.approval.tree</field>
+            <field name="model">hr.holidays</field>
+            <field name="priority">23</field>
+            <field name="view_type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Super Manager Approval">
+                    <field name="employee_id"/>
+                    <field name="holiday_type"/>
+                    <field name="category_id"/>
+                    <field name="holiday_status_id"/>
+                    <field name="name"/>
+                    <field name="number_of_days"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+ -->
+
+
+
+        <record id="open_super_holidays" model="ir.actions.act_window">
+            <field name="name">Super Manager approval</field>
+            <field name="res_model">hr.holidays</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="hr_holidays.view_holiday"/>
+            <field name="context">{
+                'default_type': 'remove',
+                'search_default_my_leaves': 1,
+                'needaction_menu_ref':
+                [
+                    'hr_holidays.menu_open_company_allocation',
+                ]
+            }</field>
+            <field name="domain">[('type','=','remove'),('super_manager_approval_status','=','True')]</field>
+            <field name="search_view_id" ref="hr_holidays.view_hr_holidays_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new leave request.
+              </p><p>
+                Once you have recorded your leave request, it will be sent
+                to a Super manager for validation. Be sure to set the right leave
+                type (recuperation, legal leaves, sickness) and the exact
+                number of open days related to your leave.
+              </p>
+            </field>
+        </record>
+
+        <record id="edit_sea_holiday_new" model="ir.ui.view">
+            <field name="name">Leave Request</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_new"/>
+            <field name="arch" type="xml">
+                    <xpath expr="/form/header/button[@name='action_approve']" position="after">
+                     <button string="Send to Super Manager" name="submit_to_super_manager" states="draft,confirm" type="object" class="oe_highlight" attrs="{'invisible': ['|','|',('more_than_three','!=',True),('type','=','add'),]}" groups="hr_holidays.group_hr_holidays_manager,hr_holidays.group_hr_holidays_user"/>
+                </xpath>
+                <xpath expr="/form/header/button[@name='action_approve']" position="replace">
+                    
+                     <button name="action_approve" string="Approve" states="confirm" type="object" class="oe_highlight" attrs="{'invisible': ['|','|',('more_than_three','=',True)]}" groups="hr_holidays.group_hr_holidays_user"/>
+                    <!--   <button name="action_approve" string="Approve" states="confirm" type="object" class="oe_highlight" attrs="{'invisible': ['|','|',('more_than_three','=',False),]}" groups="hr_holidays.group_hr_holidays_user"/> -->
+                </xpath>
+
+                <!-- New Code for hiding Reset to Draft-->
+                <xpath expr="/form/header/button[@name='action_draft']" position="replace">
+                    
+                     <button string="Reset to Draft" name="action_draft" type="object"
+                            attrs="{'invisible': [('state','=','refuse')]}"/>
+                </xpath>
+
+                <group>
+                    <field name="super_manager_approval_status" invisible="True"/>
+                    <field name="more_than_three" invisible="True"/>
+                    <field name="send_to_sup_mang" invisible="True"/>
+                </group>
+<!-- changes for the readonly after send to manager -->
+                <xpath expr="//group//field[@name='name']" position="replace">
+                    <field name="name" attrs="{'readonly' : [('state', 'in', ['confirm','sent_super','validate','refuse'])]}"/>
+                </xpath>
+                <xpath expr="//group//field[@name='holiday_status_id']" position="replace">
+                    <field name="holiday_status_id" context="{'employee_id':employee_id}" attrs="{'readonly' : [('state', 'in', ['confirm','sent_super','validate','refuse'])]}"/>
+                </xpath>
+
+                <xpath expr="//div//field[@name='date_from']" position="replace">
+                    <field name="date_from" attrs="{'readonly' : [('state', 'in', ['confirm','sent_super','validate','refuse'])], 'required':[('type', '=', 'remove')]}"/>
+                </xpath>
+                <xpath expr="//div//field[@name='date_to']" position="replace">
+                    <field name="date_to" attrs="{'readonly' : [('state', 'in', ['confirm','sent_super','validate','refuse'])], 'required':[('type', '=', 'remove')]}"/>
+                </xpath>
+                <xpath expr="//div//field[@name='number_of_days_temp']" position="replace">
+                    <field name="number_of_days_temp" class="oe_inline" attrs="{'readonly' : [('state', 'in', ['confirm','sent_super','validate','refuse'])]}"/> days
+                </xpath>
+
+
+                <xpath expr="//group//field[@name='employee_id']" position="replace">
+                    <field name="employee_id" attrs="{'required':[('holiday_type','=','employee')],'invisible':[('holiday_type','=','category')],'readonly' : [('state', 'in', ['confirm','sent_super','validate','refuse'])]}" groups="hr_holidays.group_hr_holidays_user"/>
+                </xpath>
+
+
+                <xpath expr="//group//field[@name='department_id']" position="replace">
+                    <field name="department_id" groups="hr_holidays.group_hr_holidays_user" attrs="{'readonly':['|','|' ,('type','=','add'),('holiday_type','=','category'),('state','in', ['confirm','sent_super','validate','refuse'])],'invisible':[('holiday_type','=','category')]}"/>
+
+                </xpath>
+<!-- end  -->
+
+            </field>
+        </record>
+        <record id="hr_holidays.open_department_holidays_approve" model="ir.actions.act_window">
+            <field name="name">Department Leaves</field>
+            <field name="res_model">hr.holidays</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="context">{'search_default_approve':1,'search_default_my_team_leaves':1}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click here to create a new leave request.
+                </p>
+            </field>
+            <field name="domain">[('type','=','remove')]</field>
+            <field name="search_view_id" ref="hr_holidays.view_hr_holidays_filter"/>
+        </record>
+
+        <record id="hr_holidays.open_department_holidays_allocation_approve" model="ir.actions.act_window">
+            <field name="name">Department Leaves Allocation</field>
+            <field name="res_model">hr.holidays</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="context">{'default_type':'add', 'search_default_approve':1,'search_default_my_team_leaves':1}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click here to create a new leave allocation.
+                </p>
+            </field>
+            <field name="domain">[('type','=','add')]</field>
+            <field name="search_view_id" ref="hr_holidays.view_hr_holidays_filter"/>
+        </record>
+
+        <menuitem
+            id="menu_comp_off_allocation"
+            name="Compoff"
+            parent="hr_holidays.menu_hr_holidays_root"
+            action="open_comp_off_allocation"
+            groups="base.group_user"
+            sequence="44"/>
+
+            <menuitem
+                id="hr_holidays.menu_open_allocation_holidays"
+                parent="hr_holidays.menu_hr_holidays_my_leaves"
+                action="hr_holidays.open_allocation_holidays"
+                groups="hr_holidays.group_hr_holidays_user,group_hr_holidays_super_manager"
+                sequence="40"/>
+
+            <menuitem
+            id="hr_holidays.menu_open_company_allocation"
+            name="Leaves Summary"
+            parent="hr_holidays.menu_hr_holidays_my_leaves"
+            action="hr_holidays.open_company_allocation"
+            groups="hr_holidays.group_hr_holidays_user,group_hr_holidays_super_manager"
+            sequence="0"/>
+
+
+
+        <!-- <menuitem action="open_comp_off_allocation" name="Comp-Off Allocation" id="comp_off_allocation_menu_new" parent="menu_compoff_root"/> -->
+
+
+        <record id="hr_super_manager_approval_form" model="ir.ui.view">
+            <field name="name">HR Super Maneger Form</field>
+            <field name="model">hr.super_manager</field>
+            <field name="arch" type="xml">
+                <form string="Super Manager Approval">
+                <!-- <field name="can_reset" invisible="1"/> -->
+                <!-- <field name="type" invisible="1"/> -->
+               <!--  <field name="can_reset" invisible="1"/> -->
+
+                <header>
+                    <!-- <button string="Confirm" name="action_confirm" states="draft" type="object" class="oe_highlight"/> -->
+                    <button string="Approve" name="super_action_approve" states="confirm,sent_super" type="object" groups="sea_compoff.group_hr_holidays_super_manager" class="oe_highlight"/>
+                    <!-- <button string="Validate" name="action_validate" states="validate" type="object" groups="hr_holidays.group_hr_holidays_manager" class="oe_highlight"/> -->
+                    <button string="Refuse" name="super_action_refuse" states="confirm,sent_super,validate," type="object" groups="hr_holidays.group_hr_holidays_user"/>
+                    <!-- New Code for hiding Reset to Draft -->
+                    <button string="Reset to Draft" name="super_action_draft" type="object" attrs="{'invisible': [('state','=','refuse')]}"/>
+                    
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirm,validate,refuse,cancel"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="display_name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <!-- <field name="type"/> -->
+                            <field name="name" attrs="{'readonly' : [('state', 'in', ['confirm','sent_super','validate','refuse'])]}"/>
+                            <field name="holiday_status_id" context="{'employee_id':employee_id}"/>
+                            <label for="number_of_days_temp" string="Duration"/>
+                            <div>
+                                <div>
+                                    <field name="date_from" class="oe_inline" attrs="{'readonly' : [('state', 'in', ['confirm','sent_super','validate','refuse'])]}"/>
+                                    <label string="-" class="oe_inline"/>
+                                    <field name="date_to" class="oe_inline" attrs="{'readonly' : [('state', 'in', ['confirm','sent_super','validate','refuse'])]}"/>
+                                </div>
+                                <div>
+                                    <field name="number_of_days_temp" class="oe_inline" attrs="{'readonly' : [('state', 'in', ['confirm','sent_super','validate','refuse'])]}"/> days
+                                </div>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="holiday_type" string="Mode" />
+                            <field name="employee_id"  groups="hr_holidays.group_hr_holidays_user"/>
+                            <!-- <field name="category_id" /> -->
+                            <field name="department_id" groups="hr_holidays.group_hr_holidays_user" />
+                        </group>
+                        <group>
+                            <separator string="Comment by Employee"/>
+                            <field name="notes" nolabel="1" colspan="4" placeholder="Add a comment/reason..."/>
+                        </group>
+                        <!-- <div groups="hr_holidays.group_hr_holidays_manager" attrs="{'invisible':[('type','=','add')]}">
+                            <separator string="Comment by Manager"/>
+                            <field name="report_note" placeholder="e.g. Add a reason......"/>
+                        </div> -->
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="hr_super_manager_tree" model="ir.ui.view">
+            <field name="name">hr.super_manager.report_tree</field>
+            <field name="model">hr.super_manager</field>
+            <field name="priority">22</field>
+            <field name="arch" type="xml">
+                <tree decoration-danger="state == 'refuse'" decoration-info="state == 'draft'" string="Leaves Summary">
+                    <field name="employee_id"/>
+
+                    <field name="department_id" invisible="1"/>
+                    <!-- <field name="type"/> -->
+                    <field name="name"/>
+                    <!-- <field name="number_of_days" string="Number of Days" sum="Remaining Days"/> -->
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="holiday_status_id"/>
+                    <!-- <field name="manager_id" invisible="1"/> -->
+                    <!-- <field name="user_id" invisible="1"/> -->
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="open_super_manager_approval" model="ir.actions.act_window">
+            <field name="name">HR Super Manager Approval</field>
+            <field name="res_model">hr.super_manager</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click here for Hr super manager Approval.
+                </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_super_manager_approval"
+            parent="hr_holidays.menu_hr_holidays_approvals"
+            action="open_super_manager_approval"
+            groups="sea_compoff.group_hr_holidays_super_manager"
+            sequence="22"/>
+        <menuitem
+            name="Leaves Analysis"
+            id="hr_holidays.menu_hr_available_holidays_report_tree"
+            action="hr_holidays.action_hr_available_holidays_report"
+            parent="hr_holidays.menu_hr_holidays_report" sequence="5"/> 
+
+</odoo>

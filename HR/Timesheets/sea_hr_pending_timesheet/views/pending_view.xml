@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="pending_timesheet_pivot" model="ir.ui.view">
+            <field name="name">pending.timesheet.rp.pivot</field>
+            <field name="model">pending.timesheet.rp</field>
+            <field name="arch" type="xml">
+               <pivot string="Pending Time Sheets Report">
+                    <field name="emp_id" />                       
+                    <field name="employee" />
+                    <field name="day"/>
+                    <field name="work_email" />
+                    <field name="manager_name" />   
+                </pivot>
+            </field>
+        </record>
+
+        <record id="pending_timesheet_tree" model="ir.ui.view">
+            <field name="name">pending.timesheet.rp.tree</field>
+            <field name="model">pending.timesheet.rp</field>
+            <field name="arch" type="xml">
+       
+                <tree>
+                    <field name="emp_id" />                       
+                    <field name="employee" />
+                    <field name="day"/>
+                    <field name="work_email" />
+                    <field name="manager_name" />
+                </tree>
+
+            </field>
+        </record>
+
+        <record id="pending_timesheet_filter" model="ir.ui.view">
+            <field name="name">pending.timesheet.rp.select</field>
+            <field name="model">pending.timesheet.rp</field>
+            <field name="arch" type="xml">
+                <search string="Search Pending TimeSheets">
+                    <filter string="Month" context="{'group_by':'day'}"/>
+                    <filter string="Manager" context="{'group_by':'manager_name'}"/>
+                    <filter string="Employee" context="{'group_by':'employee'}"/>
+                    <filter string="Week" domain="[ ]" context="{'group_by': 'day:week'}" />
+                </search>
+            </field>
+        </record>
+
+        <record id="pending_timesheet_action" model="ir.actions.act_window">
+            <field name="name">Pending Time Sheet's</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pending.timesheet.rp</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,pivot</field>
+            <field name="context">{'group_by':'manager_name'}</field>    
+        </record>
+
+  <!--  
+
+
+      <menuitem name="Pending Time Sheet's" 
+                id="pending_timesheet_action_id" 
+                action="pending_timesheet_action" 
+                groups="hr_timesheet.group_timesheet_manager"
+                parent="hr_timesheet.menu_timesheets_reports_timesheet" /> 
+				
+				 -->
+
+</odoo>

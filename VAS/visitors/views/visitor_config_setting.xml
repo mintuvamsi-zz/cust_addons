@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--  -->
+
+    <record id="visitors_config_settings" model="ir.ui.view">
+        <field name="name">visitors.config.setting.view.form</field>
+        <field name="model">visitors.config.settings</field>
+        <field name="name">visitors.list.view</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- <field name="name" invisible="1"/> -->
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+
+    
+
+    <record id="visitors_config_settings_action" model="ir.actions.act_window">
+        <field name="name">Configuration</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">visitors.config.settings</field>
+        <field name="view_mode">tree,form,kanban,pivot</field>
+    </record>
+
+
+    <menuitem name="E-mail id" 
+            id="visitors_menu_sub_configuration" 
+            parent="visitors_menu_parent"/> 
+      
+    <menuitem name="Visitors E-mail" 
+            id="visitors_menu_list_configuration" 
+            parent="visitors_menu_sub_configuration" 
+            action="visitors_config_settings_action"
+            sequence="130"/>
+</odoo>

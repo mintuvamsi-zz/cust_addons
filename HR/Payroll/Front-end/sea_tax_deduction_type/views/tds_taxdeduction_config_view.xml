@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- explicit list/Tree view definition -->
+    
+    <record model="ir.ui.view" id="tax_deduction_type_view33">
+      <field name="name">taxdeduction.type.list</field>
+      <field name="model">tds.taxdeductiontypes</field>
+      <field name="arch" type="xml">
+        <tree>
+          
+          <field name="sectiontypes"/>
+          <field name="deduction_desc"/>
+          <field name="limit_level"/>
+          <field name="deduction_limit"/>
+          <field name="deductionlimit_type"/>
+          
+        
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="tax_deduction_type_formview">
+      <field name="name">taxdeduction.type.form.view</field>
+      <field name="model">tds.taxdeductiontypes</field>
+      <field name="arch" type="xml">
+        <form>
+        <sheet><group>
+            <group>
+              
+              <field name="sectiontypes"/>
+              <field name="deduction_desc"/>
+            </group>
+            <group>
+              <field name="deduction_limit"/>
+              <field name="deductionlimit_type"/>
+              <field name="limit_level"/>
+            </group>
+        </group></sheet>
+        </form>
+      </field>
+    </record>
+
+
+
+	<record model="ir.actions.act_window" id="tax_deductiontype_action_window">
+      <field name="name">Tax deduction list</field>
+      <field name="res_model">tds.taxdeductiontypes</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+	<menuitem name="Tax deduction types" 
+    	id="tds_tax_deduction_type_id" 
+    	parent="hr_payroll.menu_hr_payroll_configuration" 
+    	action="tax_deductiontype_action_window" 
+    	/>
+
+  <!-- .xml file for sequence -->
+  <!-- <record id="seq_taxdeductiontype" model="ir.sequence">
+        <field name="name">taxdeductiontype_sequencer</field>
+        <field name="code">tds.taxdeductiontypes</field>
+        <field name="prefix">BDG/%(day)s/%(month)s/</field>
+        <field name="padding">1</field>
+    </record> -->
+</data>
+</odoo>
