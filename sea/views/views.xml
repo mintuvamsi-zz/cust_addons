@@ -1,0 +1,79 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="sea.form">
+      <field name="name">sea list</field>
+      <field name="model">sea.sea</field>
+      <field name="arch" type="xml">
+        <form>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+
+        <group>
+          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."/>
+
+          <ul id="myUL">
+            <li><a href="#">Adele</a></li>
+            <li><a href="#">Agnes</a></li>
+
+            <li><a href="#">Billy</a></li>
+            <li><a href="#">Bob</a></li>
+
+            <li><a href="#">Calvin</a></li>
+            <li><a href="#">Christina</a></li>
+            <li><a href="#">Cindy</a></li>
+          </ul>
+        </group>
+        <script>
+            function myFunction() {
+                // Declare variables
+                var input, filter, ul, li, a, i;
+                input = document.getElementById('myInput');
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("myUL");
+                li = ul.getElementsByTagName('li');
+
+                // Loop through all list items, and hide those who don't match the search query
+                for (i = 0; i + li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+                    }
+                }
+            }
+        </script>
+        </form>
+      </field>
+    </record>
+    
+
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="sea.action_window">
+      <field name="name">sea window</field>
+      <field name="res_model">sea.sea</field>
+      <field name="view_mode">form</field>
+    </record>
+
+    <!-- Top menu item -->
+    
+    <menuitem name="sea" id="sea.menu_root"/>
+    
+    <!-- menu categories -->
+    
+    <menuitem name="Menu 1" id="sea.menu_1" parent="sea.menu_root"/>
+    <!-- <menuitem name="Menu 2" id="sea.menu_2" parent="sea.menu_root"/> -->
+    
+    <!-- actions -->
+    
+    <menuitem name="List" id="sea.menu_1_list" parent="sea.menu_1"
+              action="sea.action_window"/>
+    <!-- <menuitem name="Server to list" id="sea" parent="sea.menu_2"
+              action="sea.action_server"/> -->
+    
+  </data>
+</odoo>
