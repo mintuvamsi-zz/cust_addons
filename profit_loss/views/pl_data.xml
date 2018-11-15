@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="pl_page" name="profitloss_details">
+        <script type="text/javascript">
+
+        </script>
+      <h6>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      </h6>
+        <t>
+          <div class="jumbotron" style="background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);">
+            <div>
+              <center>
+                 <h1>Profit Loss Report</h1>
+                 <input type="button" onclick="print()" value="print" class="btn btn-info"/>
+              </center>
+              <br/>
+            </div>
+            <center>
+                <table border="1" style="text-align:center" >
+                    <thead>
+                        <tr>
+                            <th  height="55px">Income</th>
+                            <th  height="55px">Income Product Name</th>
+                            <th  height="55px">Income Entity Name</th>
+                            <th  height="55px">Total Income</th>
+                            <th  height="55px">Expense Name</th>
+                            <th  height="55px">Expense Product Name</th>
+                            <th  height="55px">Expense Entity Name</th>
+                            <th  height="55px">Total Expense</th>
+                            <th  height="55px">Net Profit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="pldata" t-as="data">
+                            <tr>
+                                <td>
+                                    <t t-esc="data.incname"/>
+                                </td>
+                                <td>
+                                    <t t-esc="data.incproductname"/>
+                                </td>
+                                <td>
+                                    <t t-esc="data.incentityname"/>
+                                </td>
+                                <td>
+                                    <t t-esc="data.totincome"/>
+                                </td>
+                                <td>
+                                    <t t-esc="data.expname"/>
+                                </td>
+                                <td>
+                                    <t t-esc="data.expproductname"/>
+                                </td>
+                                <td>
+                                    <t t-esc="data.expentityname"/>
+                                </td>
+                                <td>
+                                    <t t-esc="data.totexpense"/>
+                                </td>
+                                <td>
+                                    <t t-esc="data.grossprofit"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </center>
+          </div>
+        </t>
+    </template>
+</odoo>
