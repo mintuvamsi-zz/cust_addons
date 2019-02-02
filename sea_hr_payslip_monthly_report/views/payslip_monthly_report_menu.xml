@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_payslip_monthly_report_view_pivot" model="ir.ui.view">
+            <field name="name">hr.monthly.payslip.report.view.pivot</field>
+            <field name="model">sea.payslip.monthly.report</field>
+            <field name="arch" type="xml">
+                <pivot string="Payslip Monthly Report Analysis">
+                    <field name="name" type="row"/>
+                    <!-- <field name="emp_id" type="row"/> -->      
+                    <field name="period" type="col"/>
+                    <field name="basic"  type="measure"/>
+                    <field name="hra"  type="measure"/>
+                    <field name="spa_flexible"  type="measure"/>
+                    <field name="ntar"  type="measure"/>
+                    <field name="project"  type="measure"/>
+                    <field name="shift"  type="measure"/>
+                    <field name="incentives"  type="measure"/>
+                    <field name="gross"  type="measure"/>
+                    <field name="emp_pf"  type="measure"/>
+                    <field name="emp_esi"  type="measure"/>
+                    <field name="pt"  type="measure"/>
+                    <field name="mv"  type="measure"/>
+                    <field name="other_deductions"  type="measure"/>
+                    <field name="unpaid_days"  type="measure"/>
+                    <field name="tds"  type="measure"/>
+                    <field name="total_deductions"  type="measure"/>
+                    <field name="netsalary"  type="measure"/>
+
+
+                </pivot>
+            </field>
+        </record>
+
+        <record id="hr_payslip_monthly_report_view_graph" model="ir.ui.view">
+            <field name="name">hr.monthly.payslip.report.graph</field>
+            <field name="model">sea.payslip.monthly.report</field>
+            <field name="arch" type="xml">
+                <graph string="Payslip Analysis">
+                    <field name="period" type="row"/>
+                    <field name="netsalary" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="hr_payslip_search_monthly_view_report" model="ir.ui.view">
+            <field name="name">hr.monthly.view.report.search</field>
+            <field name="model">sea.payslip.monthly.report</field>
+            <field name="arch" type="xml">
+                <search string="Payslip Report Search Analysis">
+                    <field name="name"/>
+                    <field name="period"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <filter string="This Year" name="year" domain="[('period','&lt;=', time.strftime('%%Y-12-31')),('period','&gt;=',time.strftime('%%Y-01-01')),('date_to','&lt;=', time.strftime('%%Y-12-31')),('date_to','&gt;=',time.strftime('%%Y-01-01'))]"/>
+                    <filter name="month" string="This Month"
+                            domain="[
+                                '&amp;',
+                                ('period', '>=', (context_today() + relativedelta(day=1)).strftime('%Y-%m-%d')),
+                                ('period', '&lt;=', (context_today() + relativedelta(months=1, day=1, days=-1)).strftime('%Y-%m-%d')),
+                            ]"/>
+                    <filter name="salary_done" string="Done State" domain="[('state','=', 'done')]"/>
+                    <filter name="Draft" string="Draft" domain="[('state','=','draft')]"/>
+                    <separator/>
+                    <field name="department_id"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Employee" name="Employee" context="{'group_by':'name'}"/>
+                        <filter string="Job" context="{'group_by':'job_id'}"/>
+                        <filter string="Department" context="{'group_by':'department_id'}"/>
+                        <filter name="status" string="Status" context="{'group_by':'state'}"/>
+                        <filter string="Company" groups="base.group_multi_company" context="{'group_by':'company_id'}"/>
+                        <filter name="Month Wise" string="Month Wise" context="{'group_by':'period'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="action_hr_monthly_payslip_view_report" model="ir.actions.act_window">
+            <field name="res_model">sea.payslip.monthly.report</field>
+            <field name="name">Payslip Structure</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">pivot,graph</field>
+            <field name="context">{'search_default_year':1}</field>
+            <field name="help">This report helps in payroll structure analysis. This helps you to check your pay slips and sorting it out from different group
+                        criteria (Employee, Job title, Department, Company, Pay slip etc.).</field>
+        </record>
+
+        
+        
+        <menuitem id="hr_monthly_payslip_pivot_report_view_id" name="Payslip Monthly Report"
+                  parent="l10n_in_hr_payroll.menu_l10n_in_hr_payroll_report" action="action_hr_monthly_payslip_view_report"
+                  groups="hr.group_hr_manager" sequence="10"/>
+    </data>
+</odoo>
+
+
