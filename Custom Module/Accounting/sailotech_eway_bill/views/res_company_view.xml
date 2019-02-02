@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   
+   
+    <record id="base_view_company_form" model="ir.ui.view">
+        <field name="name">res.company.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[1]" position="after" >
+                <page string="E-Way Bill Settings">
+                    <group>
+                        <field name="app_type" string="Application Type"/>
+                        <field name="clientid" attrs="{'invisible': [('app_type','=','withjson')]}"/>
+                        <field name="client_secret" attrs="{'invisible': [('app_type','=','withjson')]}"/>
+                    </group>
+                    <group>
+                        <field name="auth_url" attrs="{'invisible': [('app_type','=','withjson')]}"/>
+                        <field name="generate_url" attrs="{'invisible': [('app_type','=','withjson')]}"/>
+                        <field name="cancel_url" attrs="{'invisible': [('app_type','=','withjson')]}"/>
+                        <field name="vehicale_update_url" attrs="{'invisible': [('app_type','=','withjson')]}"/>
+                        <field name="consolidated_url" attrs="{'invisible': [('app_type','=','withjson')]}"/>
+                    </group>
+            </page>
+            </xpath>
+            
+           
+        </field>
+    </record>
+    
+</odoo>

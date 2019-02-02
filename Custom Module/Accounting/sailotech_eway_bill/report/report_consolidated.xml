@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<template id="report_consolidated_eway_bill">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="header">
+
+							<tr><td><img t-if="docs.eway_bill_no" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', docs.eway_bill_no, 600, 120)" style="max-height:50pt;max-width:100%;" class="pull-right"/></td></tr>
+							
+							<img src='sailotech_eway_bill/static/description/company_logo.png'
+								style="width: 200px; height: 80px;" class="pull-left" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<t t-call="web.external_layout">
+						<div class="row">
+							<div class="col-lg-12">
+								<table class="table table-condensed table table-striped">
+									<thead style="background-color: #3498DB;">
+										<tr>
+											<th
+												style="border: 1px !important; border-style: solid !important; border-color: #fff; color: #fff !important;">Conolidated E-Way Bill No</th>
+											<th
+												style="border: 1px !important; border-style: solid !important; border-color: #fff; color: #fff !important;">Consolidated E-Way Bill Date</th>
+
+										</tr>
+									</thead>
+									<tbody class="sale_tbody">
+										<tr>
+											<td
+												style="border: 1px !important; border-style: solid !important; border-color: #fff !important;">
+												<div t-field="docs.eway_bill_no" />
+											</td>
+											<td
+												style="border: 1px !important; border-style: solid !important; border-color: #fff !important;">
+												<div t-field="docs.eway_bill_date" />
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<table class="table table-condensed table table-striped">
+									<thead style="background-color: #3498DB;">
+										<tr>
+											<th
+												style="border: 1px !important; border-style: solid !important; border-color: #fff; color: #fff !important;">Company Name</th>
+											<th
+												style="border: 1px !important; border-style: solid !important; border-color: #fff; color: #fff !important;">From Place</th>
+
+											<th
+												style="border: 1px !important; border-style: solid !important; border-color: #fff; color: #fff !important;">State Of Change</th>
+										</tr>
+									</thead>
+									<tbody class="sale_tbody">
+										<tr>
+											<td
+												style="border: 1px !important; border-style: solid !important; border-color: #fff !important;">
+												<div t-field="docs.from_name" />
+												<div t-field="docs.from_gstin" />
+											</td>
+											<td
+												style="border: 1px !important; border-style: solid !important; border-color: #fff !important;">
+												<div t-field="docs.from_place" />
+											</td>
+											<td
+												style="border: 1px !important; border-style: solid !important; border-color: #fff !important;">
+												<div t-field="docs.from_state" />
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<table class="table table-condensed table table-striped">
+									<thead style="background-color: #3498DB;">
+										<tr>
+
+
+											<th
+												style="border: 1px !important; border-style: solid !important; border-color: #fff; color: #fff !important;">Transporter
+												Doc No
+											</th>
+											<th
+												style="border: 1px !important; border-style: solid !important; border-color: #fff; color: #fff !important;">Transporter
+												Date
+											</th>
+
+											<th
+												style="border: 1px !important; border-style: solid !important; border-color: #fff; color: #fff !important;">Mode</th>
+
+											<th
+												style="border: 1px !important; border-style: solid !important; border-color: #fff; color: #fff !important;">Vehicle No</th>
+										</tr>
+									</thead>
+									<tbody class="sale_tbody">
+										<tr>
+
+
+											<td
+												style="border: 1px !important; border-style: solid !important; border-color: #fff !important;">
+												<div t-field="docs.transport_doc_no" />
+											</td>
+											<td
+												style="border: 1px !important; border-style: solid !important; border-color: #fff !important;">
+												<div t-field="docs.transport_doc_date" />
+											</td>
+											<td
+												style="border: 1px !important; border-style: solid !important; border-color: #fff !important;">
+												<div t-field="docs.transport_mode" />
+											</td>
+											<td
+												style="border: 1px !important; border-style: solid !important; border-color: #fff !important;">
+												<div t-field="docs.vehicle_no" />
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<table class="table table-condensed able table-striped"
+									name="consolidated_item_id">
+									<thead style="background-color: #3498DB; color: #FFF !important;">
+										<tr>
+											<th>E-Way Bill No</th>
+										</tr>
+									</thead>
+									<tbody class="sale_tbody">
+										<t t-foreach="docs.consolidated_item_id" t-as="item">
+											<tr>
+												<td>
+													<span t-field="item.eway_bill_no" />
+												</td>
+											</tr>
+										</t>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</t>
+				</div>
+			</div>
+		</template>
+	</data>
+</odoo>

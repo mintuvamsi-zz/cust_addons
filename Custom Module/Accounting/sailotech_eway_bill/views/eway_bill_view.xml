@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem name="E-Way Bill" id="sailotech_ewaybill_parent_menu"/>
+     <menuitem name="E-Way Bill" id="sailotech_ewaybill_sub_menu" parent="sailotech_ewaybill_parent_menu"/>
+
+	<data>
+
+        <record id="sailotech_ewaybill_tree_view" model="ir.ui.view">
+                    <field name="name">sailotech.ewaybill.tree</field>
+                    <field name="model">eway.bill</field>
+                    <field name="arch" type="xml">
+                      <tree>
+                            <field name="gstin" string="Company GSTIN"/>
+                            <field name="from_name" string="Company Name"/>
+                            <field name="to_gstin" string="Customer GSTIN"/>
+                            <field name="to_name" string="Customer Name"/>
+                            <field name="transaction_type"/>
+                            <field name="sub_type"/>
+                            <field name="doc_type"/>
+                            <field name="doc_no"/>
+                            <field name="doc_date"/>
+                            <field name="status"/>
+                            <field name="amount_total" string="Total Amount"/>
+                        </tree>
+                    </field>
+        </record>
+
+
+        <record id="sailotech_ewaybill_form_view" model="ir.ui.view">
+            <field name="name">sailotech.ewaybill.form</field>
+            <field name="model">eway.bill</field>
+            <field name="arch" type="xml">
+
+
+                <form string="Transactions">
+
+
+                    <header>
+                    <button name="cancel_eway_bill" type="object" string="Cancel E-Way Bill" class="btn-primary o_sale_print" attrs="{'invisible' : [('status', 'not in', ['active'])]}"/>
+                    <button name="%(open_update_vehicle_details_action_id)d" type="action" string="Update Vehicle Details" class="btn-primary o_sale_print" attrs="{'invisible' : [('status', 'in', ['draft','inactive','cancel'])]}"/>
+                    <button name="generate_eway_bill" type="object" string="Generate E-Way bill" class="btn-primary o_sale_print" attrs="{'invisible' : [('status', 'in', ['active','cancel'])]}"/>
+                    <field name="status" widget="statusbar" statusbar_visible="draft,active,inactive,cancel"/>
+                </header>
+
+
+                    <sheet>
+                        <group>
+                            <group>
+                              <field name="from_name"/>
+                              <field name="gstin"/>
+                              <!-- <field name="company_id"/> -->
+                        		<field name="transaction_type"/>
+                                <field name="sub_type"/>
+                                <field name="doc_type"/>
+                                <field name="doc_no"/>
+                                <field name="doc_date"/>
+                                <field name="eway_bill_no"/>
+                                <field name="eway_bill_date"/>
+                                <field name="valid_date"/>
+                                <field name='tokan_gen_time'/>
+                            </group>
+                            <group>
+                                <field name="to_name"/>
+                                <field name="to_gstin"/>
+                                <field name="to_add"/>
+                                <field name="to_add1" string=""/>
+                                <field name="to_state"/>
+                                <field name="transport_mode"/>
+                                <field name="transport_distance"/>
+                                <field name="vehicle_no"/>
+                                <field name="vehicle_type"/>
+                                <field name="transporter_name"/>
+                                <field name="transporter_id"/>
+                                <field name="transport_doc_no"/>
+                                <field name="transport_doc_date"/>
+                                 <field name="veh_valid_from"/>
+                                 <field name="veh_valid_upto"/>
+                                
+                            </group>
+                        </group>
+                        <notebook>
+                                <page string="Bill">
+                                    <field name="ewaybill_item_id">
+                                        <form>
+                                            <group>
+                                                <group>
+                                                    <field name="product_id" />
+                                                    <field name="description" />
+                                                    <field name="hsn" />
+                                                </group>
+                                                <group>
+                                                    <field name="quantity" />
+                                                    <field name="uom" />
+                                                    <field name="price_unit" />
+                                                    <field name="taxes_id"/>
+
+                                                </group>
+                                            </group>
+
+
+                                            </form>
+                                         <tree string="E-way bill Lines" editable="bottom">
+                                                    <field name="product_id" />
+                                                        <field name="description" />
+                                                        <field name="hsn" />
+                                                        <field name="quantity" />
+                                                        <field name="uom" />
+                                                        <field name="price_unit" />
+                                                        <field name="taxes_id"/>
+                                                        <!-- <field name="sgst1"/>
+                                                        <field name="cgst1"/>
+                                                        <field name="igst1"/>
+                                                        <field name="cess1"/> -->
+                                                        <field name="tax_amount"/>
+                                                        <field name="price_total" />
+                                            </tree>
+                                    </field>
+
+                                    <group class="oe_subtotal_footer oe_right">
+                                            <field name="amount_untaxed"/>
+                                            <field name="amount_tax"/>
+                                            <field name="amount_total" class="oe_subtotal_footer_separator"/>
+                                            <field name="cgst_total"/>
+                                            <field name="sgst_total" />
+                                            <field name="igst_total"/>
+                                            <field name="cess_total"/>
+                                    </group>
+                                </page>
+
+
+                                <page string="Generation History">
+                                    <field name="history_id">
+                                        <!-- <form>
+                                            <group>
+                                                <group>
+                                                    <field name="eway_bill_no" />
+                                                    <field name="eway_bill_date" />
+                                                    <field name="valid_date" />
+                                                </group>
+                                            </group>
+
+
+                                            </form> -->
+                                         <tree string="E-way bill History" editable="bottom">
+                                                <field name="eway_bill_no" readonly="True"/>
+                                                <field name="eway_bill_date" readonly="True"/>
+                                                <field name="valid_date" readonly="True"/>
+                                            </tree>
+                                    </field>
+
+                                </page>
+                                <page string="Vehicle Update History">
+                                    <field name="vehicle_history_id">
+                                       
+                                         <tree string="Vehicle Update History" editable="bottom">
+                                                <field name="vehicle_no" readonly="True"/>
+                                                <field name="vehicle_no_from" readonly="True"/>
+                                                <field name="vehicle_no_history_id" readonly="True"/>
+                                            </tree>
+                                    </field>
+
+                                </page>
+
+
+                        </notebook>
+
+                    </sheet>
+                    <div class="oe_chatter"> 
+                        <field name="message_follower_ids" widget="mail_followers"/> 
+                        <field name="message_ids" widget="mail_thread"/> 
+                    </div> 
+                </form>
+
+
+            </field>
+        </record>
+
+
+
+
+        <record id="sailotech_ewaybill_action" model="ir.actions.act_window">
+            <field name="name">E-Way Bill</field>
+           <!--  <field name="type">ir.actions.act_window</field> -->
+            <field name="res_model">eway.bill</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,pivot,gant,graph</field>
+        </record>
+
+        <record id="open_cancel_action_id" model="ir.actions.act_window">
+           <field name="name">Cancel E-Way bill</field>
+           <!-- <field name="type">ir.actions.act_window</field> -->
+           <field name="res_model">eway.bill</field>
+           <field name="view_type">form</field>
+           <field name="view_mode">form</field>
+           <field name="target">new</field>
+        </record>
+
+        <record id="view_excel_form_extended" model="ir.ui.view">
+            <field name="name">excel.extended.form</field>
+            <field name="model">excel.extended</field>
+            <field name="arch" type="xml">
+                <form string="Excel Report file">
+                    <group>
+                    <field name="excel_file" readonly="1" filename="file_name"/>
+                    <field name="file_name" invisible="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="action_excel_form" model="ir.actions.act_window">
+            <field name="name">Reportes Excel</field>
+            <field name="view_id" ref="view_excel_form_extended"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="res_model">excel.extended</field>
+            <field name="target">new</field>
+        </record>
+
+		<menuitem name="Generate E-Way bill" id="action_sailotech_ewaybill" action="sailotech_ewaybill_action" parent="sailotech_ewaybill_sub_menu" sequence="7"/>
+
+	</data>
+</odoo>

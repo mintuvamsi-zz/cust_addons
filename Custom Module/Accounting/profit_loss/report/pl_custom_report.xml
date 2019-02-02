@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<template id="report_profit_loss">
+        	<t t-call="web.external_layout">
+        		<table class="table table-condensed table table-striped table table-bordered" style="margin-top: 200px;">
+        			<thead style="background-color: #3498DB; color:black;">
+        				<tr>
+		                  <th>Income</th>
+		                  <th>Income Product Name</th>
+		                  <th>Total Income</th>
+		                  <!-- <th>Expenses</th>
+		                  <th>Total Expenses</th> -->
+		                  <th>Net Profit</th>
+		                  <!-- <th>Mobile</th>
+		                  <th>Coming From</th>
+		                  <th>Visit Purpose</th>
+		                  <th>Badge Valid From</th>
+		                  <th>Badge Valid To</th> -->
+		                </tr>
+		            </thead>
+		            <tbody>
+		                <tr t-foreach="docs" t-as="doc">
+            				<td><span t-field="doc.incname"></span></td>
+            				<td><span t-field="doc.incproductname"></span></td>
+            				<td><span t-field="doc.totincome"></span></td>
+            				<!-- <td><span t-field="doc.expname"></span></td>
+            				<td><span t-field="doc.totexpense"></span></td> -->
+            				<td><span t-field="doc.grossprofit"></span></td>
+		                <!-- <td><span t-field="doc.mobile"></span></td>
+		                <td><span t-field="doc.coming_from"></span></td>
+		                <td><span t-field="doc.visit_purpose"></span></td>
+		                <td><span t-field="doc.valid_from"></span></td>
+		                <td><span t-field="doc.valid_to"></span></td> -->
+		                </tr>
+		              </tbody>
+
+		              <thead style="background-color: #3498DB; color:black;">
+        				<tr>
+		                  <!-- <th>Income</th>
+		                  <th>Total Income</th> -->
+		                  <th>Expenses</th>
+		                  <th>Expense Product Name</th>
+		                  <th>Total Expenses</th>
+		                  <th>Net Profit</th>
+		                  <!-- <th>Mobile</th>
+		                  <th>Coming From</th>
+		                  <th>Visit Purpose</th>
+		                  <th>Badge Valid From</th>
+		                  <th>Badge Valid To</th> -->
+		                </tr>
+		            </thead>
+		            <tbody>
+		                <tr t-foreach="docs" t-as="doc">
+            				<!-- <td><span t-field="doc.incname"></span></td>
+            				<td><span t-field="doc.totincome"></span></td> -->
+            				<td><span t-field="doc.expname"></span></td>
+            				<td><span t-field="doc.expproductname"></span></td>
+            				<td><span t-field="doc.totexpense"></span></td>
+            				<td><span t-field="doc.grossprofit"></span></td>
+		                <!-- <td><span t-field="doc.mobile"></span></td>
+		                <td><span t-field="doc.coming_from"></span></td>
+		                <td><span t-field="doc.visit_purpose"></span></td>
+		                <td><span t-field="doc.valid_from"></span></td>
+		                <td><span t-field="doc.valid_to"></span></td> -->
+		                </tr>
+		              </tbody>
+
+		            </table>
+    		</t>
+ 
+		</template>
+	</data>
+</odoo>

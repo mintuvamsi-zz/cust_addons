@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo> <data> <template id="invoice_report">
+
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="header">
+				<h1 style="text-align:center;" >TAX INVOICE</h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<h2>Striped Rows</h2>
+		<div class="row">
+		<div class="col-lg-12">
+			<t t-call="web.external_layout">
+			<div class="row">
+				<div class="col-lg-12">
+					<table class=" table table-condensed table table-striped" style=" table-layout:fixed;">
+						<thead style="background-color: #cccccc;">
+							<tr>
+								<th
+									style="color:black;">Invoice No</th>
+								<th
+									style="color:black;">Invoice Date</th>
+								<th
+									style="color:black;">Due Date</th>
+
+							</tr>
+						</thead>
+						<tbody class="sale_tbody">
+							<tr>
+								<td
+									style="color:black;">
+									<div t-field="docs.number" />
+								</td>
+								<td
+									style="color:black;">
+									<div t-field="docs.date_invoice" />
+								</td>
+								<td
+									style="color:black;">
+									<div t-field="docs.date_due" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<table class="table table-condensed">
+						<thead style="background-color: #cccccc;">
+							<tr>
+								<th
+									style="color:black;">Company Name
+									</th>
+								<th
+									style="color:black;">Billing Adress</th>
+									<th
+									style="color:black;">Shipping Address</th>
+
+								<!-- <th width="30px" style="border: 1px !important; border-style: 
+																			solid !important; border-color: #fff; color:#fff !important; ">E-Way Bill 
+																			Valid Upto:</th> -->
+							</tr>
+						</thead>
+						<tbody class="sale_tbody">
+							<tr>
+								<td
+									style="color:black;">
+									<div t-field="docs.partner_id"/>
+									<div t-field="docs.partner_id.vat"/>
+								</td>
+
+								<td
+									style="color:black;">
+									<div t-field="docs.partner_id"
+										t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+									<div t-field="docs.partner_id.vat" />
+								</td>
+									<td
+									style="color:black;">
+									<div t-field="docs.partner_id"
+										t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+									<div t-field="docs.partner_id.vat" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<table class="table table-condensed table table-striped" style=" table-layout:fixed; padding-top=20px;">
+						<thead style="background-color: #cccccc;">
+							<tr>
+								<th
+									style="color:black;">Place of Supply
+									</th>
+								<th
+									style="color:black;">Payment Terms
+									</th>	
+								</tr>
+							</thead>
+							<tbody class="sale_tbody">
+							<tr>
+								<td
+									style="color:black;">
+									<div t-field="docs.place_of_supply"/>
+								</td>
+								<td
+									style="color:black;">
+									<div t-field="docs.payment_term_id"/>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="table-responsive">
+					<table class="table table-condensed"
+						name="invoice_line_table">
+						<!-- <thead > -->
+							<tr>
+								<th class="text-left" style="color:black;">S.No</th>
+								<th class="text-left" style="color:black;">Item</th>
+								<!-- <th>Description</th> -->
+								<th class="text-left" style="color:black;">HSN / SAC</th>
+								<th class="text-left" style="color:black;">Quantity</th>
+								<th class="text-left" style="color:black;">Rate</th>
+								<th class="text-left" style="color:black;">Discount</th>
+								<th class="text-left" style="color:black;">Taxable Value</th>
+								<th class="text-left" style="color:black;">Taxes</th>
+								<!-- <t t-set="tag_cgst_id" t-value="env.ref('l10n_in.cgst_tag_tax').id"/> -->
+								<!-- <t t-set="is_cgst" t-value="tag_cgst_id in tax_map"/> -->
+								<!-- <t t-set="tax_datas" t-value="docs._invoice_line_tax_values()"/> -->
+									<!-- <th class="text-right" style="color:black;">CGST</th>
+									<th class="text-right" style="color:black;">SGST</th>
+									<th class="text-right" style="color:black;">IGST</th> -->
+								<!-- <th class="text-left" style="color:black;">Total</th> -->
+								<!-- <th class="text-right">Taxes</th> -->
+						</tr>
+
+						<!-- </thead> -->
+						<tbody class="sale_tbody">
+							<t t-set="i" t-value="1" /> 
+							<t t-foreach="docs.invoice_line_ids" t-as="item">
+							<tr>
+								<td>
+                            <span t-esc="i"/> 
+                            <t t-set="i" t-value="i+1"/> 
+                        </td>
+								<td class="text-left"><span t-field="item.product_id" /></td>
+								<!-- <td><span t-field="line.description" /></td> -->
+								<td class="text-left"><span t-field="item.product_id.l10n_in_hsn_code" /></td>
+								<td class="text-left"><span t-field="item.quantity" /></td>
+								<td class="text-left"><span t-field="item.price_unit" /></td>
+								<td class="text-left"><span t-field="item.discount"/></td>
+								 <td class="text-left" id="subtotal">
+                                    <span t-field="item.price_subtotal"
+                                        t-options='{"widget": "monetary", "display_currency": docs.currency_id}'/>
+                                </td>
+								<td class="text-left">
+                                    <span t-esc="', '.join(map(lambda x: (x.description or x.name), item.invoice_line_tax_ids))"/>
+                                </td>
+                                <!-- <td class="text-right"> -->
+                              <!--   <t t-foreach="docs._get_tax_amount_by_group()" t-as="amount_by_group">
+                                        <tr style="border-bottom:1px solid #dddddd;">
+                                            <t t-if="len(docs.tax_line_ids) == 1 and docs.amount_untaxed == amount_by_group[2]">
+                                                <td>
+                                                    <span t-esc="amount_by_group[0]"/>
+                                                    <span>&amp;nbsp;<span>on</span>
+                                                        <t t-esc="amount_by_group[4]"/>
+                                                    </span>
+                                                </td>
+                                                <td class="text-left">
+                                                    <span t-esc="amount_by_group[3]"/>
+                                                </td>
+                                            </t>
+                                            <t t-else="">
+                                                <td><span t-esc="amount_by_group[0]"/></td>
+                                                <td class="text-left">
+                                                    <span t-esc="amount_by_group[3]" />
+                                                </td>
+                                                </t>
+                                        </tr>
+                                    </t> -->
+                                <!-- </td> -->
+								<!-- <t t-if="docs.company_id.country_id.code == 'IN'">
+								<td class="text-right" t-if="is_cgst">
+								<t t-foreach="tax_datas[item.id]" t-as="tax_data">
+                                    <t t-if="tag_cgst_id in tax_data['tag_ids']">
+                                        <t t-esc="tax_data['amount']"/>
+                                    </t>
+                                </t>
+                            </td>
+                            <td class="text-right" t-if="is_sgst">
+								<t t-foreach="tax_datas[item.id]" t-as="tax_data">
+                                    <t t-if="tag_cgst_id in tax_data['tag_ids']">
+                                        <t t-esc="tax_data['amount']"/>
+                                    </t>
+                                </t>
+                            </td>
+                             <td class="text-right" t-if="is_igst">
+								<t t-foreach="tax_datas[item.id]" t-as="tax_data">
+                                    <t t-if="tag_cgst_id in tax_data['tag_ids']">
+                                        <t t-esc="tax_data['amount']"/>
+                                    </t>
+                                </t>
+                            </td> -->
+								<!-- <td class="text-left"><span t-field="item.price_total" /></td> -->
+							<!-- </t> -->
+							</tr>
+							</t>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="row" name="total">
+				<div class="col-xs-4 pull-right">
+					<table class="table table-condensed">
+						<tr >
+							<th 
+								style="color:black;">Taxable Value
+									</th>
+							<td class="text-right" style="color:black;"><span t-field="docs.amount_untaxed" /></td>
+						</tr>
+						    <t t-foreach="docs._get_tax_amount_by_group()" t-as="amount_by_group">
+                                        <tr style="color:black;">
+                                            <t t-if="len(docs.tax_line_ids) == 1 and docs.amount_untaxed == amount_by_group[2]">
+                                                <td>
+                                                    <span t-esc="amount_by_group[0]"/>
+                                                    <span>&amp;nbsp;<span>on</span>
+                                                        <t t-esc="amount_by_group[4]"/>
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span t-esc="amount_by_group[3]"/>
+                                                </td>
+                                            </t>
+                                            <t t-else="">
+                                                <td><span t-esc="amount_by_group[0]"/></td>
+                                                <td class="text-right">
+                                                    <span t-esc="amount_by_group[3]" />
+                                                </td>
+                                                </t>
+                                        </tr>
+                                    </t>
+            				<tr>
+							<th 
+								style="color:black;">Taxes
+									</th>
+							<td class="text-right" style="color:black;"><span t-field="docs.amount_tax" /></td>
+						</tr>
+						<tr>
+							<th 
+								style="color:black;">Total
+									</th>
+							<td class="text-right" style="color:black;"><span t-field="docs.amount_total" />
+							</td>
+						</tr>
+					</table>
+						<!-- <tr class="border-black">
+							<td><strong>CGST Amount</strong></td>
+							<td class="text-right"><span t-field="docs.cgst_total" /></td>
+						</tr>
+						<tr>
+							<td>SGST Amount</td>
+							<td class="text-right"><span t-field="docs.sgst_total" /></td>
+						</tr>
+						<tr>
+							<td>IGST Amount</td>
+							<td class="text-right"><span t-field="docs.igst_total" /></td>
+						</tr>
+						<tr>
+							<td>CESS Amount</td>
+							<td class="text-right"><span t-field="docs.cess_total" /></td>
+						</tr> -->
+
+				</div>
+			</div>
+		</t>
+	</div>
+</div>
+</div>
+</template>
+</data>
+</odoo>

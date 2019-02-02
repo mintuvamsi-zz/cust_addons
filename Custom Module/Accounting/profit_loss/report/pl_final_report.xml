@@ -1,0 +1,14 @@
+<?xml version="1.0"?> 
+<odoo> 
+  
+  <report id="action_report_profit_loss" 
+    string="Profit Loss Report" 
+    model="profit.loss" 
+    report_type="qweb-pdf" 
+    name="profit_loss.report_profit_loss" 
+    file="profit_loss.report_profit_loss"
+  /> 
+
+</odoo>
+
+

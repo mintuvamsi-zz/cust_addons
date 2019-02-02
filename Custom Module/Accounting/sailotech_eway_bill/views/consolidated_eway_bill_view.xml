@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- <menuitem name="E-Way Bill" id="sailotech_ewaybill_parent_menu"/>
+     <menuitem name="E-Way Bill" id="sailotech_ewaybill_sub_menu" parent="sailotech_ewaybill_parent_menu"/>
+ -->
+	<data>
+
+        <record id="consolidated_eway_bill_tree_view" model="ir.ui.view">
+                    <field name="name">consolidated.eway.bill.tree</field>
+                    <field name="model">consolidated.eway.bill</field>
+                    <field name="arch" type="xml">
+                        <tree>
+                            <field name="from_name"/>
+                            <field name="from_gstin"/>
+                            <field name="eway_bill_no" string="CEW Bill No"/>
+                            <field name="from_place"/>
+                            <field name="from_state"/>
+                            <field name="vehicle_no"/>
+                            <field name="transport_mode"/>
+                            <field name="transport_doc_no"/>
+                            <field name="transport_doc_date"/>
+                            <field name="status"/>
+                        </tree>
+                    </field>
+        </record>
+
+
+        <record id="consolidated_eway_bill_form_view" model="ir.ui.view">
+            <field name="name">consolidated.eway.bill.form</field>
+            <field name="model">consolidated.eway.bill</field>
+            <field name="arch" type="xml">
+
+
+                <form string="Consolidated E-way Bill">
+                    <header>
+                        <button name="consolidated_eway_bill" type="object" string="Consolidated E-Way Bill JSON" class="btn-primary o_sale_print"/>
+                        <field name="status" widget="statusbar" statusbar_visible="draft,active,inactive,cancel"/>
+                    </header>
+
+
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="from_name"/>
+                                <field name="from_gstin"/>
+                                <field name="from_place"/>
+                                <field name="from_state"/>
+                                <field name="eway_bill_no"/>
+                                <field name="eway_bill_date"/>                              
+
+                            </group>
+                            <group>
+                                <field name="transport_mode"/>
+                                <field name="vehicle_no"/>
+                                <field name="transport_doc_no"/>
+                                <field name="transport_doc_date"/>
+                                <!-- <field name="valid_date"/> -->
+                            </group>
+                        </group>
+                        <notebook>
+                                <page string="Consolidated Bills">
+                                    <field name="consolidated_item_id">
+                                        <form>
+                                            <group>
+                                                <group>
+                                                    <field name="eway_bill_no" />
+                                                    
+                                                </group>
+                                            </group>
+                                        </form>
+
+                                        <tree string="Consolidated E-way bill Lines" editable="bottom">
+                                            <field name="eway_bill_no" />    
+                                        </tree>
+                                    
+                                    </field>
+
+                                    
+                                </page>
+                        </notebook>
+
+                    </sheet>
+                    <div class="oe_chatter"> 
+                        <field name="message_follower_ids" widget="mail_followers"/> 
+                        <field name="message_ids" widget="mail_thread"/> 
+                    </div> 
+                </form>
+
+
+            </field>
+        </record>
+
+
+
+
+        <record id="consolidated_ewaybill_action" model="ir.actions.act_window">
+            <field name="name">Consolidated E-Way Bills</field>
+           <!--  <field name="type">ir.actions.act_window</field> -->
+            <field name="res_model">consolidated.eway.bill</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,pivot</field>
+
+            <!-- <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a Name .
+
+              </p>
+            </field> -->
+        </record>
+        <!-- <record id="view_excel_form_extended" model="ir.ui.view">
+            <field name="name">excel.extended.form</field>
+            <field name="model">excel.extended</field>
+            <field name="arch" type="xml">
+                <form string="Excel Report file">
+                    <group>
+                    <field name="excel_file" readonly="1" filename="file_name"/>
+                    <field name="file_name" invisible="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="action_excel_form" model="ir.actions.act_window">
+            <field name="name">Reportes Excel</field>
+            <field name="view_id" ref="view_excel_form_extended"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="res_model">excel.extended</field>
+            <field name="target">new</field>
+        </record>
+ -->
+		<menuitem name="Consolidated E-Way Bill" id="action_consolidated_ewaybill" action="consolidated_ewaybill_action" parent="sailotech_ewaybill_sub_menu" sequence="8"/>
+
+	</data>
+</odoo>

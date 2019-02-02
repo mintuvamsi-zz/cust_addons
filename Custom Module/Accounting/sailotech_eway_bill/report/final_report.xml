@@ -1,0 +1,22 @@
+<?xml version="1.0"?> 
+<odoo> 
+  <report id="action_eway_bill_report_consolidated" 
+    string="Eway Bill" 
+    model="eway.bill" 
+    report_type="qweb-pdf" 
+    name="sailotech_eway_bill.report_consolidated" 
+    file="sailotech_eway_bill.report_consolidated"
+  />
+ 
+  <report id="action_eway_bill_report1_consolidated" 
+    string="consolidated eway bill" 
+    model="consolidated.eway.bill" 
+    report_type="qweb-pdf" 
+    name="sailotech_eway_bill.report_consolidated_eway_bill" 
+    file="sailotech_eway_bill.report_consolidated_eway_bill"
+  /> 
+
+
+</odoo>
+
+

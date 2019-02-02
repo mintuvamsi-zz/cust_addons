@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+
+        <record id="cancel_eway_bill_view" model="ir.ui.view">
+            <field name="name">cancel.eway.bill.form</field>
+            <field name="model">cancel.eway.bill</field>
+            <field name="arch" type="xml">
+                <form string="Cancel E-Way Bill">
+                 
+                    <p class="oe_grey">
+                        Please Confirm to Cancel E-way Bill. 
+                    </p>
+                    <footer>
+                        <button string="Cancel E-Way Bill" name="cancel_eway_bill" type="object" default_focus="1" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="open_cancel_action_id" model="ir.actions.act_window">
+           <field name="name">Cancel E-Way bill</field>
+           <field name="type">ir.actions.act_window</field>
+           <field name="res_model">cancel.eway.bill</field>
+           <field name="view_type">form</field>
+           <field name="view_mode">form</field>
+           <field name="target">new</field>
+        </record>
+    </data>
+</odoo>
